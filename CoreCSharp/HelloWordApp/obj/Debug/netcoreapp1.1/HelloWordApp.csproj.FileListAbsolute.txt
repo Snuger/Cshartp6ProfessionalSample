@@ -1,0 +1,10 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\bin\Debug\netcoreapp1.1\HelloWordApp.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\bin\Debug\netcoreapp1.1\HelloWordApp.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\bin\Debug\netcoreapp1.1\HelloWordApp.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\bin\Debug\netcoreapp1.1\HelloWordApp.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\bin\Debug\netcoreapp1.1\HelloWordApp.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\obj\Debug\netcoreapp1.1\HelloWordApp.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\obj\Debug\netcoreapp1.1\HelloWordApp.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\obj\Debug\netcoreapp1.1\HelloWordApp.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\obj\Debug\netcoreapp1.1\HelloWordApp.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\CoreCSharp\HelloWordApp\obj\Debug\netcoreapp1.1\HelloWordApp.pdb

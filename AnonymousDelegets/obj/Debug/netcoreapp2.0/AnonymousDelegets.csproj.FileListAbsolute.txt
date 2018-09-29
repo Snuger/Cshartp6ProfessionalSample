@@ -1,0 +1,10 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\bin\Debug\netcoreapp2.0\AnonymousDelegets.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\bin\Debug\netcoreapp2.0\AnonymousDelegets.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\bin\Debug\netcoreapp2.0\AnonymousDelegets.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\bin\Debug\netcoreapp2.0\AnonymousDelegets.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\bin\Debug\netcoreapp2.0\AnonymousDelegets.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\obj\Debug\netcoreapp2.0\AnonymousDelegets.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\obj\Debug\netcoreapp2.0\AnonymousDelegets.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\obj\Debug\netcoreapp2.0\AnonymousDelegets.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\obj\Debug\netcoreapp2.0\AnonymousDelegets.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AnonymousDelegets\obj\Debug\netcoreapp2.0\AnonymousDelegets.pdb

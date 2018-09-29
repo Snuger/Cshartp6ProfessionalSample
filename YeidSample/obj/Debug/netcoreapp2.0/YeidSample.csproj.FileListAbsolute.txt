@@ -1,0 +1,10 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\bin\Debug\netcoreapp2.0\YeidSample.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\bin\Debug\netcoreapp2.0\YeidSample.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\bin\Debug\netcoreapp2.0\YeidSample.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\bin\Debug\netcoreapp2.0\YeidSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\bin\Debug\netcoreapp2.0\YeidSample.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\obj\Debug\netcoreapp2.0\YeidSample.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\obj\Debug\netcoreapp2.0\YeidSample.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\obj\Debug\netcoreapp2.0\YeidSample.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\obj\Debug\netcoreapp2.0\YeidSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\YeidSample\obj\Debug\netcoreapp2.0\YeidSample.pdb

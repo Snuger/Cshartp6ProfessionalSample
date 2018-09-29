@@ -1,0 +1,10 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\bin\Debug\netcoreapp2.0\StringSample.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\bin\Debug\netcoreapp2.0\StringSample.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\bin\Debug\netcoreapp2.0\StringSample.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\bin\Debug\netcoreapp2.0\StringSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\bin\Debug\netcoreapp2.0\StringSample.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\obj\Debug\netcoreapp2.0\StringSample.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\obj\Debug\netcoreapp2.0\StringSample.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\obj\Debug\netcoreapp2.0\StringSample.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\obj\Debug\netcoreapp2.0\StringSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\StringSample\obj\Debug\netcoreapp2.0\StringSample.pdb

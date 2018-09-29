@@ -1,0 +1,10 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\bin\Debug\netcoreapp1.1\Variance.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\bin\Debug\netcoreapp1.1\Variance.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\bin\Debug\netcoreapp1.1\Variance.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\bin\Debug\netcoreapp1.1\Variance.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\bin\Debug\netcoreapp1.1\Variance.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\obj\Debug\netcoreapp1.1\Variance.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\obj\Debug\netcoreapp1.1\Variance.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\obj\Debug\netcoreapp1.1\Variance.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\obj\Debug\netcoreapp1.1\Variance.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Variance\obj\Debug\netcoreapp1.1\Variance.pdb

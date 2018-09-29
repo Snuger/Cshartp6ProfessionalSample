@@ -1,0 +1,6 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AsyncConsole\bin\Debug\AsyncConsole.exe.config
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AsyncConsole\bin\Debug\AsyncConsole.exe
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AsyncConsole\bin\Debug\AsyncConsole.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AsyncConsole\obj\Debug\AsyncConsole.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AsyncConsole\obj\Debug\AsyncConsole.exe
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AsyncConsole\obj\Debug\AsyncConsole.pdb
