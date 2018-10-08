@@ -1,0 +1,8 @@
+C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\bin\Debug\MSMQUI.exe
+C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\bin\Debug\MSMQUI.pdb
+C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.Form1.resources
+C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.Properties.Resources.resources
+C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.csproj.GenerateResource.cache
+C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.csproj.CoreCompileInputs.cache
+C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.exe
+C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.pdb

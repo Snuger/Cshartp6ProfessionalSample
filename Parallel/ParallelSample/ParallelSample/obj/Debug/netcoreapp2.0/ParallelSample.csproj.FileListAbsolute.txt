@@ -1,0 +1,11 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\bin\Debug\netcoreapp2.0\ParallelSample.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\bin\Debug\netcoreapp2.0\ParallelSample.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\bin\Debug\netcoreapp2.0\ParallelSample.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\bin\Debug\netcoreapp2.0\ParallelSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\bin\Debug\netcoreapp2.0\ParallelSample.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\obj\Debug\netcoreapp2.0\ParallelSample.csprojAssemblyReference.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\obj\Debug\netcoreapp2.0\ParallelSample.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\obj\Debug\netcoreapp2.0\ParallelSample.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\obj\Debug\netcoreapp2.0\ParallelSample.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\obj\Debug\netcoreapp2.0\ParallelSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\ParallelSample\obj\Debug\netcoreapp2.0\ParallelSample.pdb
