@@ -1,0 +1,6 @@
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Listener\bin\Debug\MessageQueue.Listener.exe.config
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Listener\bin\Debug\MessageQueue.Listener.exe
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Listener\bin\Debug\MessageQueue.Listener.pdb
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Listener\obj\Debug\MessageQueue.Listener.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Listener\obj\Debug\MessageQueue.Listener.exe
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Listener\obj\Debug\MessageQueue.Listener.pdb

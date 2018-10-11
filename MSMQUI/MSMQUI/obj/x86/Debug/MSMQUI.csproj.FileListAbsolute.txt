@@ -6,3 +6,11 @@ C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug
 C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.csproj.CoreCompileInputs.cache
 C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.exe
 C:\Users\Snuger.MicZenus\Downloads\Compressed\MSMQUI\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\MSMQUI\MSMQUI\bin\Debug\MSMQUI.exe
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\MSMQUI\MSMQUI\bin\Debug\MSMQUI.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.Form1.resources
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.Properties.Resources.resources
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.csproj.GenerateResource.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.exe
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\MSMQUI\MSMQUI\obj\x86\Debug\MSMQUI.pdb

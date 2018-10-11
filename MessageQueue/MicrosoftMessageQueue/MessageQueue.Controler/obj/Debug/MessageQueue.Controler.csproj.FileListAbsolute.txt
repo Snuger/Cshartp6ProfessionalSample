@@ -1,0 +1,14 @@
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\bin\Debug\MessageQueue.Controler.exe.config
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\bin\Debug\MessageQueue.Controler.exe
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\bin\Debug\MessageQueue.Controler.pdb
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MainWindow.g.cs
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\App.g.cs
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MessageQueue.Controler_MarkupCompile.cache
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MessageQueue.Controler_MarkupCompile.lref
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MainWindow.baml
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MessageQueue.Controler.g.resources
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MessageQueue.Controler.Properties.Resources.resources
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MessageQueue.Controler.csproj.GenerateResource.cache
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MessageQueue.Controler.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MessageQueue.Controler.exe
+E:\Code Studio\C#-Project\MessageQueue\MicrosoftMessageQueue\MessageQueue.Controler\obj\Debug\MessageQueue.Controler.pdb

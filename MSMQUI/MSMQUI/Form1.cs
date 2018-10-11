@@ -47,21 +47,37 @@ namespace MSMQUI
         private void SendButton_Click(object sender, EventArgs e)
         {
             int count = Convert.ToInt32(countTxt.Text);
+        
+
             while (count > 0)
             {
-                ThreadPool.QueueUserWorkItem(new WaitCallback(SendMessage), $"msg_{count.ToString()}");
+                System.Messaging.Message message = new System.Messaging.Message();
+                message.Formatter = new System.Messaging.XmlMessageFormatter(new Type[] { typeof(string) });
+                message.Body = $"msg on {count.ToString()}";
+
+                ThreadPool.QueueUserWorkItem(new WaitCallback(SendMessage), message);
                 count--;
             }
         }
 
-        private void SendMessage(object state)
+        private void SendMessage(object item)
         {
-            if (mq != null)
+            MessageQueue queue;
+            if (MessageQueue.Exists(mqCreateTxt.Text))
+            {
+                queue = new System.Messaging.MessageQueue(mqCreateTxt.Text);
+            }
+            else
+            {
+                queue = MessageQueue.Create(mqCreateTxt.Text);
+            }
+
+            System.Messaging.Message messageItem = item as System.Messaging.Message;
+            if (queue != null)
             {
                 try
                 {
-                    msg.Body = state.ToString();
-                    mq.Send(msg);
+                    queue.Send(messageItem);
                 }
                 catch (Exception ex)
                 {
@@ -69,5 +85,5 @@ namespace MSMQUI
                 }
             }
         }
-    }
+    }  
 }
