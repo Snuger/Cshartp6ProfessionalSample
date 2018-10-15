@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelSample", "ParallelSample\ParallelSample.csproj", "{F1F78D39-FBE1-4FD1-A900-FC9A0E9D026A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParallelSample", "ParallelSample\ParallelSample.csproj", "{F1F78D39-FBE1-4FD1-A900-FC9A0E9D026A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSample", "TaskSample\TaskSample.csproj", "{37D4B179-8877-43D4-90A4-C79649CCCC0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F1F78D39-FBE1-4FD1-A900-FC9A0E9D026A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1F78D39-FBE1-4FD1-A900-FC9A0E9D026A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1F78D39-FBE1-4FD1-A900-FC9A0E9D026A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37D4B179-8877-43D4-90A4-C79649CCCC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37D4B179-8877-43D4-90A4-C79649CCCC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37D4B179-8877-43D4-90A4-C79649CCCC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37D4B179-8877-43D4-90A4-C79649CCCC0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
