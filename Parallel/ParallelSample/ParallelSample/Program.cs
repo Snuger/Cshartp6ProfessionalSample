@@ -45,6 +45,8 @@ namespace ParallelSample
             ParallerInvok();
 
             Console.ReadLine();
+
+
         }
             
         private static void Log(string prefix) {
@@ -106,5 +108,9 @@ namespace ParallelSample
         {
             Console.WriteLine("Aoo");
         }
+
+
+
+        
     }
 }

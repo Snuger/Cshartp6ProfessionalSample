@@ -29,6 +29,16 @@ namespace TaskSample
                     case "-l":
                         LongRuningTask();
                         break;
+                    case "-r":
+                        //TaskWithResultDemo();
+                        TaskWithResultDemo2();
+                        break;
+                    case "-c":
+                        ContinuationTasks();
+                        break;
+                    case "-pc":
+                        ParentAndChild();
+                        break;
                     case "-q":
                         stop = true;
                         break;
@@ -90,5 +100,107 @@ namespace TaskSample
             task.Start();          
         }
 
+
+        private static void TaskWithResultDemo()
+        {
+            var t1 = new Task<Tuple<int, int>>(TaskWithResult, Tuple.Create(8, 3));
+            t1.Start();
+           // Console.WriteLine(t1.Result);
+            //t1.Wait();
+            Console.WriteLine($"result form task: one is  {t1.Result.Item1} two is  {t1.Result.Item2} ");
+
+        }
+
+
+        private static void TaskWithResultDemo2() {
+            var task = new Task<Tuple<int, int>>((object division) =>
+            {
+                Tuple<int, int> div = (Tuple<int, int>)division;
+                int result = div.Item1 / div.Item2;
+                int reminder = div.Item1 % div.Item2;
+                Console.WriteLine("Task creates a result...");
+                return Tuple.Create(result, reminder);
+            },Tuple.Create(8, 3));
+
+            task.Start();
+
+            Console.WriteLine($"result form task: one is  {task.Result.Item1} two is  {task.Result.Item2} ");
+
+        }
+
+        private static Tuple<int, int> TaskWithResult(object division)
+        {
+            Tuple<int, int> div = (Tuple<int, int>)division;
+
+            int result = div.Item1 / div.Item2;
+            int reminder = div.Item1 % div.Item2;
+            Console.WriteLine("Task creates a result...");
+            return Tuple.Create(result, reminder);
+        }
+
+
+
+        private static void ContinuationTasks()
+        {
+            var task = new Task(DoFirt);
+            Task t2=task.ContinueWith(DoSecond);
+            task.Start();
+        }
+        private static void DoFirt() {
+            Console.WriteLine($"doing some task {Task.CurrentId}");
+            Task.Delay(3000).Wait();
+        }
+
+
+        private static void DoSecond(Task t)
+        {
+            Console.WriteLine($"task {t.Id} finished");
+            Console.WriteLine($"this task id {Task.CurrentId}");
+            Console.WriteLine("do some cleanup");
+            Task.Delay(3000).Wait();
+        }
+
+        private static void ContinuationTasks1()
+        {
+            Task t1 = new Task(() => {
+                Console.WriteLine($"doing some task {Task.CurrentId}");
+                Task.Delay(3000).Wait();
+            });
+
+            t1.ContinueWith((Task task) =>
+            {
+                Console.WriteLine($"task {task.Id} finished");
+                Console.WriteLine($"this task id {Task.CurrentId}");
+                Console.WriteLine("do some cleanup");
+                Task.Delay(3000).Wait();
+            });
+
+        }
+
+
+        private static void ParentAndChild() {
+            Task parent = new Task(ParentPack);
+            parent.Start();
+            Task.Delay(2000).Wait();
+            Console.WriteLine(parent.Status);
+            Task.Delay(4000).Wait();
+            Console.WriteLine(parent.Status);
+
+        }
+
+        private static void ParentPack() {
+            Console.WriteLine($"task id {Task.CurrentId}");
+            var task = new Task(ChildPack);
+            task.Start();
+            Task.Delay(1000).Wait();
+            Console.WriteLine("parent started child");
+
+        }
+
+        private static void ChildPack() {
+            Console.WriteLine("child");
+            Task.Delay(3000).Wait();
+            Console.WriteLine("child finished");
+        }
     }
 }

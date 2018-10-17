@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParallelSample", "ParallelS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSample", "TaskSample\TaskSample.csproj", "{37D4B179-8877-43D4-90A4-C79649CCCC0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancellationSample", "CancellationSample\CancellationSample.csproj", "{946FAD7A-DBE1-41DB-AA53-8BCE99F0B83B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFlowSample", "DataFlowSample\DataFlowSample.csproj", "{A95D4B3A-5B82-4AFE-9E0D-E90B84927900}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{37D4B179-8877-43D4-90A4-C79649CCCC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37D4B179-8877-43D4-90A4-C79649CCCC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37D4B179-8877-43D4-90A4-C79649CCCC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{946FAD7A-DBE1-41DB-AA53-8BCE99F0B83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{946FAD7A-DBE1-41DB-AA53-8BCE99F0B83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{946FAD7A-DBE1-41DB-AA53-8BCE99F0B83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{946FAD7A-DBE1-41DB-AA53-8BCE99F0B83B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A95D4B3A-5B82-4AFE-9E0D-E90B84927900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A95D4B3A-5B82-4AFE-9E0D-E90B84927900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A95D4B3A-5B82-4AFE-9E0D-E90B84927900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A95D4B3A-5B82-4AFE-9E0D-E90B84927900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
