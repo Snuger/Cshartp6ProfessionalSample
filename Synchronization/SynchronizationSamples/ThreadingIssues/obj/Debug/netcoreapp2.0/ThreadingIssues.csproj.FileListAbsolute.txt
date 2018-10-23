@@ -1,0 +1,10 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\bin\Debug\netcoreapp2.0\ThreadingIssues.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\bin\Debug\netcoreapp2.0\ThreadingIssues.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\bin\Debug\netcoreapp2.0\ThreadingIssues.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\bin\Debug\netcoreapp2.0\ThreadingIssues.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\bin\Debug\netcoreapp2.0\ThreadingIssues.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\obj\Debug\netcoreapp2.0\ThreadingIssues.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\obj\Debug\netcoreapp2.0\ThreadingIssues.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\obj\Debug\netcoreapp2.0\ThreadingIssues.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\obj\Debug\netcoreapp2.0\ThreadingIssues.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\ThreadingIssues\obj\Debug\netcoreapp2.0\ThreadingIssues.pdb
