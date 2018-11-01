@@ -1,0 +1,11 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\bin\Debug\netcoreapp2.0\BooksSample.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\bin\Debug\netcoreapp2.0\BooksSample.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\bin\Debug\netcoreapp2.0\BooksSample.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\bin\Debug\netcoreapp2.0\BooksSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\obj\Debug\netcoreapp2.0\BooksSample.csprojAssemblyReference.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\obj\Debug\netcoreapp2.0\BooksSample.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\obj\Debug\netcoreapp2.0\BooksSample.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\obj\Debug\netcoreapp2.0\BooksSample.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\bin\Debug\netcoreapp2.0\BooksSample.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\obj\Debug\netcoreapp2.0\BooksSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\BooksSample\obj\Debug\netcoreapp2.0\BooksSample.pdb
