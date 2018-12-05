@@ -1,0 +1,12 @@
+﻿@model MvcApplicationSample.Models.Menu
+@{
+    ViewData["Title"] = "HelperWithMenu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>测试模型数据</h2>
+@Html.DisplayName("Text:")
+@Html.Display("Text")
+<br />
+@Html.DisplayName("Category:")
+@Html.Display("Category")
+@Html.BeginForm()

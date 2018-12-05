@@ -1,0 +1,17 @@
+﻿@model IEnumerable<SelectListItem>
+@{
+    ViewData["Title"] = "HelperList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<fieldset>
+    <legend>
+        列表绑定
+    </legend>
+    @using (Html.BeginForm()) {
+    <div class="form-group">
+        @Html.Label("省市")
+        @Html.DropDownList("Zonings", Model, new { @Class="form-control" })
+    </div>
+    }
+</fieldset>

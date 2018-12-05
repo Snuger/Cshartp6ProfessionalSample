@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Students>
+@{
+    ViewData["Title"] = "PassingSet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //  IEnumerable<Students>
+}
+    <h2>测试传递集合数据到视图</h2>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">编号</th>
+                    <th scope="col">姓名</th>
+                    <th scope="col">年龄</th>
+                    <th scope="col">地址</th>
+                    <th scope="col">电话</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Age</td>
+                        <td>@item.Address</td>
+                        <td>@item.TelPhone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

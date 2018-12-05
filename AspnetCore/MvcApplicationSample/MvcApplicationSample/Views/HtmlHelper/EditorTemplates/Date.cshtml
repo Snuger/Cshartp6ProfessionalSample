@@ -1,0 +1,8 @@
+﻿@model System.DateTime
+@{
+    var propertyName = ViewData.ModelMetadata.PropertyName;
+    <div class="form-group">
+        <input data-date-format="dd-mm-yyyy" type="datetime" id="@propertyName" name="@propertyName" value="@Model" class="form-control form_datetime" />
+    </div>   
+}
+

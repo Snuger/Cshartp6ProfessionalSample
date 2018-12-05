@@ -1,0 +1,8 @@
+﻿@using MvcApplicationSample.Models;
+@model IEnumerable<Zoning>
+<select id="zoningRoot" class="form-control">
+    @foreach (var item in Model)
+    {       
+        <option value="@item.Code">@item.Name</option>
+    }
+</select>

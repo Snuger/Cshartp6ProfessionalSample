@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterlockedExchange_Example
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncDelegate", "AsyncDelegate\AsyncDelegate.csproj", "{7D0F0D86-CCCB-4B58-A2EF-D9B4618CBEBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSamples", "EventSamples\EventSamples.csproj", "{125E1015-0E8F-43AE-8DB4-82DDB5A9E27B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSampleWithCountdownEvent", "EventSampleWithCountdownEvent\EventSampleWithCountdownEvent.csproj", "{B7B19D41-4C7C-4848-A428-BC433E612AD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7D0F0D86-CCCB-4B58-A2EF-D9B4618CBEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D0F0D86-CCCB-4B58-A2EF-D9B4618CBEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D0F0D86-CCCB-4B58-A2EF-D9B4618CBEBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{125E1015-0E8F-43AE-8DB4-82DDB5A9E27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125E1015-0E8F-43AE-8DB4-82DDB5A9E27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125E1015-0E8F-43AE-8DB4-82DDB5A9E27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125E1015-0E8F-43AE-8DB4-82DDB5A9E27B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7B19D41-4C7C-4848-A428-BC433E612AD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B19D41-4C7C-4848-A428-BC433E612AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B19D41-4C7C-4848-A428-BC433E612AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B19D41-4C7C-4848-A428-BC433E612AD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

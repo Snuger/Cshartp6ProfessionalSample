@@ -1,0 +1,9 @@
+﻿@using MvcApplicationSample.Models;
+@model IEnumerable<Event>
+<h3>formula 1 Calendar</h3>
+<ul>
+    @foreach (var en in Model)
+    {
+        <li><div>@en.Day.ToString("D")</div><div>@en.Text</div></li>
+    }
+</ul>

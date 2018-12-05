@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "CreateMenus4";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<fieldset>
+    <legend>Menu</legend>
+    <form action="/SubmitData/CreateMenu4" method="post">
+        <div class="form-group">
+            <label>id:</label>
+            <input type="text" class="form-control" name="id" value="" p />           
+        </div>
+        <div class="form-group">
+            <label>text</label>
+            <input type="text" class="form-control" name="text" value="" />
+        </div>
+        <div class="form-group">
+            <label>price</label>
+            <input type="number" class="form-control" name="price" value="" />
+        </div>
+        <div class="form-group">
+            <label>Category</label>
+            <input type="tel" class="form-control" name="category" value="" />
+        </div>
+        <button type="submit">提交</button>
+    </form>
+</fieldset>
+

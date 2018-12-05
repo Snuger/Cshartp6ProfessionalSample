@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "PassingMode";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>测试传递模型</h2>
+<div class="row">
+    <div class="col-sm-2">
+        <label>姓名:</label>
+        <span>@Model.Name</span>
+    </div>
+    <div class="col-sm-2">
+        <label>年龄:</label>
+        <span>@Model.Age</span>
+    </div>
+    <div class="col-sm-2">
+        <label>地址:</label>
+        <span>@Model.Address</span>
+    </div>
+    <div class="col-sm-2">
+        <label>电话:</label>
+        <span>@Model.TelPhone</span>
+    </div>   
+</div>
+

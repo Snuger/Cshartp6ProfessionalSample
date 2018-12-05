@@ -1,0 +1,10 @@
+﻿@model MvcApplicationSample.Models.EventsAndMenusContext
+@{
+    ViewBag.Title = "Use a Partial view";
+    ViewBag.EventTitle = "Live Events";
+}
+<h2>use a partial view</h2>
+<div>this is the main view</div>
+<div>
+    @await Html.PartialAsync("ShowEvents",Model.Events)
+</div>

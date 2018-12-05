@@ -1,0 +1,24 @@
+﻿@model MvcApplicationSample.Models.Menu
+@{
+    ViewData["Title"] = "StronglyTypeMenu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>测试强类型绑定</h2>
+<form>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Text): @Html.LabelFor(m => m.Text)
+        @Html.DisplayFor(m => m.Text)
+    </div>
+</form>
+<h2>绑定整个model</h2>
+<hr />
+@Html.DisplayForModel(Model)
+
+<h2>测试编辑器扩展EditorForModel</h2>
+@Html.EditorForModel(Model)
+<h2>测试编辑器扩展EditorFor</h2>
+@Html.EditorFor(m => m)
+
+<h2>测试使用模型修改时间字段</h2>
+@Html.EditorFor(m => m.CreateDate)
