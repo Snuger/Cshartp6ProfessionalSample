@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,9 +9,10 @@ namespace MvcApplicationSample.Models
 {
     public class Menu
     {
+        [Key,Required]
         public int Id { get; set; }
 
-        [Required,StringLength(50)]
+        [DisplayName("书名"),Required(ErrorMessage ="请输入书名"),StringLength(50)]
         public string Text { get; set; }
 
         [Display(Name="Price"),DisplayFormat(DataFormatString ="{0:C}")]

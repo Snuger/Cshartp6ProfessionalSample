@@ -19,7 +19,7 @@ namespace MvcApplicationSample.Controllers
         public IActionResult CreateMenus4() => View();
 
 
-        [HttpPost]
+    
         public IActionResult CreateMenu(int id, string text, double price, string category) {
             Menu menu = new Menu { Id = id, Text = text, Price = price, Category = category };
             ViewBag.info = $"menu created: {menu.Text}, Price: {menu.Price}, category: {menu.Category}";

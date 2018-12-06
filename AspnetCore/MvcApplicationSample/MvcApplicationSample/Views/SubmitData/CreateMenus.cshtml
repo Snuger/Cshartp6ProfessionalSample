@@ -1,26 +1,37 @@
-﻿@{
+﻿@model MvcApplicationSample.Models.Menu
+@{
     ViewData["Title"] = "CreateMenus";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <fieldset>
     <legend>Menu</legend>
-    <form action="/SubmitData/CreateMenu" method="post" >
+    @using (Html.BeginForm("CreateMenu", "SubmitData",FormMethod.Post))
+    {
         <div class="form-group">
-            <label>id:</label>
-            <input type="text" class="form-control" name="id" value="" />
+            @Html.LabelFor(m => m.Id)
+            @Html.TextBoxFor(m => m.Id, new { @class = "form-control", placeholder = "请输入一串数字" })
+            @Html.ValidationMessageFor(m => m.Id,"书籍没有编码不允许上架,因为这样不利于管理!")
         </div>
         <div class="form-group">
-            <label>text</label>
-            <input type="text" class="form-control" name="text" value="" />
+            @Html.LabelFor(m => m.Text)
+            @Html.TextBoxFor(m => m.Text, new { @class = "form-control" , placeholder = "请输入书名" })
         </div>
         <div class="form-group">
-            <label>price</label>
-            <input type="number" class="form-control" name="price" value="" />
+            @Html.LabelFor(m => m.Price)
+            @Html.TextBoxFor(m => m.Price, new { @class = "form-control", placeholder = "请输入相应的价钱" })
+            @Html.ValidationMessageFor(m=>m.Price,"书籍价钱不能为空")
         </div>
         <div class="form-group">
-            <label>Category</label>
-            <input type="tel" class="form-control" name="category" value="" />
+            @Html.LabelFor(m => m.Category)
+            @Html.TextBoxFor(m => m.Category, new { @class = "form-control", placeholder = "该输入书籍分类" })
         </div>
+        <div class="bg-warning">
+            @Html.ValidationSummary()
+        </div>                  
         <button type="submit">提交</button>
-    </form>
+    }
 </fieldset>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
