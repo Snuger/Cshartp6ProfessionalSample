@@ -4,11 +4,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MvcApplicationSample.Extensions;
 using MvcApplicationSample.Models;
 
 namespace MvcApplicationSample.Controllers
 {
-    public class HomeController : Controller
+
+    [Language]
+   public class HomeController : Controller
     {
         public IActionResult Index()
         {

@@ -8,4 +8,3 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MvcApplicationSa
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MvcApplicationSample\MvcApplicationSample\obj\Debug\netcoreapp2.0\MvcApplicationSample.AssemblyInfo.cs
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MvcApplicationSample\MvcApplicationSample\obj\Debug\netcoreapp2.0\MvcApplicationSample.dll
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MvcApplicationSample\MvcApplicationSample\obj\Debug\netcoreapp2.0\MvcApplicationSample.pdb
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MvcApplicationSample\MvcApplicationSample\obj\Debug\netcoreapp2.0\MvcApplicationSample.csprojAssemblyReference.cache

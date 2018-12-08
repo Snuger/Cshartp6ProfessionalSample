@@ -58,7 +58,12 @@ namespace MvcApplicationSample
 
             app.UseMvc(routes=> {
                 routes.MapRoute(name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");                  
+                    template: "{controller=Home}/{action=Index}/{id?}")
+                    .MapRoute(
+                    name:"language",
+                    template:"{language}/{controller}/{action}/{id?}",
+                    defaults:new {controller="Home",action="Index" },
+                    constraints:new {language=@"(en)|(zh-cn)" });                  
             });
         }
     }

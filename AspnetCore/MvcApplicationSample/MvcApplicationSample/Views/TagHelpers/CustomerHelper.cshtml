@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Menu>
+@addTagHelper *,MvcApplicationSample
+
+@{
+    ViewData["Title"] = "CustomerHelper";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int pageNumber = 3;
+ }
+<div class="panel">
+    <div class="panel-heading">
+        <h2>测试自定义标记辅助程序</h2>
+    </div>
+    <div class="panel-body">
+        <table id="first-table" table-for="Model"  table-pageshow="10" table-pagesize="50" table-action="/TagHelpers/CustomerHelper" table-pagenumber="pageNumber" class="table table-hover table-responsive"></table>
+    </div>
+</div>
+
