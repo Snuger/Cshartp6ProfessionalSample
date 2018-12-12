@@ -1,0 +1,37 @@
+﻿@model MenuPlannerSample.Models.Menu
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<fieldset>
+    <legend>
+        新增Menu
+    </legend>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label asp-for="MenuCardId"></label>           
+            <select asp-for="MenuCardId" asp-items="@((IEnumerable<SelectListItem>)ViewBag.MenuCards)" class="form-control">
+                <option value="">点击选择</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="Text"></label>
+            <input type="text" asp-for="Text" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Day"></label>
+            <input asp-for="Day" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="创建" class="btn btn-default" />
+        </div>
+    </form>
+</fieldset>
+
+

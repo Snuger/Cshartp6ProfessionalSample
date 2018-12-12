@@ -24,12 +24,21 @@ namespace MenuPlannerSample.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            var menus = builder.Entity<Menu>();
+            menus.Property(p => p.Text).HasMaxLength(50).IsRequired();
+            menus.Property(p => p.Active).HasColumnType("bit");
 
-            builder.Entity<Menu>().Property(p => p.Text)
-                .HasMaxLength(50).IsRequired();
+            var menuCard = builder.Entity<MenuCard>();
+            menuCard.Property(p => p.Active).HasColumnType("bit");
+
+            var appUser = builder.Entity<ApplicationUser>();
+            appUser.Property(p => p.EmailConfirmed).HasColumnType("bit");
+            appUser.Property(p => p.PhoneNumberConfirmed).HasColumnType("bit");
+            appUser.Property(p => p.TwoFactorEnabled).HasColumnType("bit");
+            appUser.Property(p => p.LockoutEnabled).HasColumnType("bit");
             base.OnModelCreating(builder);
-
-         
+          
+          
 
            
             // Customize the ASP.NET Identity model and override the defaults if needed.

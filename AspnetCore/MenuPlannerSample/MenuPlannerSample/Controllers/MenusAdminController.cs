@@ -34,9 +34,9 @@ namespace MenuPlannerSample.Controllers
             return View(menu);
         }
 
-        public async Task<IActionResult> Create() {
+        public async Task<IActionResult> Create() {          
             IEnumerable<MenuCard> cards = await menuCardsService.GetMenuCardsAsync();
-            ViewBag.MenuCardId = new SelectList(cards,"id","Name");
+            ViewBag.MenuCards = new SelectList(cards,"id","Name");
             return View();
         }
 

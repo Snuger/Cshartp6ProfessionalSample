@@ -13579,7 +13579,6 @@
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.All >= 2.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 2.2.0",
-      "Microsoft.EntityFrameworkCore.Tools >= 2.0.3",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.4",
       "MySql.Data.EntityFrameworkCore >= 8.0.13",
@@ -13634,11 +13633,6 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "target": "Package",
             "version": "[2.2.0, )"
-          },
-          "Microsoft.EntityFrameworkCore.Tools": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[2.0.3, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
