@@ -20,5 +20,6 @@ namespace MenuPlannerSample.Services
 
         Task UpdateMenuAsync(Menu menu);
 
+        Task AddMenuCardAsync(MenuCard card);
     }
 }

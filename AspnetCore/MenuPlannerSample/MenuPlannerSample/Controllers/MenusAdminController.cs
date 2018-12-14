@@ -36,12 +36,12 @@ namespace MenuPlannerSample.Controllers
 
         public async Task<IActionResult> Create() {          
             IEnumerable<MenuCard> cards = await menuCardsService.GetMenuCardsAsync();
-            ViewBag.MenuCards = new SelectList(cards,"id","Name");
+            ViewBag.MenuCards = cards;            
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create([Bind("Id", "MenuCardId", "Text", "Price", "Active", "Order", "Type", "Day")] Menu menu)
+        public async Task<IActionResult> Create([Bind("Id", "MenuCardId", "Text", "Price", "Active", "Order", "Type", "Day")] Menu menu)
         {
             if (ModelState.IsValid)
             {
@@ -53,5 +53,22 @@ namespace MenuPlannerSample.Controllers
             return View(menu);
         }
 
+        public async Task<IActionResult> MenuCardManger() {
+
+            return View((await menuCardsService.GetMenuCardsAsync()).OrderBy(m => m.Order));
+        }
+
+        public async Task<IActionResult> MenuCardAdd() {
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> MenuCardAdd(MenuCard menuCard) {
+            if (ModelState.IsValid) {
+                await menuCardsService.AddMenuCardAsync(menuCard);
+            }        
+          return RedirectToAction("MenuCardManger"); 
+        }
     }
 }

@@ -13,5 +13,9 @@
         @Html.Label("省市")
         @Html.DropDownList("Zonings", Model, new { @Class="form-control" })
     </div>
+    <div class="form-group">
+        @Html.Label("方式二")
+        @Html.DropDownList("ZoningId", new SelectList(ViewBag.Zonings, "Code", "Name") ,new {@class="form-control"})
+    </div>
     }
 </fieldset>

@@ -31,6 +31,7 @@ namespace MvcApplicationSample.Controllers
 
         public IActionResult HelperList() {
             IEnumerable<Zoning> zonings = GetZonings();
+            ViewBag.Zonings = zonings;
             return View(zonings.ToSelectListItem(0));
         }
 

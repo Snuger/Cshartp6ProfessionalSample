@@ -27,6 +27,12 @@ namespace MenuPlannerSample.Services
             await applicationDbContext.SaveChangesAsync();
         }
 
+        public async Task AddMenuCardAsync(MenuCard card)
+        {
+            applicationDbContext.MenuCards.Add(card);
+            await applicationDbContext.SaveChangesAsync();          
+        }
+
         public async Task DelteMenuAsync(int id)
         {
             var menu = applicationDbContext.Menus.Single(m => m.Id==id);
