@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\bin\Debug\netcoreapp2.1\publish\</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>server=192.168.59.104;user id=root;password=admin;persistsecurityinfo=True;database=MenuPlannerSample;charset=UTF8;</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

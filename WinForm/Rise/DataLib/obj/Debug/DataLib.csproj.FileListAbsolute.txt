@@ -1,0 +1,5 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\DataLib\bin\Debug\DataLib.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\DataLib\bin\Debug\DataLib.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\DataLib\obj\Debug\DataLib.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\DataLib\obj\Debug\DataLib.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\DataLib\obj\Debug\DataLib.pdb

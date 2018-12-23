@@ -8,5 +8,4 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSampl
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Debug\netcoreapp2.0\MenuPlannerSample.AssemblyInfo.cs
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Debug\netcoreapp2.0\MenuPlannerSample.dll
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Debug\netcoreapp2.0\MenuPlannerSample.pdb
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Debug\netcoreapp2.0\MenuPlannerSample.csprojAssemblyReference.cache
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

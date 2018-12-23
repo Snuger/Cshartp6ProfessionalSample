@@ -1,0 +1,8 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroWPF\bin\Debug\CodeIntroWPF.exe.config
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroWPF\bin\Debug\CodeIntroWPF.exe
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroWPF\bin\Debug\CodeIntroWPF.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroWPF\bin\Debug\PresentationFramework.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroWPF\obj\Debug\CodeIntroWPF.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroWPF\obj\Debug\CodeIntroWPF.csproj.CopyComplete
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroWPF\obj\Debug\CodeIntroWPF.exe
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroWPF\obj\Debug\CodeIntroWPF.pdb

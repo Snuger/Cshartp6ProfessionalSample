@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  mvcapplicationsample:
+    image: ${DOCKER_REGISTRY}mvcapplicationsample
+    build:
+      context: .
+      dockerfile: MvcApplicationSample/Dockerfile

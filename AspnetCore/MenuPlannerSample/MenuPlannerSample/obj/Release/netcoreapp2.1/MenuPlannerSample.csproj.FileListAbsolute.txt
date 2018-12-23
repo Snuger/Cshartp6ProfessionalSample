@@ -1,0 +1,11 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\bin\Release\netcoreapp2.1\MenuPlannerSample.deps.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\bin\Release\netcoreapp2.1\MenuPlannerSample.runtimeconfig.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\bin\Release\netcoreapp2.1\MenuPlannerSample.runtimeconfig.dev.json
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\bin\Release\netcoreapp2.1\MenuPlannerSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\bin\Release\netcoreapp2.1\MenuPlannerSample.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Release\netcoreapp2.1\MenuPlannerSample.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Release\netcoreapp2.1\MenuPlannerSample.AssemblyInfoInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Release\netcoreapp2.1\MenuPlannerSample.AssemblyInfo.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Release\netcoreapp2.1\MenuPlannerSample.dll
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\AspnetCore\MenuPlannerSample\MenuPlannerSample\obj\Release\netcoreapp2.1\MenuPlannerSample.pdb
