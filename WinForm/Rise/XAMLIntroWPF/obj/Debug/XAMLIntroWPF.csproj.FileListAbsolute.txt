@@ -4,10 +4,10 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\b
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\bin\Debug\DataLib.dll
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\bin\Debug\DataLib.pdb
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\XAMLIntroWPF.csprojAssemblyReference.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\MainWindow.baml
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\MainWindow.g.cs
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\App.g.cs
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\XAMLIntroWPF_MarkupCompile.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\MainWindow.baml
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\XAMLIntroWPF.g.resources
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\XAMLIntroWPF.Properties.Resources.resources
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\XAMLIntroWPF\obj\Debug\XAMLIntroWPF.csproj.GenerateResource.cache

@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLib", "DataLib\DataLib.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XAMLIntroWPF", "XAMLIntroWPF\XAMLIntroWPF.csproj", "{DA0E4767-9EE5-423C-877B-6BD2BFC274C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDependencyObject", "MyDependencyObject\MyDependencyObject.csproj", "{BB886AD4-AD28-4F0F-908E-1890BEAEFEB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDependencyObjectWPF", "MyDependencyObject\MyDependencyObjectWPF.csproj", "{BB886AD4-AD28-4F0F-908E-1890BEAEFEB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutedEventsWPF", "RoutedEventsWPF\RoutedEventsWPF.csproj", "{7F223731-64FB-48C3-93CA-EF4CBB94FF10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BB886AD4-AD28-4F0F-908E-1890BEAEFEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB886AD4-AD28-4F0F-908E-1890BEAEFEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB886AD4-AD28-4F0F-908E-1890BEAEFEB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F223731-64FB-48C3-93CA-EF4CBB94FF10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F223731-64FB-48C3-93CA-EF4CBB94FF10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F223731-64FB-48C3-93CA-EF4CBB94FF10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F223731-64FB-48C3-93CA-EF4CBB94FF10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

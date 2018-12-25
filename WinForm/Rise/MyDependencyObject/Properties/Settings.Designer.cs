@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyDependencyObject.Properties
+namespace MyDependencyObjectWPF.Properties
 {
 
 

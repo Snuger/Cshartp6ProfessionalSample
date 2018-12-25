@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MyDependencyObject
+namespace MyDependencyObjectWPF
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -23,6 +23,11 @@ namespace MyDependencyObject
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OnValueChanged(object sender, RoutedPropertyChangedEventArgs<int> e)
+        {
+
         }
     }
 }
