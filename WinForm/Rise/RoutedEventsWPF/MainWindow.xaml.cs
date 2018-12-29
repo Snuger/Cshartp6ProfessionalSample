@@ -24,30 +24,45 @@ namespace RoutedEventsWPF
         {
             InitializeComponent();
         }
-        private bool IsMoveButton(RoutedEventArgs e) =>
-           (e.Source as FrameworkElement).Name == nameof(btn_move);
-
-        private void OnGridMoseMove(object sender, MouseEventArgs e)
-        {
-            if (CheckIgnoreGridMove.IsChecked == true && !IsMoveButton(e)) return;
-            ShowStatus(nameof(OnGridMoseMove), e);
-            e.Handled = CheckStopBubbling.IsChecked == true;
-        }
-
-        private void ShowStatus(string status, RoutedEventArgs e) {
-            txt_log.Text += $"{status} source: {e.Source.GetType().Name} {(e.Source as FrameworkElement)?.Name}, original source: {e.OriginalSource.GetType().Name}";
-            txt_log.Text += "\r\n";
-        }
 
         private void OnCleanStatus(object sender, RoutedEventArgs e)
         {
             txt_log.Text = string.Empty;
         }
 
-        private void Onbtn_move_MouseMove(object sender, MouseEventArgs e)
-        {
-            ShowStatus(nameof(Onbtn_move_MouseMove), e);
+
+        private bool IsMoveButton(RoutedEventArgs e) =>
+           (e.Source as FrameworkElement).Name == nameof(btn_move);
+
+        private void ShowStatus(string status, RoutedEventArgs e) {
+            txt_log.Text += $"{status} source: {e.Source.GetType().Name} {(e.Source as FrameworkElement)?.Name}, original source: {e.OriginalSource.GetType().Name}";
+            txt_log.Text += "\r\n";
+        } 
+    
+
+        private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {   
+            ShowStatus(nameof(OnMouseLeftButtonDown), e);
             e.Handled = CheckStopBubbling.IsChecked == true;
+        }
+
+        private void OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowStatus(nameof(OnPreviewMouseLeftButtonDown), e);
+            e.Handled =CheckStopPreview.IsChecked == true;
+        }
+
+        private void OnGridPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {           
+            ShowStatus(nameof(OnGridPreviewMouseLeftButtonDown), e);
+            e.Handled = CheckStopPreview.IsChecked == true;
+        }
+
+        private void OnGridMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {           
+            ShowStatus(nameof(OnGridMouseLeftButtonDown), e);
+            e.Handled = CheckStopBubbling.IsChecked == true;
+
         }
     }
 }

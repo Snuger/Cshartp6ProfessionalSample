@@ -1,0 +1,15 @@
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\bin\Debug\AttachedPropertyDemo.exe.config
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\bin\Debug\AttachedPropertyDemo.exe
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\bin\Debug\AttachedPropertyDemo.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\MainWindow.g.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\App.g.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo_MarkupCompile.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo_MarkupCompile.lref
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\MainWindow.baml
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.g.resources
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.Properties.Resources.resources
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.csproj.GenerateResource.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.csproj.CoreCompileInputs.cache
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.exe
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\GeneratedInternalTypeHelper.g.cs
