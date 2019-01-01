@@ -6,3 +6,4 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroUWP\o
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroUWP\obj\Debug\CodeIntroUWP.csproj.CopyComplete
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroUWP\obj\Debug\CodeIntroUWP.exe
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroUWP\obj\Debug\CodeIntroUWP.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\CodeIntroUWP\obj\Debug\CodeIntroUWP.csprojAssemblyReference.cache

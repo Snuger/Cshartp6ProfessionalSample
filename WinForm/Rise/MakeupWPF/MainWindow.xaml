@@ -18,7 +18,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition  Height="100" />
-            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -33,5 +34,19 @@
                 </Button.Background>
             </Button>
         </WrapPanel>
+        <TextBlock Grid.Row="1" Margin="5" x:Name="tbx1" Text="{local:Calculator OperationType=Add, X=33,Y=99}"/>
+        <TextBlock Grid.Row="2" Margin="5" x:Name="tbx2">
+            <TextBlock.Text>
+                <local:CalculatorExtension>
+                    <local:CalculatorExtension.OperationType>
+                        <local:OperationType>Multiply</local:OperationType>
+                    </local:CalculatorExtension.OperationType>
+                    <local:CalculatorExtension.X>20</local:CalculatorExtension.X>
+                    <local:CalculatorExtension.Y>22</local:CalculatorExtension.Y>
+                </local:CalculatorExtension>               
+            </TextBlock.Text>
+        </TextBlock>
+        
+
     </Grid>
 </Window>

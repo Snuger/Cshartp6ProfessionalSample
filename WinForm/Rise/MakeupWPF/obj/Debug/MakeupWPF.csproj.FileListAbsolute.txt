@@ -1,7 +1,6 @@
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\bin\Debug\MakeupWPF.exe.config
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\bin\Debug\MakeupWPF.exe
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\bin\Debug\MakeupWPF.pdb
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF.csprojAssemblyReference.cache
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MainWindow.g.cs
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\App.g.cs
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF_MarkupCompile.cache
@@ -13,3 +12,5 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF.csproj.CoreCompileInputs.cache
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF.exe
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF.pdb
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF.csprojAssemblyReference.cache

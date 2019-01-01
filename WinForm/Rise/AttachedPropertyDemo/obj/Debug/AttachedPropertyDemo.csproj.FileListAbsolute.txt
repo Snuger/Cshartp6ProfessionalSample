@@ -13,3 +13,4 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedProper
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.exe
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.pdb
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\AttachedPropertyDemo\obj\Debug\AttachedPropertyDemo.csprojAssemblyReference.cache

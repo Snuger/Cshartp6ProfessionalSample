@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachedPropertyDemo", "Att
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeupWPF", "MakeupWPF\MakeupWPF.csproj", "{A83A8613-C0F2-49F2-995C-E54C6B0F864C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StylesOfWPF", "StylesOfWPF", "{6167B211-43C1-4205-AA9C-556793192906}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeSampleWPF", "ShapeSampleWPF\ShapeSampleWPF.csproj", "{C1ED6472-52E2-4BDA-9ECC-D1DB3CBC05C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,9 +61,16 @@ Global
 		{A83A8613-C0F2-49F2-995C-E54C6B0F864C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A83A8613-C0F2-49F2-995C-E54C6B0F864C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A83A8613-C0F2-49F2-995C-E54C6B0F864C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1ED6472-52E2-4BDA-9ECC-D1DB3CBC05C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1ED6472-52E2-4BDA-9ECC-D1DB3CBC05C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1ED6472-52E2-4BDA-9ECC-D1DB3CBC05C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1ED6472-52E2-4BDA-9ECC-D1DB3CBC05C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1ED6472-52E2-4BDA-9ECC-D1DB3CBC05C4} = {6167B211-43C1-4205-AA9C-556793192906}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {646FF0F9-91C5-4A26-8AF9-2FE17B336438}
