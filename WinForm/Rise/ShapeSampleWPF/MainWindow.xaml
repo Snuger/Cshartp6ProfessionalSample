@@ -285,5 +285,37 @@
                 </DrawingBrush>
             </Button.Background>
         </Button>
+        <Button Grid.Row="3" Grid.Column="4" Content="Visual Brush" Width="100" Height="80">
+            <Button.Background>
+                <VisualBrush Opacity="0.5">
+                    <VisualBrush.Visual>
+                        <StackPanel Background="White">
+                            <Rectangle Width="25" Height="25" Fill="Blue"/>
+                            <Button Content="Drawing Button" Background="red"/>                            
+                        </StackPanel>                        
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Button.Background>            
+        </Button>
+        <Button Grid.Row="3" Grid.Column="5" Width="200" Height="200" Foreground="White">
+            <StackPanel>
+                <MediaElement x:Name="media1" Source="" LoadedBehavior="Manual"
+/>
+                <Border Width="100">
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <VisualBrush Opacity="0.35" Stretch="None" Visual="{Binding ElementName=media1}">
+                                <VisualBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="-1"/>
+                                        <TranslateTransform Y="1"/>
+                                    </TransformGroup>
+                                </VisualBrush.RelativeTransform>
+                            </VisualBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Border>
+            </StackPanel>
+        </Button>
     </Grid>
 </Window>
