@@ -13,4 +13,3 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MyDependencyOb
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MyDependencyObject\obj\Debug\MyDependencyObjectWPF.csproj.CoreCompileInputs.cache
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MyDependencyObject\obj\Debug\MyDependencyObject.exe
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MyDependencyObject\obj\Debug\MyDependencyObject.pdb
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MyDependencyObject\obj\Debug\MyDependencyObjectWPF.csprojAssemblyReference.cache

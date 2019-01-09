@@ -13,4 +13,3 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF.exe
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF.pdb
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\MakeupWPF\obj\Debug\MakeupWPF.csprojAssemblyReference.cache

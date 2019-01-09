@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:TemplatesWPF.Styles">
+                    xmlns:local="clr-namespace:TemplatesWPF">
 
-    <DataTemplate x:Key="ButtonControlTemplate1">
+    <DataTemplate x:Key="CountryButtonControlTemplate">
         <Border Margin="5" BorderThickness="2" CornerRadius="6">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">

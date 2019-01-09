@@ -37,7 +37,7 @@
     <SolidColorBrush x:Key="Button.Static.Foreground" Color="#e453ef"/>
     <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#e453ef"/>
     <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#e453ef"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="White"/>   
+    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="White"/>
     <Style x:Key="DefaultButton" TargetType="{x:Type Button}">
         <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{StaticResource  Button.Static.Border}"/>
@@ -50,7 +50,7 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border x:Name="border" CornerRadius="3.3333" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                         <ContentPresenter x:Name="contentPresenter" Focusable="False"  HorizontalAlignment="{TemplateBinding HorizontalAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalAlignment}"/>
-                    </Border>                   
+                    </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted" Value="true">
                             <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Static.Border}"/>
@@ -58,7 +58,7 @@
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            <Setter Property="Foreground"   Value="{StaticResource Button.MouseOver.Foreground}"/>                                                     
+                            <Setter Property="Foreground"   Value="{StaticResource Button.MouseOver.Foreground}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
@@ -69,9 +69,8 @@
                             <Setter Property="Opacity" Value="0.5"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
-                </ControlTemplate>                
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>   
-    
+    </Style>
 </ResourceDictionary>

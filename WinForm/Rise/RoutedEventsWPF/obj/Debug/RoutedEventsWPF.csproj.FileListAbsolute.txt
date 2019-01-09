@@ -12,4 +12,3 @@ E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\RoutedEventsWP
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\RoutedEventsWPF\obj\Debug\RoutedEventsWPF.csproj.CoreCompileInputs.cache
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\RoutedEventsWPF\obj\Debug\RoutedEventsWPF.exe
 E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\RoutedEventsWPF\obj\Debug\RoutedEventsWPF.pdb
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\WinForm\Rise\RoutedEventsWPF\obj\Debug\RoutedEventsWPF.csprojAssemblyReference.cache

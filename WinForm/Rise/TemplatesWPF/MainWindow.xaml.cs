@@ -1,6 +1,7 @@
 ﻿using ModelWPF;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,15 +22,24 @@ namespace TemplatesWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
 
+        public ObservableCollection<Country> Countries { get; } = new ObservableCollection<Country>();
+
+        public MainWindow()
+        {           
+
+            InitializeComponent();
+            this.DataContext = this;
             this.countryButton.Content = new Country
             {
                 Name = "Austria",
                 ImagePath = "/Images/Austria.bmp"
             };
+
+            var countries = new CountryRepository().GetCountries();
+            foreach (var country in countries) {
+                Countries.Add(country);
+            }
         }
 
         private void On_Default_Button_Click(object sender, RoutedEventArgs e)
