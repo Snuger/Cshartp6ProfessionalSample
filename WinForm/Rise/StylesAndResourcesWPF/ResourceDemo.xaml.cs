@@ -26,7 +26,7 @@ namespace StylesAndResourcesWPF
 
         private void OnApplyResources(object sender, RoutedEventArgs e)
         {
-            Control ctrl = sender as Control;
+            Control ctrl = sender as Control;           
             ctrl.Background = ctrl.TryFindResource("MyGradientBrush") as Brush;
         }
 

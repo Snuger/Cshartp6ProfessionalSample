@@ -4,6 +4,7 @@
     <Style x:Key="listViewStyle1" TargetType="ListView">
         <Setter Property="ItemTemplate" Value="{StaticResource CountryButtonControlTemplate}"/>
     </Style>
+    
     <ItemsPanelTemplate x:Key="ItemsPanelTemplate">
         <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" />
     </ItemsPanelTemplate>

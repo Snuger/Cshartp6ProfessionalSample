@@ -1,0 +1,35 @@
+﻿<Application x:Class="Contracts.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Contracts"
+             xmlns:converters="clr-namespace:BooksDesktopApp.Converters"
+             xmlns:dmconverters="clr-namespace:DMSkin.Core.Converters;assembly=DMSkin.Core">
+    <Application.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="FontNormal">微软雅黑,SimSun</FontFamily>
+            <FontFamily x:Key="FontTitle">微软雅黑</FontFamily>
+            <TextBlock x:Key="xxx" FontFamily="Microsoft YaHei"/>
+
+            <converters:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+            
+            <ResourceDictionary.MergedDictionaries>
+
+                <!--  DMSKin内置转换器 配色  -->
+                <ResourceDictionary Source="pack://application:,,,/DMSkin.WPF;Component/Styles/DMSkin.xaml" />
+
+                <!--  DMSKin内置SVG图标  -->
+                <ResourceDictionary Source="pack://application:,,,/DMSkin.WPF;component/Styles/DMIcon.xaml" />
+
+                <!--  DMSKin内置按钮  -->
+                <ResourceDictionary Source="pack://application:,,,/DMSkin.WPF;component/Styles/DMButton.xaml" />
+
+                <ResourceDictionary Source="Style/Path.xaml"/>
+                <ResourceDictionary Source="Style/Button.xaml"/>
+                <ResourceDictionary Source="Style/Color.xaml"/>
+                <ResourceDictionary Source="Style/Expander.xaml"/>
+                <ResourceDictionary Source="Style/RadioButton.xaml"/>
+                <ResourceDictionary Source="Style/ScrollViewer.xaml"/>
+            </ResourceDictionary.MergedDictionaries>            
+        </ResourceDictionary>    
+    </Application.Resources>
+</Application>

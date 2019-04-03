@@ -1,0 +1,75 @@
+﻿<DMSkin:DMSkinSimpleWindow x:Class="CrazyElemphant.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CrazyElemphant.Client"
+        xmlns:DMSkin="clr-namespace:DMSkin.WPF;assembly=DMSkin.WPF"
+        xmlns:dmcontrols="clr-namespace:DMSkin.WPF.Controls;assembly=DMSkin.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="450" 
+        Width="800"
+       WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{DynamicResource  ThemeColor}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="190"/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="2" Margin="0,0,12,0" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                <Border Width="1" Height="22" Margin="14,0,10,0" Background="#A82828"/>
+                <dmcontrols:DMSystemMinButton   Cursor="Hand" DMSystemButtonForeground="#EEC1C1" DMSystemButtonHoverColor="Transparent" DMSystemButtonHoverForeground="White" DMSystemButtonSize="22" />
+                <dmcontrols:DMSystemMaxButton  Cursor="Hand" DMSystemButtonForeground="#EEC1C1" DMSystemButtonHoverColor="Transparent" DMSystemButtonHoverForeground="White"/>
+                <dmcontrols:DMSystemCloseButton Cursor="Hand" DMSystemButtonForeground="#EEC1C1" DMSystemButtonHoverColor="Transparent" DMSystemButtonHoverForeground="White" DMSystemButtonSize="22" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel.Effect>
+                        <DropShadowEffect Color="LightGray"></DropShadowEffect>
+                    </StackPanel.Effect>
+                    <TextBlock Text="欢迎光临" FontSize="45" FontFamily="{StaticResource fontTitle}"/>
+                    <TextBlock Text=""/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="小店地址:" FontSize="24" FontFamily="{StaticResource fontNorm}"/>
+                    <TextBlock Text="浙江省杭州市西湖区文一西路170" FontSize="24" FontFamily="{StaticResource fontNorm}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="订餐电话:" FontSize="24" FontFamily="{StaticResource fontNorm}"/>
+                    <TextBlock Text="15968895658 0377-65236912" FontSize="24" FontFamily="{StaticResource fontNorm}"/>
+                </StackPanel>
+            </StackPanel>
+            <DataGrid Grid.Row="1" AutoGenerateColumns="False" GridLinesVisibility="None" CanUserDeleteRows="False" CanUserAddRows="False" Margin="0,4" FontSize="16">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="菜品" Width="120"/>
+                    <DataGridTextColumn Header="种类" Width="120"/>
+                    <DataGridTextColumn Header="单价" Width="120"/>
+                    <DataGridTextColumn Header="点评" Width="120"/>
+                    <DataGridTextColumn Header="推荐指数" Width="120"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2" Margin="5,5,5,10">
+                <TextBlock Text="共计" VerticalAlignment="Center"/>
+                <TextBlock Text="0" Width="30" Margin="5,0" VerticalAlignment="Center"/>              
+                <TextBlock Text="菜品" VerticalAlignment="Center"/>
+                <TextBox IsReadOnly="True" TextAlignment="Center" Width="120" Margin="5,0"/>
+                <TextBlock Text="元(RMB)" VerticalAlignment="Center"/>
+                <Button Content="下单" Height="24" Width="75" Margin="5,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</DMSkin:DMSkinSimpleWindow>

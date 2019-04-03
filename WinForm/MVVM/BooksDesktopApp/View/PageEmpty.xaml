@@ -1,0 +1,37 @@
+﻿<Page x:Class="BooksDesktopApp.View.PageEmpty"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BooksDesktopApp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="660" d:DesignWidth="800"
+      x:Name="pageEmpty"
+      DataContext="{Binding ElementName=pageEmpty}"
+      Title="PageEmpty">    
+    <DockPanel>
+        <WrapPanel DockPanel.Dock="Top" Background="White" Height="45">           
+            <Label Width="60" Content="出版名称" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox Width="120" HorizontalAlignment="Left" Height="23"  Text="{Binding ViewModel.Books.id}" VerticalAlignment="Center" />
+            <Label Width="60"  Content="发布者" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox  Width="120" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center"/>
+             <Button Content="新增" Width="75"/>
+            <Button Content="加载所有书籍" Height="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10,0" Width="99" Command="{Binding ViewModel.GetBooksCommand}"/>
+        </WrapPanel>                
+        <TabControl DockPanel.Dock="Right" MinHeight="565"  Height="auto" VerticalAlignment="Top" Margin="5">
+            <TabItem Header="数据">
+                <DataGrid MinHeight="532" VerticalAlignment="Top" ItemsSource="{Binding ViewModel.Books,Mode=OneWay}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="250" Binding="{Binding Title}" Header="书名" />
+                        <DataGridTextColumn Width="100" Binding="{Binding Publisher}" Header="出版人" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="日志">
+                
+            </TabItem>
+        </TabControl>
+
+
+    </DockPanel>    
+</Page>

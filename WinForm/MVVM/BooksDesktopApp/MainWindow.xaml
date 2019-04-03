@@ -1,0 +1,93 @@
+﻿<DMSkin:DMSkinSimpleWindow  
+       x:Class="Contracts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:DMSkin="clr-namespace:DMSkin.WPF;assembly=DMSkin.WPF"      
+        xmlns:dmcontrols="clr-namespace:DMSkin.WPF.Controls;assembly=DMSkin.WPF"
+        xmlns:control="clr-namespace:BooksDesktopApp.Controls"
+        xmlns:viewmodel="clr-namespace:BooksDesktopApp.ViewModel"
+        mc:Ignorable="d"
+        Title="bookSore" 
+        Height="670"
+        Width="1022"
+         MinWidth="1062"
+        MinHeight="710"
+         WindowStartupLocation="CenterScreen"
+        TextOptions.TextFormattingMode="Display"
+        DMWindowShadowColor="#888888"
+       DMWindowShadowOpacity="0.4"
+       DMWindowShadowSize="20"
+    FontFamily="{StaticResource FontNormal}"
+    Foreground="{StaticResource TextColor}"
+        ResizeMode="CanResizeWithGrip">
+    <Window.DataContext>
+        <viewmodel:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition/>            
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{DynamicResource  ThemeColor}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="190"/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="2" Margin="0,0,12,0" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                <Border Width="1" Height="22" Margin="14,0,10,0" Background="#A82828"/>
+
+                <dmcontrols:DMSystemMinButton 
+                    Cursor="Hand"
+                    DMSystemButtonForeground="#EEC1C1"
+                    DMSystemButtonHoverColor="Transparent"
+                    DMSystemButtonHoverForeground="White"
+                    DMSystemButtonSize="22" />
+
+                <dmcontrols:DMSystemMaxButton 
+                    Cursor="Hand"
+                    DMSystemButtonForeground="#EEC1C1"
+                    DMSystemButtonHoverColor="Transparent"
+                    DMSystemButtonHoverForeground="White"/>
+                <dmcontrols:DMSystemCloseButton
+                    Cursor="Hand"
+                    DMSystemButtonForeground="#EEC1C1"
+                    DMSystemButtonHoverColor="Transparent"
+                    DMSystemButtonHoverForeground="White"
+                    DMSystemButtonSize="22" />
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" MinWidth="200"/>
+                <ColumnDefinition Width="*" MinWidth="822"/>
+            </Grid.ColumnDefinitions>
+            <Grid Background="{StaticResource LeftGridColor}">
+                <ScrollViewer Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource for_scrollViewer}">
+                    <StackPanel>
+                        <Expander Header="我的音乐" 
+                                  IsExpanded="True"
+                                  Style="{StaticResource NoExpander}">
+                            <StackPanel>
+                                <control:ImageRadioButton
+                                    Content="本地音乐"
+                                    GroupName="Menu"
+                                     Image="{StaticResource Icon_Music}"
+                                     IsChecked="{Binding SelectMenu,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Home}"/>
+                                <control:ImageRadioButton Content="我的收藏" GroupName="Menu" Image="{StaticResource Icon_Love}" IsChecked="{Binding SelectMenu,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Collection}"/>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+            <GridSplitter Width="1" Background="{StaticResource SplitterColor}"/>
+            <Grid Grid.Column="1" Background="{StaticResource RightGridColor}">
+                <Frame x:Name="Frame"
+                       Content="{Binding CurrentPage}"
+                        NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</DMSkin:DMSkinSimpleWindow>

@@ -28,6 +28,7 @@ namespace XAMLIntroWPF
         private void On_btn_01_Click(object sender, RoutedEventArgs e)
         {
             btn_01.Content = "you has clicked";
-        }
+        }    
     }
+       
 }
