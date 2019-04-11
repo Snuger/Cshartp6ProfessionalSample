@@ -1,8 +1,0 @@
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\MenusSamples\bin\Debug\netcoreapp2.0\MenusSamples.deps.json
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\MenusSamples\bin\Debug\netcoreapp2.0\MenusSamples.runtimeconfig.json
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\MenusSamples\bin\Debug\netcoreapp2.0\MenusSamples.runtimeconfig.dev.json
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\MenusSamples\bin\Debug\netcoreapp2.0\MenusSamples.dll
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\MenusSamples\obj\Debug\netcoreapp2.0\MenusSamples.csprojAssemblyReference.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\MenusSamples\obj\Debug\netcoreapp2.0\MenusSamples.csproj.CoreCompileInputs.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\MenusSamples\obj\Debug\netcoreapp2.0\MenusSamples.AssemblyInfoInputs.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\EntityFrameWork\EntityFramWorkSample\MenusSamples\obj\Debug\netcoreapp2.0\MenusSamples.AssemblyInfo.cs
