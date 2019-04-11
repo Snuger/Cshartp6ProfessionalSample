@@ -22,10 +22,9 @@ namespace CrazyElemphant.Client
     public partial class MainWindow
     {
         public MainWindow()
-        {
-            this.gridDishs.DataContext = new DishOrderViewModel((Application.Current as App).GetDishService);
+        {            
             InitializeComponent();
-
+            this.gridDishs.DataContext = new DishOrderViewModel((Application.Current as App).GetDishService);
         }
     }
 }

@@ -12,31 +12,15 @@ namespace CrazyElemphant.Client.ViewModel
     {
        
         private IDishService _dishService;
-
-
-        public DelegateCommand SelectItemCommand { get; set; }
-
-
-        private int count;
-
-        public int Count
-        {
-            get { return count; }
-            set
-            {
-                count = value;
-                this.RaisePropertyChanged("Count");
-            }
-        }
-
         private List<DishViewModel> dishOrders;
-  
+
+        public DelegateCommand SelectCommand { get; set; }
 
         public DishOrderViewModel(IDishService dishService)
-        {
+        {           
             _dishService = dishService;
             loadDishs();
-           // this.SelectItemCommand = new DelegateCommand(new Action(this.SelectItemExecute));
+            SelectCommand = new DelegateCommand(new Action(SelectItem));
         }
 
         public List<DishViewModel> DishOrders
@@ -44,23 +28,43 @@ namespace CrazyElemphant.Client.ViewModel
             get { return dishOrders; }
             set
             {
-                dishOrders = value;
+                dishOrders = value;  
                 this.RaisePropertyChanged("DishOrders");
             }
         }
-
-        private void SelectItemExecute() {
-            this.Count = this.DishOrders.Count(i => i.IsSelected == true);
-        }
-
 
         protected void loadDishs()
         {         
             var models = _dishService.GetItems();
             this.DishOrders = (from a in models select new DishViewModel() { Dish=a, IsSelected=false }).ToList();
-
         }
 
+        private void SelectItem() {
+           this.TotalCount=this.DishOrders.Where(i => i.IsSelected == true).Sum(c => c.DishCount);
+            this.TotalPrice = this.DishOrders.Where(i => i.IsSelected == true).Sum(c => c.DishPrice);
+        }
+
+        private int totalCount;
+        public int TotalCount
+        {
+            get { return totalCount; }
+            set
+            {
+                totalCount = value;
+                this.RaisePropertyChanged("TotalCount");
+            }
+        }
+
+        private double totalPrice;
+        public double TotalPrice
+        {
+            get { return totalPrice; }
+            set
+            {
+                totalPrice = value;
+                this.RaisePropertyChanged("TotalPrice");
+            }
+        }
 
     }
 }

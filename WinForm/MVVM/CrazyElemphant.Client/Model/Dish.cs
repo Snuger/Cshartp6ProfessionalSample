@@ -16,5 +16,7 @@ namespace CrazyElemphant.Client.Model
 
         public string  Scort { get; set; }
 
+        public double UnitPrice { get; set; }        
+
     }
 }

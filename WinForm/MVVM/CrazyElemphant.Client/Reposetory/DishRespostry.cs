@@ -38,6 +38,7 @@ namespace CrazyElemphant.Client.Reposetory
                 dish.Name = d.Element("Name").Value;
                 dish.Categray = d.Element("Category").Value;
                 dish.Commont = d.Element("Comment").Value;
+                dish.UnitPrice =double.Parse(d.Element("UnitPrice").Value);
                 dish.Scort = d.Element("Score").Value;
                 Dishes.Add(dish);
             }

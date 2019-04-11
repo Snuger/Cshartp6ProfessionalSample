@@ -60,17 +60,36 @@
             <DataGrid Grid.Row="1" AutoGenerateColumns="False" GridLinesVisibility="None" CanUserDeleteRows="False" CanUserAddRows="False" FontSize="16" Margin="2,0,2,0" ItemsSource="{Binding DishOrders}" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="菜品" Width="120" Binding="{Binding Dish.Name }"/>
-                    <DataGridTextColumn Header="种类" Width="120"/>
-                    <DataGridTextColumn Header="单价" Width="120"/>
-                    <DataGridTextColumn Header="点评" Width="120"/>
-                    <DataGridTextColumn Header="推荐指数" Width="120"/>
+                    <DataGridTextColumn Header="种类" Width="120" Binding="{Binding Dish.Categray}"/>                    
+                    <DataGridTextColumn Header="单价" Width="120" Binding="{Binding Dish.UnitPrice}"/>
+                    <DataGridTextColumn Header="点评" Width="120" Binding="{Binding Dish.Scort}"/>
+                    <DataGridTextColumn Header="小计" Width="120" Binding="{Binding DishPrice}"/>                   
+                    <DataGridTemplateColumn Header="点单" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions >
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Content="-" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="20" Height="20" Command="{Binding Remove}"/>
+                                    <TextBox Text="{Binding DishCount}" Grid.Row="0" TextAlignment="Left" Grid.Column="1"/>
+                                    <Button Content="+" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="20" Height="20" Command="{Binding Add}"/>
+                                </Grid>
+                            </DataTemplate>                           
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>                    
                 </DataGrid.Columns>
             </DataGrid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2" Margin="5,5,5,10">
                 <TextBlock Text="共计" VerticalAlignment="Center"/>
-                <TextBlock Text="0" Width="30" Margin="5,0" VerticalAlignment="Center"/>              
-                <TextBlock Text="菜品" VerticalAlignment="Center"/>
-                <TextBox IsReadOnly="True" TextAlignment="Center" Width="120" Margin="5,0"/>
+                <TextBlock Text="{Binding Count}" Margin="10,0" VerticalAlignment="Center"/>              
+                <TextBlock Text="种菜品" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding TotalPrice}" Margin="10,0" VerticalAlignment="Center" Foreground="Red" FontWeight="Black"/>
                 <TextBlock Text="元(RMB)" VerticalAlignment="Center"/>
                 <Button Content="下单" Height="24" Width="75" Margin="5,0"/>
             </StackPanel>
