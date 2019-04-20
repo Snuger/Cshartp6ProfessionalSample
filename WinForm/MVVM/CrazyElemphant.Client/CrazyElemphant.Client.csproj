@@ -66,12 +66,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bridge\UserCiresDevice.cs" />
     <Compile Include="Command\DelegateCommand.cs" />
     <Compile Include="Contracts\IDishRespostry.cs" />
     <Compile Include="Contracts\IQueryRepostry.cs" />
     <Compile Include="Contracts\IServices\IDishService.cs" />
     <Compile Include="Contracts\IUpdateRepostry.cs" />
     <Compile Include="Model\Dish.cs" />
+    <Compile Include="Model\DishOrder.cs" />
+    <Compile Include="Model\OrderStateType.cs" />
     <Compile Include="Model\Restaurant.cs" />
     <Compile Include="Reposetory\DishRespostry.cs" />
     <Compile Include="Services\DishService.cs" />

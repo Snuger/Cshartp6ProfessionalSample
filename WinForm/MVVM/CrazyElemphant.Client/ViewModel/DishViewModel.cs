@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CrazyElemphant.Client.Bridge;
 
 namespace CrazyElemphant.Client.ViewModel
 {
@@ -64,8 +65,8 @@ namespace CrazyElemphant.Client.ViewModel
                 }
                 else {
                     this.DishCount = 0;
-                }                 
-                this.RaisePropertyChanged("IsSelected");
+                }               
+                this.RaisePropertyChanged("IsSelected");               
             }
         }
 
@@ -74,6 +75,7 @@ namespace CrazyElemphant.Client.ViewModel
             this.DishCount += 1;
             if (this.DishCount > 0)
                 this.IsSelected = true;
+            UserCiresDevice.UserChooseChanged.Invoke();
         }
 
         private void DishRemove()
@@ -82,6 +84,7 @@ namespace CrazyElemphant.Client.ViewModel
                 this.DishCount -= 1;
             if (this.DishCount == 0)
                 this.IsSelected = false;
+            UserCiresDevice.UserChooseChanged.Invoke();
         }
     }
 }

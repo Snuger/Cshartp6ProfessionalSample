@@ -115,13 +115,25 @@
                     </DataGridTemplateColumn>                    
                 </DataGrid.Columns>
             </DataGrid>
-            <StackPanel x:Name="dishOrder_toalPannel" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="2" Margin="5,5,5,10">
-                <TextBlock Text="共计" VerticalAlignment="Center"/>
-                <TextBlock Text="{Binding TotalCount}" Margin="10,0" VerticalAlignment="Center"/>              
-                <TextBlock Text="种菜品" VerticalAlignment="Center"/>
-                <TextBlock Text="{Binding TotalPrice}" Margin="10,0" VerticalAlignment="Center" Foreground="Red" FontWeight="Black"/>
-                <TextBlock Text="元(RMB)" VerticalAlignment="Center"/>
-                <Button Content="下单" Height="24" Width="75" Margin="5,0"/>
+            <StackPanel x:Name="dishOrder_toalPannel" Orientation="Horizontal" HorizontalAlignment="Right"  Grid.Row="2" Margin="5,5,5,10">
+                <Grid>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <WrapPanel Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="{Binding OrderStateDiscription}"/>
+                    </WrapPanel>
+                    <WrapPanel Grid.Column="2" HorizontalAlignment="Right">
+                        <TextBlock Text="共计" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding TotalCount}" Margin="10,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="种菜品" VerticalAlignment="Center"/>
+                        <TextBlock Text="{Binding TotalPrice}" Margin="10,0" VerticalAlignment="Center" Foreground="Red" FontWeight="Black"/>
+                        <TextBlock Text="元(RMB)" VerticalAlignment="Center"/>
+                        <Button Content="下单" Height="24" Width="75" Margin="5,0" Command="{Binding DishPushOrder}"/>
+                    </WrapPanel>
+                </Grid>
             </StackPanel>
         </Grid>
     </Grid>

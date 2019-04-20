@@ -15,5 +15,7 @@ namespace CrazyElemphant.Client.Contracts.IServices
 
          List<Dish> GetItems();
 
+        bool DishPushOrder(List<DishOrder> dishes);
+
     }
 }

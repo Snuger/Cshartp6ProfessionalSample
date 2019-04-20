@@ -2,15 +2,18 @@
 using CrazyElemphant.Client.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace CrazyElemphant.Client.Reposetory
 {
     public class DishRespostry : IDishRespostry
-    {    
+    { 
+
         public Task<Dish> Add(Dish item)
         {
             throw new NotImplementedException();
@@ -24,6 +27,24 @@ namespace CrazyElemphant.Client.Reposetory
         public Dish GetItemByID(int id)
         {
             throw new NotImplementedException();
+        }
+
+
+        public bool DishPushOrder(List<DishOrder> dishOrders)
+        {
+            string directoryPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"Odrder");
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach(DishOrder order in dishOrders)
+            {
+                stringBuilder.Append($"{order.Name},{order.Count}\r");
+            }
+            if (!Directory.Exists(directoryPath))
+                Directory.CreateDirectory(directoryPath);
+            string xmlFileName = Path.Combine(directoryPath, @"order.log");
+           if(! File.Exists(xmlFileName))            
+                File.Create(xmlFileName);     
+            File.WriteAllLines(xmlFileName, new string [] { stringBuilder.ToString() });
+            return true;
         }
 
         public List<Dish> GetItems()

@@ -9,5 +9,6 @@ namespace CrazyElemphant.Client.Contracts
 {
     public interface IDishRespostry:IQueryRepostry<Dish,int>,IUpdateRepostry<Dish,int>
     {
+         bool DishPushOrder(List<DishOrder> dishes);
     }
 }

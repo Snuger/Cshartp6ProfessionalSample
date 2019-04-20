@@ -10,10 +10,10 @@ using System.Collections.ObjectModel;
 
 namespace CrazyElemphant.Client.Services
 {
-   public class DishService:IDishService
+    public class DishService : IDishService
     {
-        public IDishRespostry DishRespostry { get; set; } 
-        
+        public IDishRespostry DishRespostry { get; set; }
+
         public DishService(IDishRespostry dishRespostry)
         {
             DishRespostry = dishRespostry;
@@ -25,8 +25,6 @@ namespace CrazyElemphant.Client.Services
 
         public List<Dish> GetItems() => DishRespostry.GetItems();
 
-
-
-              
+        public bool DishPushOrder(List<DishOrder> dishOrder) => DishRespostry.DishPushOrder(dishOrder);
     }
 }
