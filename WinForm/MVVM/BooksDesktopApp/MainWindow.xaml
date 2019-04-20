@@ -67,27 +67,17 @@
             <Grid Background="{StaticResource LeftGridColor}">
                 <ScrollViewer Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource for_scrollViewer}">
                     <StackPanel>
-                        <Expander Header="我的音乐" 
-                                  IsExpanded="True"
-                                  Style="{StaticResource NoExpander}">
+                        <Expander Header="我的音乐"  IsExpanded="True"  Style="{StaticResource NoExpander}">
                             <StackPanel>
-                                <control:ImageRadioButton
-                                    Content="本地音乐"
-                                    GroupName="Menu"
-                                     Image="{StaticResource Icon_Music}"
-                                     IsChecked="{Binding SelectMenu,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Home}"/>
-                                <control:ImageRadioButton Content="我的收藏" GroupName="Menu" Image="{StaticResource Icon_Love}" IsChecked="{Binding SelectMenu,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Collection}"/>
+                                <control:ImageRadioButton  Content="本地音乐"  GroupName="Menu" Image="{StaticResource Icon_Music}" IsChecked="{Binding SelectMeun,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Home}" CommandParameter="Home"/>
+                                <control:ImageRadioButton Content="我的收藏" GroupName="Menu" Image="{StaticResource Icon_Love}" IsChecked="{Binding SelectMeun,Mode=TwoWay,Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Collection}" CommandParameter="Collection"/>
                             </StackPanel>
                         </Expander>
                     </StackPanel>
                 </ScrollViewer>
             </Grid>
             <GridSplitter Width="1" Background="{StaticResource SplitterColor}"/>
-            <Grid Grid.Column="1" Background="{StaticResource RightGridColor}">
-                <Frame x:Name="Frame"
-                       Content="{Binding CurrentPage}"
-                        NavigationUIVisibility="Hidden"/>
-            </Grid>
+            <Frame Grid.Column="1" Content="{Binding CurrentPage}"  NavigationUIVisibility="Hidden"/>           
         </Grid>
     </Grid>
 </DMSkin:DMSkinSimpleWindow>

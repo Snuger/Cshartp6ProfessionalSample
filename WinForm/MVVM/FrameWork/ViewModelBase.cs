@@ -12,7 +12,7 @@ namespace FrameWork
             set
             {
                 isLoad = value;
-                OnPropertyChanged(nameof(IsLoad));
+               this.RaisePropertyChanged("IsLoad");
             }
         }
 
@@ -26,7 +26,7 @@ namespace FrameWork
             }
             set {
                 update = value;
-                OnPropertyChanged(nameof(Update));
+                RaisePropertyChanged("Update");
             }
         }
 

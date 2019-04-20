@@ -12,14 +12,14 @@ namespace BooksDesktopApp.ViewModel
 {
     public class MainWindowViewModel: ViewModelBase
     {
-        private Page currentPage = PageManager.PageEmpty;
-
+        private Page currentPage=PageManager.PageHome;
         public Page CurrentPage
         {
             get { return currentPage; }
-            set {
-                value = currentPage;
-                OnPropertyChanged("CurrentPage");
+            set
+            {
+                currentPage = value;
+                this.RaisePropertyChanged("CurrentPage");
             }
         }
 
@@ -34,13 +34,13 @@ namespace BooksDesktopApp.ViewModel
                 switch (selectMenu)
                 {
                     case LeftMenu.Home:
-                        CurrentPage = PageManager.PageEmpty;
+                        CurrentPage = PageManager.PageHome;
                         break;
                     case LeftMenu.Collection:
-                        currentPage = PageManager.PageCollection;
+                        CurrentPage = PageManager.PageCollection;
                         break;
                 }
-                OnPropertyChanged("SelectMenu");
+               this.RaisePropertyChanged("SelectMeun");
             }
         }
 

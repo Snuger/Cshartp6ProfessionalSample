@@ -12,5 +12,7 @@ namespace BooksDesktopApp.API
         public static PageEmpty PageEmpty=new PageEmpty();
 
         public static PageCollection PageCollection = new PageCollection();
+
+        public static PageHome PageHome = new PageHome();
     }
 }

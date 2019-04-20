@@ -1,5 +1,4 @@
-﻿using CrazyElemphant.Client.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CrazyElemphant.Client
+namespace BooksDesktopApp.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// PageStar.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow
+    public partial class PageStar : Page
     {
-        public MainWindow()
+        public PageStar()
         {
             InitializeComponent();
-            DishOrderViewModel viewModel=new DishOrderViewModel((Application.Current as App).GetDishService);
-            this.gridDishs.DataContext = viewModel;
-            this.dishOrder_toalPannel.DataContext = viewModel;
         }
     }
 }
