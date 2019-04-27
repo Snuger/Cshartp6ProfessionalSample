@@ -8,7 +8,23 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageHome">
 
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Label FontSize="24" Content="默认超始页"/>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Expander Grid.Column="0">
+            <Expander.Header>
+                <TextBlock>菜单管理</TextBlock>
+            </Expander.Header>
+            <ListBox>
+                <ListBoxItem>
+                    <TextBlock>
+                        <Hyperlink NavigateUri="FrameSource.xaml" TargetName="Frame1">百度一下 </Hyperlink>
+                    </TextBlock>
+                </ListBoxItem>
+            </ListBox>
+        </Expander>
+        <Frame x:Name="Frame1" Source="wellocom.xaml" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Frame>
     </Grid>
 </Page>

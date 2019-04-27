@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrazyElemphant.Client", "CrazyElemphant.Client\CrazyElemphant.Client.csproj", "{69F4E92B-1706-4732-8427-9A3AED7CF024}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlSamples", "ControlSamples\ControlSamples.csproj", "{568E7A16-681C-468D-8565-AA09B1247385}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{69F4E92B-1706-4732-8427-9A3AED7CF024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69F4E92B-1706-4732-8427-9A3AED7CF024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69F4E92B-1706-4732-8427-9A3AED7CF024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{568E7A16-681C-468D-8565-AA09B1247385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568E7A16-681C-468D-8565-AA09B1247385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568E7A16-681C-468D-8565-AA09B1247385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568E7A16-681C-468D-8565-AA09B1247385}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

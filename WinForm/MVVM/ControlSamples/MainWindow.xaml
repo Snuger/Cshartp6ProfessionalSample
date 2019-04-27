@@ -1,0 +1,35 @@
+﻿<controls:MetroWindow x:Class="ControlSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:ControlSamples"
+        mc:Ignorable="d"
+         WindowTransitionsEnabled="False"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"      
+        Title="WPF 控件使用示例"
+        Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#FFF1F3F3">
+            <DockPanel LastChildFill="True">
+                <Expander Background="#FFF1F3F3" IsExpanded="True"  DockPanel.Dock="Top" Margin="0,0,0,10" FocusVisualStyle="{x:Null}">
+                    <Expander.Header>
+                        <TextBlock Margin="10,0,0,0" FontWeight="Bold">布局控件示例</TextBlock>
+                    </Expander.Header>
+                    <ListBox Background="#FFF1F3F3"  Margin="30,0,0,0">
+                        <Hyperlink NavigateUri="http://www.baidu.com" TargetName="Frame1">边框(Border)</Hyperlink>
+                        <Hyperlink NavigateUri="www.blibli.com" TargetName="Frame1">边框(Border)</Hyperlink>
+                    </ListBox>
+                </Expander>
+            </DockPanel>
+        </Grid>
+        <Frame Margin="5,0,0,0" Grid.Column="1" NavigationUIVisibility="Hidden" Name="Frame1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="Welcome.xaml"/>
+      
+    </Grid>
+</controls:MetroWindow>

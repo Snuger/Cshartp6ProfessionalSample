@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Category Title="Layout">
+  <Sample Path="samps\border_samp.xaml" Title="Border" Description="Border draws a border, background, or both around another element.">
+    <Syntax>
+      <![CDATA[<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+    <Border Background="LightGray" CornerRadius="10" Padding="10"  HorizontalAlignment="Center" VerticalAlignment="center" BorderBrush="Black" BorderThickness="4">
+        <TextBlock>Content inside of a Border</TextBlock>
+        </Border>
+    </Grid>]]>
+    </Syntax>
+  </Sample>
+</Category>

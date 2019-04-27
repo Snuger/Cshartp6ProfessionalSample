@@ -69,6 +69,9 @@
     <Compile Include="API\PageManager.cs" />
     <Compile Include="Converters\EnumToBooleanConverter.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\FrameSource.xaml.cs">
+      <DependentUpon>FrameSource.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PageCollection.xaml.cs">
       <DependentUpon>PageCollection.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,9 @@
     </Compile>
     <Compile Include="View\PageStar.xaml.cs">
       <DependentUpon>PageStar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wellocom.xaml.cs">
+      <DependentUpon>wellocom.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -119,6 +125,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\FrameSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PageCollection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PageStar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\wellocom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

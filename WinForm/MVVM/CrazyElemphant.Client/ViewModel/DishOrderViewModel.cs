@@ -90,7 +90,7 @@ namespace CrazyElemphant.Client.ViewModel
             get { return orderStateDiscription; }
             set
             {
-                orderStateDiscription = value;
+                orderStateDiscription = value;                
                 this.RaisePropertyChanged("OrderStateDiscription");
             }
         }
