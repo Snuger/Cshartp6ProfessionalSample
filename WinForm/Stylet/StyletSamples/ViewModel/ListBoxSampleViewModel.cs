@@ -46,6 +46,5 @@ namespace StyletSamples.ViewModel
             CurrentSelect = listbox.SelectedItem.ToString();          
         }
 
-
     }
 }

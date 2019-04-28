@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StyletSamples.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,8 @@ namespace StyletSamples.View
     {
         public ListBoxSample()
         {
-            InitializeComponent();    
+            InitializeComponent();
+            this.DataContext = new ListBoxSampleViewModel();
         }   
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
