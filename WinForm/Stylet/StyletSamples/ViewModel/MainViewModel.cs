@@ -20,10 +20,11 @@ namespace StyletSamples.ViewModel
         public MainViewModel()
         {
             this.Cartes = new List<Carte>() {
-                new Carte(){ Name="默认",Page=PageManager.PageWellcome},
+               new Carte(){ Name="默认",Page=PageManager.PageWellcome},
                new Carte(){ Name="边框", Page=PageManager.BorderSamples },
-               new Carte(){ Name="文本框",Page=PageManager.TextBoxSamples}
-               
+               new Carte(){ Name="文本框",Page=PageManager.TextBoxSamples},
+               new Carte(){ Name="ListBox Sample",Page=PageManager.ListBoxSample}
+
             };
         }
 

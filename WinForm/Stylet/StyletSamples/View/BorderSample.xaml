@@ -8,5 +8,8 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BorderSample">
 
-    <DockPanel>        <TextBlock DockPanel.Dock="Top" FontSize="24">这是一个边框的基本使用示例程序</TextBlock>        <TextBlock DockPanel.Dock="Top" TextAlignment="Justify">  这一段代码来自于WPF学习控件使用。</TextBlock>           </DockPanel>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" FontSize="24">这是一个边框的基本使用示例程序</TextBlock>
+        <TextBlock DockPanel.Dock="Top" TextAlignment="Justify">  这一段代码来自于WPF学习控件使用。</TextBlock>       
+    </DockPanel>
 </Page>

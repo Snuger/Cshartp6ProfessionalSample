@@ -15,5 +15,7 @@ namespace StyletSamples.ViewModel
 
         public static TextBoxSample TextBoxSamples = new TextBoxSample();
 
+        public static ListBoxSample ListBoxSample = new ListBoxSample();
+
     }
 }

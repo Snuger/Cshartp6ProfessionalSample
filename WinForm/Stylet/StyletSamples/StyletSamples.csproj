@@ -85,10 +85,14 @@
     <Compile Include="Model\Carte.cs" />
     <Compile Include="Model\Menus.cs" />
     <Compile Include="Model\PageManager.cs" />
+    <Compile Include="ViewModel\ListBoxSampleViewModel.cs" />
     <Compile Include="ViewModel\WelcomeViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\BorderSample.xaml.cs">
       <DependentUpon>BorderSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ListBoxSample.xaml.cs">
+      <DependentUpon>ListBoxSample.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TextBoxSample.xaml.cs">
       <DependentUpon>TextBoxSample.xaml</DependentUpon>
@@ -126,6 +130,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\BorderSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListBoxSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
