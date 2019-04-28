@@ -23,8 +23,7 @@ namespace StyletSamples.View
     {
         public ListBoxSample()
         {
-            InitializeComponent();
-            this.DataContext = new ListBoxSampleViewModel();
+            InitializeComponent();          
         }   
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

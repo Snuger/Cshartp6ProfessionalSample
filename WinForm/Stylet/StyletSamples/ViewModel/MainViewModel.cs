@@ -14,7 +14,8 @@ namespace StyletSamples.ViewModel
     public class MainViewModel : Screen
     {
         
-
+        public ListBoxSampleViewModel ListBoxInnerSampleViewModel { get; private set; }
+       
         private Page currentPage = PageManager.PageWellcome;
 
         public MainViewModel()
@@ -24,8 +25,9 @@ namespace StyletSamples.ViewModel
                new Carte(){ Name="边框", Page=PageManager.BorderSamples },
                new Carte(){ Name="文本框",Page=PageManager.TextBoxSamples},
                new Carte(){ Name="ListBox Sample",Page=PageManager.ListBoxSample}
-
             };
+
+            this.ListBoxInnerSampleViewModel = new ListBoxSampleViewModel();
         }
 
         public Page CurrentPage

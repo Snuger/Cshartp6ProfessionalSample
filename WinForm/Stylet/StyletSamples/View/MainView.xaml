@@ -12,8 +12,7 @@
         mc:Ignorable="d"
         WindowTransitionsEnabled="False"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         Background="{DynamicResource MaterialDesignPaper}"   
-        d:DataContext="{d:DesignInstance vmodel:MainViewModel}"
+         Background="{DynamicResource MaterialDesignPaper}"         
         Title="Stylet使用示例" Height="450" Width="800">
     <Window.Resources>
         <DataTemplate x:Name="templateBox" x:Key="menuListItem" DataType="{x:Type model:Carte}">
@@ -38,6 +37,9 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="#FFF1F3F3">
             <DockPanel LastChildFill="True">
+                <DockPanel.DataContext>
+                    <vmodel:MainViewModel/>
+                </DockPanel.DataContext>
                 <Expander Background="#FFF1F3F3" IsExpanded="False"  DockPanel.Dock="Top" Margin="0,0,0,10" FocusVisualStyle="{x:Null}">
                     <Expander.Header>
                         <TextBlock FontWeight="Bold">布局控件示例</TextBlock>
@@ -46,6 +48,6 @@
                 </Expander>
             </DockPanel>
         </Grid>
-        <Frame Margin="5,0,0,0" Grid.Column="1" NavigationUIVisibility="Hidden" Name="Frame1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding CurrentPage}"/>
+        <Frame Margin="5,0,0,0" Grid.Column="1" NavigationUIVisibility="Hidden" Name="Frame1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Content="{Binding CurrentPage}"/>
     </Grid>
 </control:MetroWindow>

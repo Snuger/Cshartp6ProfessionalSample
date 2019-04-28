@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyletSamples", "StyletSamp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PureStyleSample", "PureStyleSample\PureStyleSample.csproj", "{FE9C5B19-F456-454D-A996-717D3CFBF27E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stylet", "..\..\..\..\ExcellentSourceCode\Stylet\Stylet\Stylet.csproj", "{2435BD00-AC12-48B0-AD36-9BAB2FDEC3F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FE9C5B19-F456-454D-A996-717D3CFBF27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE9C5B19-F456-454D-A996-717D3CFBF27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE9C5B19-F456-454D-A996-717D3CFBF27E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2435BD00-AC12-48B0-AD36-9BAB2FDEC3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2435BD00-AC12-48B0-AD36-9BAB2FDEC3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2435BD00-AC12-48B0-AD36-9BAB2FDEC3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2435BD00-AC12-48B0-AD36-9BAB2FDEC3F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
