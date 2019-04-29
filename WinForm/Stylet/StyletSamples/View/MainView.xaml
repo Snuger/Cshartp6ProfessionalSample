@@ -40,11 +40,17 @@
                 <DockPanel.DataContext>
                     <vmodel:MainViewModel/>
                 </DockPanel.DataContext>
-                <Expander Background="#FFF1F3F3" IsExpanded="False"  DockPanel.Dock="Top" Margin="0,0,0,10" FocusVisualStyle="{x:Null}">
+                <Expander Background="#FFF1F3F3" IsExpanded="True"  DockPanel.Dock="Top" FocusVisualStyle="{x:Null}">
                     <Expander.Header>
-                        <TextBlock FontWeight="Bold">布局控件示例</TextBlock>
+                        <TextBlock FontWeight="Bold">ContentControl</TextBlock>
                     </Expander.Header>
-                    <ListBox Name="menuBox" Background="#FFF1F3F3"  ItemsSource="{Binding Cartes}"></ListBox>
+                    <ListBox Name="menuBox" Background="#FFF1F3F3"  ItemsSource="{Binding ContentControlCartes}"></ListBox>
+                </Expander>
+                <Expander Background="#FFF1F3F3" IsExpanded="True"  DockPanel.Dock="Top"  FocusVisualStyle="{x:Null}">
+                    <Expander.Header>
+                        <TextBlock FontWeight="Bold">HeaderContentControl</TextBlock>
+                    </Expander.Header>
+                    <ListBox Background="#FFF1F3F3"  ItemsSource="{Binding HeaderContentControlCartes}"></ListBox>
                 </Expander>
             </DockPanel>
         </Grid>

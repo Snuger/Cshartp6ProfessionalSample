@@ -20,11 +20,20 @@ namespace StyletSamples.ViewModel
 
         public MainViewModel()
         {
-            this.Cartes = new List<Carte>() {
+            this.ContentControlCartes = new List<Carte>() {
+               new Carte(){ Name="Button Sample",Page=PageManager.ButtonSample},
+               new Carte(){ Name="边框", Page=PageManager.BorderSamples },
+               new Carte(){ Name="文本框",Page=PageManager.TextBoxSamples},
+               new Carte(){ Name="ListBox Sample",Page=PageManager.ListBoxSample  
+               }
+            };
+
+            this.HeaderContentControlCartes = new List<Carte>() {
                new Carte(){ Name="默认",Page=PageManager.PageWellcome},
                new Carte(){ Name="边框", Page=PageManager.BorderSamples },
                new Carte(){ Name="文本框",Page=PageManager.TextBoxSamples},
-               new Carte(){ Name="ListBox Sample",Page=PageManager.ListBoxSample}
+               new Carte(){ Name="ListBox Sample",Page=PageManager.ListBoxSample
+               }
             };
 
             this.ListBoxInnerSampleViewModel = new ListBoxSampleViewModel();
@@ -36,7 +45,9 @@ namespace StyletSamples.ViewModel
             set { SetAndNotify(ref currentPage, value); }
         }
 
-        public List<Carte> Cartes { get; set; }
+        public List<Carte> ContentControlCartes { get; set; }
+
+        public List<Carte> HeaderContentControlCartes { get; set; }
 
 
         public void MenuSelected(object obj)

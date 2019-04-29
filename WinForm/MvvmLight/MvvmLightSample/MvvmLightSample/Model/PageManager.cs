@@ -1,25 +1,21 @@
-﻿using System;
+﻿using MvvmLightSample.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StyletSamples.View;
 
-namespace StyletSamples.ViewModel
+namespace MvvmLightSample.Model
 {
     public class PageManager
     {
-        public static WelcomeView PageWellcome = new WelcomeView();
+        public static PageWellcome PageWellcome = new PageWellcome();
 
         public static BorderSample BorderSamples = new BorderSample();
 
         public static TextBoxSample TextBoxSamples = new TextBoxSample();
 
         public static ListBoxSample ListBoxSample = new ListBoxSample();
-
-        public static GradUseSample GradUseSample = new GradUseSample();
-
-        public static ButtonSample ButtonSample = new ButtonSample();
 
     }
 }
