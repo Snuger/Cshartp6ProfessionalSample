@@ -7036,22 +7036,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Snuger.MicZenus\\.nuget\\packages\\": {}
+    "C:\\Users\\Snuger\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\SimpleDelegets\\SimpleDelegets.csproj",
+      "projectUniqueName": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\SimpleDelegets\\SimpleDelegets.csproj",
       "projectName": "SimpleDelegets",
-      "projectPath": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\SimpleDelegets\\SimpleDelegets.csproj",
-      "packagesPath": "C:\\Users\\Snuger.MicZenus\\.nuget\\packages\\",
-      "outputPath": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\SimpleDelegets\\obj\\",
+      "projectPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\SimpleDelegets\\SimpleDelegets.csproj",
+      "packagesPath": "C:\\Users\\Snuger\\.nuget\\packages\\",
+      "outputPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\SimpleDelegets\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Snuger.MicZenus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Snuger\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7076,14 +7073,14 @@
     "frameworks": {
       "netcoreapp1.1": {
         "dependencies": {
-          "System.Text.Encoding.CodePages": {
-            "target": "Package",
-            "version": "4.5.0"
-          },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "1.1.2",
+            "version": "[1.1.2, )",
             "autoReferenced": true
+          },
+          "System.Text.Encoding.CodePages": {
+            "target": "Package",
+            "version": "[4.5.0, )"
           }
         }
       }

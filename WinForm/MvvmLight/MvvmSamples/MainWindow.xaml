@@ -1,0 +1,40 @@
+﻿<Window x:Class="MvvmSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        Height="450"
+        Width="650"
+        Title="MVVM Light Application"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <DockPanel>
+        <WrapPanel DockPanel.Dock="Top" Height="50" VerticalAlignment="Center">
+            <TextBlock FontSize="20" Margin="20,15,0,0"                  
+                   Foreground="Purple"
+                   Text="{Binding WelcomeTitle}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap" />
+        </WrapPanel>
+        <StackPanel DockPanel.Dock="Left" Width="150">
+            
+        </StackPanel>
+        <Grid DockPanel.Dock="Right">
+            <Grid.RowDefinitions>
+                <RowDefinition/> 
+            </Grid.RowDefinitions>
+            <Frame  NavigationUIVisibility="Hidden"  Source="Views/Wellcom.xaml"/>
+        </Grid>
+    </DockPanel>
+</Window>

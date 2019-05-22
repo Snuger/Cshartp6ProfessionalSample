@@ -664,23 +664,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Snuger.MicZenus\\.nuget\\packages\\": {},
+    "C:\\Users\\Snuger\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\inheritSample\\inheritSample.csproj",
+      "projectUniqueName": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\inheritSample\\inheritSample.csproj",
       "projectName": "inheritSample",
-      "projectPath": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\inheritSample\\inheritSample.csproj",
-      "packagesPath": "C:\\Users\\Snuger.MicZenus\\.nuget\\packages\\",
-      "outputPath": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\inheritSample\\obj\\",
+      "projectPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\inheritSample\\inheritSample.csproj",
+      "packagesPath": "C:\\Users\\Snuger\\.nuget\\packages\\",
+      "outputPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\inheritSample\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Snuger.MicZenus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Snuger\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

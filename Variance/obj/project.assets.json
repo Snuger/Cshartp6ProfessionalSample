@@ -7037,22 +7037,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Snuger.MicZenus\\.nuget\\packages\\": {}
+    "C:\\Users\\Snuger\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\Variance\\Variance.csproj",
+      "projectUniqueName": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\Variance\\Variance.csproj",
       "projectName": "Variance",
-      "projectPath": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\Variance\\Variance.csproj",
-      "packagesPath": "C:\\Users\\Snuger.MicZenus\\.nuget\\packages\\",
-      "outputPath": "E:\\Code Studio\\C#-Project\\Cshartp6ProfessionalSample\\Variance\\obj\\",
+      "projectPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\Variance\\Variance.csproj",
+      "packagesPath": "C:\\Users\\Snuger\\.nuget\\packages\\",
+      "outputPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\Variance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Snuger.MicZenus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Snuger\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7077,18 +7074,18 @@
     "frameworks": {
       "netcoreapp1.1": {
         "dependencies": {
-          "System.Text.Encoding.CodePages": {
-            "target": "Package",
-            "version": "4.5.0"
-          },
           "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "1.1.2",
+            "version": "[1.1.2, )",
             "autoReferenced": true
           },
           "System.Collections": {
             "target": "Package",
-            "version": "4.3.0"
+            "version": "[4.3.0, )"
+          },
+          "System.Text.Encoding.CodePages": {
+            "target": "Package",
+            "version": "[4.5.0, )"
           }
         }
       }

@@ -1,5 +1,4 @@
-﻿using StyletSamples.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,21 +16,13 @@ using System.Windows.Shapes;
 namespace StyletSamples.View
 {
     /// <summary>
-    /// ListBoxSample.xaml 的交互逻辑
+    /// ListBoxSampleView.xaml 的交互逻辑
     /// </summary>
-    public partial class ListBoxSample : Page
+    public partial class ListBoxSampleView : Page
     {
-        public ListBoxSample()
+        public ListBoxSampleView()
         {
             InitializeComponent();
-            this.DataContext = new ListBoxSampleViewModel();
-        }   
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ListBox listbox = sender as ListBox;          
-            this.lab_SelectText.Content =$"你选中了:{ listbox.SelectedItem.ToString()}";
-
         }
     }
 }

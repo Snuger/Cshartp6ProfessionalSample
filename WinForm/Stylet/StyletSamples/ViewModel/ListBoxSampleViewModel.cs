@@ -9,7 +9,7 @@ using Stylet;
 
 namespace StyletSamples.ViewModel
 {
-    public class ListBoxSampleViewModel:Screen
+    public class ListBoxSampleViewModel: Screen
     {
 
         private string currentSelect;

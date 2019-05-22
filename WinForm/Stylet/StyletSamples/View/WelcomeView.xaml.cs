@@ -23,8 +23,7 @@ namespace StyletSamples.View
     {
         public WelcomeView()
         {
-            InitializeComponent();
-            this.DataContext = new WelcomeViewModel();
+            InitializeComponent();         
         }
     }
 }

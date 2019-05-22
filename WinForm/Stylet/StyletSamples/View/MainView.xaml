@@ -46,6 +46,6 @@
                 </Expander>
             </DockPanel>
         </Grid>
-        <Frame Margin="5,0,0,0" Grid.Column="1" NavigationUIVisibility="Hidden" Name="Frame1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding CurrentPage}"/>
+        <Frame Margin="5,0,0,0" Grid.Column="1" NavigationUIVisibility="Hidden" Name="Frame1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Content="{Binding CurrentPage}"/>
     </Grid>
 </control:MetroWindow>
