@@ -19,12 +19,11 @@ namespace MSMQListener
 {
     class Program
     {
-        static MessageQueue mq1; 
+        static MessageQueue mq1;
+        private static readonly string[] queueNames = { "queue1", "queue2", "queue3", "queue4", "queue5", "queue6", "queue7", "queue8", "queue9", "queue10" };
 
         static void Main(string[] args)
         {
-            ThreadPool.SetMaxThreads(5, 1);
-
             string _commond = string.Empty;
             bool stop = false;
             while (!stop)
@@ -42,32 +41,27 @@ namespace MSMQListener
                             Console.WriteLine("准备开启服务...");
                             onStart();
                             break;
+                        case "init":
+                            break;
                         default:
                             break;
                     }
-
                 }
 
             }
 
             Console.Read();
- 
+
         }
 
-        private static void onStart() {
-
-            //Thread thread = new Thread(new ThreadStart(() =>
-            //{               
-                mq1 = new MessageQueue(@".\private$\system_request");
-                mq1.ReceiveCompleted += new ReceiveCompletedEventHandler(MessageReceived);                  
-                mq1.BeginReceive(new TimeSpan(0, 0, 2));                 
-               
-            //}));
-            //thread.IsBackground = true;
-            //thread.Start();          
+        private static void onStart()
+        {      
+            foreach (string s in queueNames)
+            {
+                ThreadPool.QueueUserWorkItem(new WaitCallback(InvokeMDAO), s);
+            }
         }
 
-        
 
 
         private static void MessageReceived(object source, ReceiveCompletedEventArgs asyncResult)
@@ -75,12 +69,13 @@ namespace MSMQListener
             bool isReceivedSucceed = true;
             MessageQueue mq = null;
             try
-            {               
-                //Connect to the queue
+            {
                 mq = (MessageQueue)source;
-                Message m = mq.EndReceive(asyncResult.AsyncResult);              
-                m.Formatter = new System.Messaging.XmlMessageFormatter(new Type[] { typeof(string) });               
-                ThreadPool.QueueUserWorkItem(new WaitCallback(InvokeMDAO), m.Body);
+                Message m = mq.EndReceive(asyncResult.AsyncResult);
+                m.Formatter = new System.Messaging.XmlMessageFormatter(new Type[] { typeof(string) });
+                System.Console.WriteLine($"{m.Body.ToString()}");
+                //处理其他事情     
+
             }
             catch (MessageQueueException)
             {
@@ -93,22 +88,25 @@ namespace MSMQListener
             }
             finally
             {
+                //处理正常的情况下，读取下一条
                 if (isReceivedSucceed)
                 {
                     mq1.BeginReceive(new TimeSpan(0, 0, 2));
                 }
             }
         }
-        
+
         static void InvokeMDAO(object state)
         {
-            Console.WriteLine($"线程  {Thread.CurrentThread.ManagedThreadId} reade state is {state.ToString()}");
-            System.Random random = new Random();
-            Thread.Sleep(random.Next(1000,3000));
+            MessageQueue queue = new MessageQueue($@".\private$\{state.ToString()}");
+            queue.ReceiveCompleted += new ReceiveCompletedEventHandler(MessageReceived);
+            while (true)
+            {
+                queue.BeginReceive(new TimeSpan(0, 0, 2));
+                Thread.Sleep(5000); 
+            }
+
         }
-
-
-
 
         private static void MessageReceived2(object source, ReceiveCompletedEventArgs asyncResult)
         {
@@ -142,6 +140,6 @@ namespace MSMQListener
                 }
             }
         }
-       
+
     }
 }

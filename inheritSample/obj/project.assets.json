@@ -670,11 +670,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\inheritSample\\inheritSample.csproj",
       "projectName": "inheritSample",
       "projectPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\inheritSample\\inheritSample.csproj",
       "packagesPath": "C:\\Users\\Snuger\\.nuget\\packages\\",
       "outputPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\inheritSample\\obj\\",
+=======
+      "projectUniqueName": "E:\\CodeStudio\\C#\\Cshartp6ProfessionalSample\\inheritSample\\inheritSample.csproj",
+      "projectName": "inheritSample",
+      "projectPath": "E:\\CodeStudio\\C#\\Cshartp6ProfessionalSample\\inheritSample\\inheritSample.csproj",
+      "packagesPath": "C:\\Users\\Snuger\\.nuget\\packages\\",
+      "outputPath": "E:\\CodeStudio\\C#\\Cshartp6ProfessionalSample\\inheritSample\\obj\\",
+>>>>>>> 0ef541ac5347f8d77f07491806e6d67bfec75ca8
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

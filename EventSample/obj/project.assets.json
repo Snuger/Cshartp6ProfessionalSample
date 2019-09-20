@@ -713,7 +713,11 @@
       ]
     },
     "System.Text.Encoding.CodePages/4.5.0": {
+<<<<<<< HEAD
       "sha512": "S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
+=======
+      "sha512": "jjOQmfrQ+02WFH8MmuwUUG2vj9pjzczCqZJ3/beyjlunLhn75NdqqOYV+Rm25F7qHZR9FevjbqdmmCKODp9XuQ==",
+>>>>>>> 0ef541ac5347f8d77f07491806e6d67bfec75ca8
       "type": "package",
       "path": "system.text.encoding.codepages/4.5.0",
       "files": [
@@ -774,11 +778,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\EventSample\\EventSample.csproj",
       "projectName": "EventSample",
       "projectPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\EventSample\\EventSample.csproj",
       "packagesPath": "C:\\Users\\Snuger\\.nuget\\packages\\",
       "outputPath": "E:\\Postgraduate\\C#-Project\\Rise\\Cshartp6ProfessionalSample\\EventSample\\obj\\",
+=======
+      "projectUniqueName": "E:\\CodeStudio\\C#\\Cshartp6ProfessionalSample\\EventSample\\EventSample.csproj",
+      "projectName": "EventSample",
+      "projectPath": "E:\\CodeStudio\\C#\\Cshartp6ProfessionalSample\\EventSample\\EventSample.csproj",
+      "packagesPath": "C:\\Users\\Snuger\\.nuget\\packages\\",
+      "outputPath": "E:\\CodeStudio\\C#\\Cshartp6ProfessionalSample\\EventSample\\obj\\",
+>>>>>>> 0ef541ac5347f8d77f07491806e6d67bfec75ca8
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
