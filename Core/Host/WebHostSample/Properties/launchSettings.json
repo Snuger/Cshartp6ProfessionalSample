@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WebHostSample": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

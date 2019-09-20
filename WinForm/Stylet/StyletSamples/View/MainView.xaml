@@ -12,8 +12,7 @@
         mc:Ignorable="d"
         WindowTransitionsEnabled="False"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         Background="{DynamicResource MaterialDesignPaper}"   
-        d:DataContext="{d:DesignInstance vmodel:MainViewModel}"
+         Background="{DynamicResource MaterialDesignPaper}"         
         Title="Stylet使用示例" Height="450" Width="800">
     <Window.Resources>
         <DataTemplate x:Name="templateBox" x:Key="menuListItem" DataType="{x:Type model:Carte}">
@@ -38,11 +37,20 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="#FFF1F3F3">
             <DockPanel LastChildFill="True">
-                <Expander Background="#FFF1F3F3" IsExpanded="False"  DockPanel.Dock="Top" Margin="0,0,0,10" FocusVisualStyle="{x:Null}">
+                <DockPanel.DataContext>
+                    <vmodel:MainViewModel/>
+                </DockPanel.DataContext>
+                <Expander Background="#FFF1F3F3" IsExpanded="True"  DockPanel.Dock="Top" FocusVisualStyle="{x:Null}">
                     <Expander.Header>
-                        <TextBlock FontWeight="Bold">布局控件示例</TextBlock>
+                        <TextBlock FontWeight="Bold">ContentControl</TextBlock>
                     </Expander.Header>
-                    <ListBox Name="menuBox" Background="#FFF1F3F3"  ItemsSource="{Binding Cartes}"></ListBox>
+                    <ListBox Name="menuBox" Background="#FFF1F3F3"  ItemsSource="{Binding ContentControlCartes}"></ListBox>
+                </Expander>
+                <Expander Background="#FFF1F3F3" IsExpanded="True"  DockPanel.Dock="Top"  FocusVisualStyle="{x:Null}">
+                    <Expander.Header>
+                        <TextBlock FontWeight="Bold">HeaderContentControl</TextBlock>
+                    </Expander.Header>
+                    <ListBox Background="#FFF1F3F3"  ItemsSource="{Binding HeaderContentControlCartes}"></ListBox>
                 </Expander>
             </DockPanel>
         </Grid>

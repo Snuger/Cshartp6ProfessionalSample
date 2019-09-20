@@ -53,7 +53,21 @@ namespace MvvmSamples.ViewModel
 
                     WelcomeTitle = item.Title;
                 });
+
+            CurrentItem = "Plain";
         }
+
+        private string _currentItem;
+
+        public string CurrentItem
+        {
+            get { return _currentItem; }
+            set
+            {
+                Set(ref _currentItem, value);
+            }
+        }
+
 
         ////public override void Cleanup()
         ////{

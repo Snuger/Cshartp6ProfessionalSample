@@ -17,5 +17,9 @@ namespace StyletSamples.ViewModel
 
         public static ListBoxSampleView ListBoxSample = new ListBoxSampleView();
 
+        public static GradUseSample GradUseSample = new GradUseSample();
+
+        public static ButtonSample ButtonSample = new ButtonSample();
+
     }
 }

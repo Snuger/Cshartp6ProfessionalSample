@@ -22,7 +22,18 @@ namespace StyletSamples.View
     {
         public ListBoxSampleView()
         {
+<<<<<<< HEAD:WinForm/Stylet/StyletSamples/View/ListBoxSampleView.xaml.cs
             InitializeComponent();
+=======
+            InitializeComponent();          
+        }   
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox listbox = sender as ListBox;          
+            this.lab_SelectText.Content =$"你选中了:{ listbox.SelectedItem.ToString()}";
+
+>>>>>>> a5c36f47287ed06223919170986c5bf95289755c:WinForm/Stylet/StyletSamples/View/ListBoxSample.xaml.cs
         }
     }
 }

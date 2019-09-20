@@ -36,7 +36,7 @@ namespace MvvmSamples.ViewModel
             else
             {
                 SimpleIoc.Default.Register<IDataService, DataService>();
-            }
+            }  
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<WellcomViewModel>();

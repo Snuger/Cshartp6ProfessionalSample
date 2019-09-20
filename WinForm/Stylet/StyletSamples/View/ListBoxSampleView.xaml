@@ -16,8 +16,7 @@
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
     </Page.Resources>
-
-    <DockPanel>
+    <DockPanel>       
         <TextBlock DockPanel.Dock="Top" FontSize="24">List Box Style Samples</TextBlock>
         <Grid DockPanel.Dock="Top" Margin="10">
             <Grid.RowDefinitions>
@@ -31,7 +30,11 @@
             <ListBox x:Name="lbx_language" Grid.Row="0" Grid.Column="0" ItemsSource="{Binding Languages}" s:View.ActionTarget="ListBoxSampleViewModel" Style="{StaticResource listBoxBord}">
             </ListBox>
             <Label x:Name="lab_SelectText" Grid.Row="0" Grid.Column="1"/>
+<<<<<<< HEAD:WinForm/Stylet/StyletSamples/View/ListBoxSampleView.xaml
             <Button Grid.Row="1" Grid.Column="0" Content="test" s:View.Model="{Binding MainViewModel}" s:View.ActionTarget="{Binding ListBoxSampleViewModel}" Command="{s:Action GetSelectItem}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"/>
+=======
+            <Button Grid.Row="1" Grid.Column="0" Content="测试" s:View.ActionTarget="{Binding ListBoxInnerSampleViewModel}" Command="{s:Action GetSelectItem,ActionNotFound=Disable}" CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}}"/>
+>>>>>>> a5c36f47287ed06223919170986c5bf95289755c:WinForm/Stylet/StyletSamples/View/ListBoxSample.xaml
         </Grid>
     </DockPanel>
 </Page>
