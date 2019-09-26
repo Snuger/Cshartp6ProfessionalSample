@@ -1,56 +1,32 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
 
 namespace GenericHostSample
 {
     class Program
     {
-        public static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            //var host = new HostBuilder()              
-            //    .ConfigureHostConfiguration(set =>
-            //    {
-            //        set.SetBasePath(Directory.GetCurrentDirectory());
-            //        set.AddJsonFile("hostsettings.json", optional: true);
-            //        set.AddCommandLine(args);
-            //    })
-            //    .ConfigureServices((context, services) => {                  
-            //        services.AddHostedService<LifetimeEventsHostedService>();
-            //    })
-            //    .ConfigureLogging((hostContext, configLogging) =>
-            //    {
-            //        //configLogging.AddConsole();
-            //        // configLogging.AddDebug();
-            //    })
-            //    .UseConsoleLifetime()
-            //    .Build();
-            // await  host.RunAsync();      
+            using (var host = CreateHostBuilder(args).Build()) {
+                host.Run();
+                host.Services.GetRequiredService("");
 
-            var host = new HostBuilder()
-                .ConfigureServices((context,service)=> {
-                    service.Configure<HostOptions>(opt =>
-                    {
-                        opt.ShutdownTimeout = System.TimeSpan.FromSeconds(100);
-                    });
-                })
-                .ConfigureAppConfiguration((context, app) => {
-                   
-                })
-                .ConfigureLogging((context, logger) => {
-                   
-                })
-                .Build();
-            using (host)
-            {
-                await host.StartAsync();
-                await host.WaitForShutdownAsync();
+
             }
-       
+           
         }
+
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+            .ConfigureServices((context, service) =>
+            {                
+                service.Configure<MyOptions>(opt =>
+                {
+                    opt.Optinos1 = "来来来，我们一起来";
+                    opt.Options2 = 100;
+                });
+
+            });
     }
 }
