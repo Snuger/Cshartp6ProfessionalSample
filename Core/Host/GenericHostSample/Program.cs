@@ -12,45 +12,45 @@ namespace GenericHostSample
     {
         public static async Task Main(string[] args)
         {
-            //var host = new HostBuilder()              
-            //    .ConfigureHostConfiguration(set =>
-            //    {
-            //        set.SetBasePath(Directory.GetCurrentDirectory());
-            //        set.AddJsonFile("hostsettings.json", optional: true);
-            //        set.AddCommandLine(args);
-            //    })
-            //    .ConfigureServices((context, services) => {                  
-            //        services.AddHostedService<LifetimeEventsHostedService>();
-            //    })
-            //    .ConfigureLogging((hostContext, configLogging) =>
-            //    {
-            //        //configLogging.AddConsole();
-            //        // configLogging.AddDebug();
-            //    })
-            //    .UseConsoleLifetime()
-            //    .Build();
-            // await  host.RunAsync();      
-
             var host = new HostBuilder()
-                .ConfigureServices((context,service)=> {
-                    service.Configure<HostOptions>(opt =>
-                    {
-                        opt.ShutdownTimeout = System.TimeSpan.FromSeconds(100);
-                    });
-                })
-                .ConfigureAppConfiguration((context, app) => {
-                   
-                })
-                .ConfigureLogging((context, logger) => {
-                   
-                })
-                .Build();
+            .ConfigureLogging((context, logger) =>
+            { 
+                logger.AddConsole();
+                logger.AddDebug();
+            })
+            .ConfigureHostConfiguration(config =>
+            {
+                config.AddEnvironmentVariables();
+            })
+            .ConfigureAppConfiguration((context, config) =>
+            {
+                config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                config.AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true);
+                config.AddCommandLine(args);
+            })
+            .ConfigureServices((context, services) =>
+            {              
+                services.AddLogging();
+                services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+                services.AddSingleton<MonitorLoop>();
+                services.AddHostedService<TimedHostedService>();
+            })   
+            .UseEnvironment(EnvironmentName.Development)
+            .UseConsoleLifetime()
+            .Build();
+
             using (host)
             {
                 await host.StartAsync();
+
+                var monitorLoop = host.Services.GetRequiredService<MonitorLoop>();
+                monitorLoop.StartMonitorLoop();
+
+                
                 await host.WaitForShutdownAsync();
+
             }
-       
+                
         }
     }
 }
