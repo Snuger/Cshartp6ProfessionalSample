@@ -1,0 +1,20 @@
+﻿@page
+@model EvironmentSample30.Pages.githubModel
+@{
+    ViewData["Title"] = "github";
+}
+
+<h1>github</h1>
+
+@if (Model.GetPullRequestsError)
+{
+<p>Unable to get pullrequest from GitHub. Please try again later.</p>
+}
+else
+{
+    <ul>
+        @foreach (var reques in Model.PullRequests) { 
+            <li>@reques.Title</li>
+        }
+    </ul>
+}

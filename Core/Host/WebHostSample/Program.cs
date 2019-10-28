@@ -1,4 +1,4 @@
-﻿#define HostManaer
+﻿#define TemplateCode
 using System;
 using System.Collections.Generic;
 using System.IO;

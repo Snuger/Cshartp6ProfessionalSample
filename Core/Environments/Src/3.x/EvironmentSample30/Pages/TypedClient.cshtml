@@ -1,0 +1,20 @@
+﻿@page
+@model EvironmentSample30.Pages.TypedClientModel
+@{
+    ViewData["Title"] = "TypedClient";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>TypedClient</h1>
+
+<table>
+    @foreach (var us in Model.Issues)
+    {
+        <tr>
+            <td> @us.Title </td>
+            <td>@us.Url </td>
+            <td>@us.Created </td>
+        </tr>
+       
+    }
+</table>

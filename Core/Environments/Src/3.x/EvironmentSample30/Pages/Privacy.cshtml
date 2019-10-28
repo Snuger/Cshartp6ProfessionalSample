@@ -1,0 +1,23 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+@if (Model.GetBranchesError)
+{
+<p>Unable to get branches from GitHub. Please try again later.</p>
+}
+else
+{
+<ul>
+    @foreach (var branch in Model.Branches)
+    {
+        <li>@branch.Name</li>
+    }
+</ul>
+ 
+}
