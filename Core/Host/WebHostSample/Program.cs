@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿#define TemplateCode
+=======
+﻿#define MapSamples
+>>>>>>> 37ca1290db8f27b02c06320c12bc734e08d542fe
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -114,6 +118,24 @@ namespace WebHostSample
             {
                 Console.ReadLine();
             }
+        }
+#elif MapSamples
+        static void Main(string[] args)
+        {
+            //using (var host = WebHost.Start(router => router
+            //.MapGet("hello/{name}", (req, res, data) =>
+            //    res.WriteAsync($"Hello, {data.Values["name"]}!"))
+            //.MapGet("buenosdias/{name}", (req, res, data) =>
+            //    res.WriteAsync($"Buenos dias, {data.Values["name"]}!"))
+            //.MapGet("throw/{message?}", (req, res, data) =>
+            //    throw new Exception((string)data.Values["message"] ?? "Uh oh!"))
+            //.MapGet("{greeting}/{name}", (req, res, data) =>
+            //    res.WriteAsync($"{data.Values["greeting"]}, {data.Values["name"]}!"))
+            //.MapGet("", (req, res, data) => res.WriteAsync("Hello, World!"))))
+            //{
+            //    Console.WriteLine("Use Ctrl-C to shutdown the host...");
+            //    host.WaitForShutdown();
+            //}
         }
 #endif
 

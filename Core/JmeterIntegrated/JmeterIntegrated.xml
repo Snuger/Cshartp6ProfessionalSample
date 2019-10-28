@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JmeterIntegrated</name>
+    </assembly>
+    <members>
+        <member name="M:JmeterIntegrated.Controllers.WeatherForecastController.PostExecution(System.String)">
+            <summary>
+            执行测试
+            </summary>
+            <param name="jmx">jmx文件(不需要后缀)</param>
+            <returns></returns>
+        </member>
+        <member name="M:JmeterIntegrated.Controllers.WeatherForecastController.QueryJmeterResult(System.String)">
+            <summary>
+            获取执行结果
+            </summary>
+            <param name="id">执行任务ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:JmeterIntegrated.Controllers.WeatherForecastController.ExecuteProcessAndReadResult(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="jmx"></param>
+            <param name="id"></param>
+        </member>
+        <member name="P:JmeterIntegrated.Model.HttpResponseResult.ThreadName">
+            <summary>
+            线程数
+            </summary>
+        </member>
+    </members>
+</doc>
