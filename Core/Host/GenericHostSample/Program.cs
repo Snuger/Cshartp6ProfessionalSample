@@ -1,30 +1,15 @@
-<<<<<<< HEAD
-﻿using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-=======
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
->>>>>>> 37ca1290db8f27b02c06320c12bc734e08d542fe
 
 namespace GenericHostSample
 {
     class Program
     {
-<<<<<<< HEAD
-
-        static void Main(string[] args)
-        {
-
-            
-        }
-        
-=======
         public static async Task Main(string[] args)
         {
             var host = new HostBuilder()
@@ -67,6 +52,5 @@ namespace GenericHostSample
             }
                 
         }
->>>>>>> 37ca1290db8f27b02c06320c12bc734e08d542fe
     }
 }

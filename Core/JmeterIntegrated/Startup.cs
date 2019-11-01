@@ -31,22 +31,17 @@ namespace JmeterIntegrated
         {
             services.AddControllers();
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
-          
-
-            services.AddSwaggerGen(c =>
-            {
+        
+            services.AddSwaggerGen(c =>            {
                 c.SwaggerDoc("V1", new OpenApiInfo
-                {
-                    // {ApiName} ¶¨Òå³ÉÈ«¾Ö±äÁ¿£¬·½±ãĞŞ¸Ä
+                {                   
                     Version = "V1",
-                    Title = $"{ApiName} ½Ó¿ÚÎÄµµ¡ª¡ªNetcore 3.0",
-                    Description = $"{ApiName} HTTP API V1",
-                    Contact = new OpenApiContact { Name = ApiName, Email = "Blog.Core@xxx.com", Url = new Uri("https://www.jianshu.com/u/94102b59cc2a") },
-                    License = new OpenApiLicense { Name = ApiName, Url = new Uri("https://www.jianshu.com/u/94102b59cc2a") }
+                    Title = $"{ApiName} æ¥å£æ–‡æ¡£â€”â€”Netcore 3.0",
+                    Description = $"{ApiName} HTTP API V1"                 
                 });
                 c.OrderActionsBy(o => o.RelativePath);
-                var xmlPath = Path.Combine(basePath, "JmeterIntegrated.xml");//Õâ¸ö¾ÍÊÇ¸Õ¸ÕÅäÖÃµÄxmlÎÄ¼şÃû
-                c.IncludeXmlComments(xmlPath, true);//Ä¬ÈÏµÄµÚ¶ş¸ö²ÎÊıÊÇfalse£¬Õâ¸öÊÇcontrollerµÄ×¢ÊÍ£¬¼ÇµÃĞŞ¸Ä
+                var xmlPath = Path.Combine(basePath, "JmeterIntegrated.xml");//è¿™ä¸ªå°±æ˜¯åˆšåˆšé…ç½®çš„xmlæ–‡ä»¶å
+                c.IncludeXmlComments(xmlPath, true);//é»˜è®¤çš„ç¬¬äºŒä¸ªå‚æ•°æ˜¯falseï¼Œè¿™ä¸ªæ˜¯controllerçš„æ³¨é‡Šï¼Œè®°å¾—ä¿®æ”¹
             });
 
            
@@ -66,8 +61,6 @@ namespace JmeterIntegrated
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint($"/swagger/V1/swagger.json", $"{ApiName} V1");
-
-                //Â·¾¶ÅäÖÃ£¬ÉèÖÃÎª¿Õ£¬±íÊ¾Ö±½ÓÔÚ¸ùÓòÃû£¨localhost:8001£©·ÃÎÊ¸ÃÎÄ¼ş,×¢Òâlocalhost:8001/swaggerÊÇ·ÃÎÊ²»µ½µÄ£¬È¥launchSettings.json°ÑlaunchUrlÈ¥µô£¬Èç¹ûÄãÏë»»Ò»¸öÂ·¾¶£¬Ö±½ÓĞ´Ãû×Ö¼´¿É£¬±ÈÈçÖ±½ÓĞ´c.RoutePrefix = "doc";
                 c.RoutePrefix = "";
             });
 

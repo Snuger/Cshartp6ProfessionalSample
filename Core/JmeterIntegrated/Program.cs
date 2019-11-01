@@ -17,10 +17,17 @@ namespace JmeterIntegrated
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+            Host.CreateDefaultBuilder(args)           
+            .ConfigureAppConfiguration((Context, config) =>
+            {
+                config.AddJsonFile("hosting.json", optional: true);
+
+            })
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+               
+                webBuilder.UseUrls("http://*:8080");
+                webBuilder.UseStartup<Startup>();
+            });
     }
 }

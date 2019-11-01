@@ -1,0 +1,2 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1572571273266,65,SearchByCity,200,OK,172.19.30.203:1099-Samples 1-1,text,true,,2194,231,1,1,http://toy1.weather.com.cn/search?cityname=上海,64,0,12
