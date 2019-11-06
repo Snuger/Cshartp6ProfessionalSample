@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JmeterHosts</name>
+    </assembly>
+    <members>
+        <member name="M:JmeterHosts.Controllers.IntegratedController.QueryJmeterResult(System.String)">
+            <summary>
+            获取测试报告
+            </summary>
+            <param name="id">执行计划ID</param>
+            <returns>测试报告文字内容</returns>
+        </member>
+        <member name="M:JmeterHosts.Controllers.IntegratedController.PostExecuteAndReturnResult(System.String)">
+            <summary>
+            执行测试计划并返回结果
+            </summary>
+            <param name="jmx">执行测试计划的jmx文件(不包含后缀)</param>
+            <returns>返回测试报告，异常时返回异常原因</returns>
+        </member>
+        <member name="M:JmeterHosts.Controllers.IntegratedController.ExecuteProcessAndReadResult(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="jmx"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:JmeterHosts.Controllers.IntegratedController.BoastPlatformJmeter(System.String)">
+            <summary>
+            执行测试计划
+            </summary>
+            <param name="jmx">执行测试计划的jmx文件(不包含后缀)</param>
+            <returns>返回执行结果，不返回测试报告</returns>
+        </member>
+    </members>
+</doc>

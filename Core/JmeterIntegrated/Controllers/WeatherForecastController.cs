@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -9,6 +10,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Text;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Net.Http.Headers;
+using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Hosting;
 
 namespace JmeterIntegrated.Controllers
 {
@@ -16,18 +22,13 @@ namespace JmeterIntegrated.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
-  
+
         /// <summary>
         /// 获取测试报告
         /// </summary>
@@ -72,7 +73,7 @@ namespace JmeterIntegrated.Controllers
         /// <param name="jmx">执行测试计划的jmx文件(不包含后缀)</param>
         /// <returns>返回测试报告，异常时返回异常原因</returns>
         [HttpPost("ExecuteAndReturnResult")]
-        public async Task<ActionResult> PostExecuteAndReturnResult(string jmx="samples")
+        public async Task<ActionResult> PostExecuteAndReturnResult(string jmx = "samples")
         {
             List<string[]> result = new List<string[]>();
             try
@@ -108,46 +109,46 @@ namespace JmeterIntegrated.Controllers
             }
             return await Task<List<string[]>>.Run(() =>
             {
-               List<string[]> jmeterResult = new List<string[]>();
-               ProcessStartInfo process = new ProcessStartInfo(jmeterPath, $" -n -t jmx/{jmx}.jmx -r -l result/{_id}.csv") { RedirectStandardOutput = true };
-               var proc = Process.Start(process);
-               using (var sr = proc.StandardOutput)
-               {
-                   while(!sr.EndOfStream)
-                   {
-                       string msg=sr.ReadLine();                      
-                   }
-                   if (!proc.HasExited)
-                   {
-                       proc.Kill();
-                   }
-                   if (sr.EndOfStream)
-                   {
-                       if (System.IO.File.Exists($"result/{_id}.csv"))
-                       {
-                           string line = string.Empty;
-                           int counter = 0;
-                           System.IO.StreamReader file = new System.IO.StreamReader($"result/{_id}.csv");
-                           while ((line = file.ReadLine()) != null)
-                           {
-                               if (counter != 0)
-                                   jmeterResult.Add(line.Split(","));
-                               counter++;
-                           }
-                       }
-                   }
-               }
-               return jmeterResult;
-           });
+                List<string[]> jmeterResult = new List<string[]>();
+                ProcessStartInfo process = new ProcessStartInfo(jmeterPath, $" -n -t jmx/{jmx}.jmx -r -l result/{_id}.csv") { RedirectStandardOutput = true };
+                var proc = Process.Start(process);
+                using (var sr = proc.StandardOutput)
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string msg = sr.ReadLine();
+                    }
+                    if (!proc.HasExited)
+                    {
+                        proc.Kill();
+                    }
+                    if (sr.EndOfStream)
+                    {
+                        if (System.IO.File.Exists($"result/{_id}.csv"))
+                        {
+                            string line = string.Empty;
+                            int counter = 0;
+                            System.IO.StreamReader file = new System.IO.StreamReader($"result/{_id}.csv");
+                            while ((line = file.ReadLine()) != null)
+                            {
+                                if (counter != 0)
+                                    jmeterResult.Add(line.Split(","));
+                                counter++;
+                            }
+                        }
+                    }
+                }
+                return jmeterResult;
+            });
         }
 
-          /// <summary>
+        /// <summary>
         /// 执行测试计划
         /// </summary>
         /// <param name="jmx">执行测试计划的jmx文件(不包含后缀)</param>
         /// <returns>返回执行结果，不返回测试报告</returns>
         [HttpPost("ExecutionPlan/{jmx}")]
-        public async Task<ActionResult> BoastPlatformJmeter(string jmx="samples")
+        public async Task<ActionResult> BoastPlatformJmeter(string jmx = "samples")
         {
             string _id = System.Guid.NewGuid().ToString();
             string jmeterPath = "/usr/local/jmeter/bin/jmeter";
@@ -184,5 +185,85 @@ namespace JmeterIntegrated.Controllers
              });
             return new JsonResult(new { fileName = jmx, id = _id, result = (result.ToString() != "error"), message = result.ToString() });
         }
+
+
+        [HttpPost("upload")]
+        public async Task<ActionResult> UpLoadFile()
+        {  
+             string id=System.Guid.NewGuid().ToString();
+            if (string.IsNullOrEmpty(Request.ContentType) || Request.ContentType.IndexOf("multipart/", StringComparison.OrdinalIgnoreCase) < 0)
+            {
+                ModelState.AddModelError("File", "请求不合法.");
+                return BadRequest(ModelState);
+            }
+            MediaTypeHeaderValue headerValue = MediaTypeHeaderValue.Parse(Request.ContentType);
+            var boundary = HeaderUtilities.RemoveQuotes(headerValue.Boundary).Value;
+            if (string.IsNullOrEmpty(boundary))
+            {
+                ModelState.AddModelError("ContentType", "Missing content-type boundary.");
+                return BadRequest(ModelState);
+            }
+
+            var reader = new MultipartReader(boundary, HttpContext.Request.Body);
+            var section = await reader.ReadNextSectionAsync();
+
+            while (section != null)
+            {
+                var hasContentDispositionHeader = ContentDispositionHeaderValue.TryParse(section.ContentDisposition, out var contentDisposition);
+                if (hasContentDispositionHeader)
+                {
+                    if (contentDisposition != null && contentDisposition.DispositionType.Equals("form-data"))
+                    {
+                        var untrustedFileNameForStorage = string.Empty;
+                        var trustedFileNameForDisplay = string.Empty;
+                        untrustedFileNameForStorage = contentDisposition.FileName.Value;
+                        trustedFileNameForDisplay = WebUtility.HtmlEncode(contentDisposition.FileName.Value);
+                        var streamContent = await Task<byte[]>.Run(() =>
+                        {
+                            try
+                            {
+                                using (var memorystream = new MemoryStream())
+                                {                                    
+                                     section.Body.CopyToAsync(memorystream);   
+                                    if (memorystream.Length == 0)
+                                    {
+                                        ModelState.AddModelError("File", "文件内容为空");
+                                    }
+                                    if (memorystream.Length > 2097152)
+                                    {
+                                        var megabyteSizeLimit = 2097152 / 1048576;
+                                        ModelState.AddModelError("File", $"The file exceeds {megabyteSizeLimit:N1} MB.");
+                                    }
+
+                                    return memorystream.ToArray();
+                                }
+                            }
+                            catch (System.Exception ex)
+                            {
+                                ModelState.AddModelError("File", $"{ex.Message}");
+                            }
+                            return new byte[0];
+
+                        });
+
+                        if(!ModelState.IsValid){
+                            return BadRequest(ModelState);
+                        }
+
+                        using (var targetStream=System.IO.File.Create($"jmx/{id}.jmx"))
+                        {
+                             await   targetStream.WriteAsync(streamContent);                            
+                        }
+                    }
+
+                }
+
+             section =await reader.ReadNextSectionAsync();
+
+            }
+             return Ok(new {code="1",message="上传成功",path=$"jmx/{id}.jmx"});
+
+        }
+
     }
 }

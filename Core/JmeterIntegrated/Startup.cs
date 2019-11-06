@@ -26,9 +26,14 @@ namespace JmeterIntegrated
         public IConfiguration Configuration { get; }
         public string ApiName { get; set; } = "Jmeter.Integrated";
 
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options=>{
+                options.AddPolicy("相信一切",p=>p.AllowAnyOrigin());
+            });
             services.AddControllers();
             var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
         
@@ -61,12 +66,14 @@ namespace JmeterIntegrated
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint($"/swagger/V1/swagger.json", $"{ApiName} V1");
-                c.RoutePrefix = "";
+                c.RoutePrefix = "";               
             });
 
+            
+          
 
             app.UseHttpsRedirection();
-
+            app.UseCors("相信一切");
             app.UseRouting();
 
             app.UseAuthorization();
