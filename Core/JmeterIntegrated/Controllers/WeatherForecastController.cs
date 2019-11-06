@@ -15,6 +15,7 @@ using Microsoft.Net.Http.Headers;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Hosting;
+using JmeterIntegrated.Utilities;
 
 namespace JmeterIntegrated.Controllers
 {
@@ -262,6 +263,61 @@ namespace JmeterIntegrated.Controllers
 
             }
              return Ok(new {code="1",message="上传成功",path=$"jmx/{id}.jmx"});
+
+        }
+
+        /// <summary>
+        /// 接收上传的文件并进行处理
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("uploadfile")]
+        public async Task<ActionResult>UpLoadAndProcessFile(){
+            string id=System.Guid.NewGuid().ToString();
+            string _extension=string.Empty;
+            if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
+            {
+                ModelState.AddModelError("File", "非法请求或请求的格式不正确.");
+                return BadRequest(ModelState);
+            }
+            MediaTypeHeaderValue headerValue = MediaTypeHeaderValue.Parse(Request.ContentType);
+            var boundary =MultipartRequestHelper.GetBoundary(headerValue,2097152);
+            if (string.IsNullOrEmpty(boundary))
+            {
+                ModelState.AddModelError("ContentType", "Missing content-type boundary.");
+                return BadRequest(ModelState);
+            }
+
+            var reader = new MultipartReader(boundary, HttpContext.Request.Body);
+            var section = await reader.ReadNextSectionAsync();
+
+            while (section != null)
+            {
+                var hasContentDispositionHeader = ContentDispositionHeaderValue.TryParse(section.ContentDisposition, out var contentDisposition);
+                if (hasContentDispositionHeader)
+                {
+                    if (MultipartRequestHelper.HasFileContentDisposition(contentDisposition))
+                    {
+                        //var untrustedFileNameForStorage = string.Empty;
+                        var trustedFileNameForDisplay = string.Empty;
+                        //untrustedFileNameForStorage = contentDisposition.FileName.Value;
+                        trustedFileNameForDisplay = WebUtility.HtmlEncode(contentDisposition.FileName.Value);
+                        _extension=Path.GetExtension(trustedFileNameForDisplay);
+                        var streamContent=await FileUploadHelper.ProcessStreamdFile(section,contentDisposition,ModelState,2097152);
+                        
+                        if(!ModelState.IsValid){
+                            return BadRequest(ModelState);
+                        }
+
+                        using (var targetStream=System.IO.File.Create($"jmx/{id}{_extension}"))
+                        {
+                             await   targetStream.WriteAsync(streamContent);                            
+                        }
+                    }
+                }
+
+             section =await reader.ReadNextSectionAsync();
+            }
+             return Ok(new {code="1",message="上传成功",path=$"jmx/{id}{_extension}"});
 
         }
 
