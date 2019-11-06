@@ -190,8 +190,8 @@ namespace JmeterIntegrated.Controllers
 
         [HttpPost("upload")]
         public async Task<ActionResult> UpLoadFile()
-        {  
-             string id=System.Guid.NewGuid().ToString();
+        {
+            string id = System.Guid.NewGuid().ToString();
             if (string.IsNullOrEmpty(Request.ContentType) || Request.ContentType.IndexOf("multipart/", StringComparison.OrdinalIgnoreCase) < 0)
             {
                 ModelState.AddModelError("File", "请求不合法.");
@@ -224,8 +224,8 @@ namespace JmeterIntegrated.Controllers
                             try
                             {
                                 using (var memorystream = new MemoryStream())
-                                {                                    
-                                     section.Body.CopyToAsync(memorystream);   
+                                {
+                                    section.Body.CopyToAsync(memorystream);
                                     if (memorystream.Length == 0)
                                     {
                                         ModelState.AddModelError("File", "文件内容为空");
@@ -247,22 +247,23 @@ namespace JmeterIntegrated.Controllers
 
                         });
 
-                        if(!ModelState.IsValid){
+                        if (!ModelState.IsValid)
+                        {
                             return BadRequest(ModelState);
                         }
 
-                        using (var targetStream=System.IO.File.Create($"jmx/{id}.jmx"))
+                        using (var targetStream = System.IO.File.Create($"jmx/{id}.jmx"))
                         {
-                             await   targetStream.WriteAsync(streamContent);                            
+                            await targetStream.WriteAsync(streamContent);
                         }
                     }
 
                 }
 
-             section =await reader.ReadNextSectionAsync();
+                section = await reader.ReadNextSectionAsync();
 
             }
-             return Ok(new {code="1",message="上传成功",path=$"jmx/{id}.jmx"});
+            return Ok(new { code = "1", message = "上传成功", path = $"jmx/{id}.jmx" });
 
         }
 
@@ -271,16 +272,17 @@ namespace JmeterIntegrated.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("uploadfile")]
-        public async Task<ActionResult>UpLoadAndProcessFile(){
-            string id=System.Guid.NewGuid().ToString();
-            string _extension=string.Empty;
+        public async Task<ActionResult> UpLoadAndProcessFile()
+        {
+            string id = System.Guid.NewGuid().ToString();
+            string _extension = string.Empty;
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
             {
                 ModelState.AddModelError("File", "非法请求或请求的格式不正确.");
                 return BadRequest(ModelState);
             }
             MediaTypeHeaderValue headerValue = MediaTypeHeaderValue.Parse(Request.ContentType);
-            var boundary =MultipartRequestHelper.GetBoundary(headerValue,2097152);
+            var boundary = MultipartRequestHelper.GetBoundary(headerValue, 2097152);
             if (string.IsNullOrEmpty(boundary))
             {
                 ModelState.AddModelError("ContentType", "Missing content-type boundary.");
@@ -301,23 +303,33 @@ namespace JmeterIntegrated.Controllers
                         var trustedFileNameForDisplay = string.Empty;
                         //untrustedFileNameForStorage = contentDisposition.FileName.Value;
                         trustedFileNameForDisplay = WebUtility.HtmlEncode(contentDisposition.FileName.Value);
-                        _extension=Path.GetExtension(trustedFileNameForDisplay);
-                        var streamContent=await FileUploadHelper.ProcessStreamdFile(section,contentDisposition,ModelState,2097152);
-                        
-                        if(!ModelState.IsValid){
+                        _extension = Path.GetExtension(trustedFileNameForDisplay);
+                        var streamContent = await FileUploadHelper.ProcessStreamFile(section, contentDisposition, ModelState, 2097152);
+
+                        if (!ModelState.IsValid)
+                        {
+                            return BadRequest(ModelState);
+                        }
+                        string zipFilePath = $"jmx/{id}{_extension}";
+                        string extractDirectoryPath = $"jmx/{id}";
+                        using (var targetStream = System.IO.File.Create(zipFilePath))
+                        {
+                            await targetStream.WriteAsync(streamContent);
+                        }
+                        bool extract = await FileOperaHelper.ExtractToDirectory(zipFilePath, extractDirectoryPath, true);
+                        if (!extract)
+                        {
+                            ModelState.AddModelError("message", "文件解压失败");
                             return BadRequest(ModelState);
                         }
 
-                        using (var targetStream=System.IO.File.Create($"jmx/{id}{_extension}"))
-                        {
-                             await   targetStream.WriteAsync(streamContent);                            
-                        }
+
                     }
                 }
 
-             section =await reader.ReadNextSectionAsync();
+                section = await reader.ReadNextSectionAsync();
             }
-             return Ok(new {code="1",message="上传成功",path=$"jmx/{id}{_extension}"});
+            return Ok(new { code = "1", message = "上传成功", path = $"jmx/{id}{_extension}" });
 
         }
 

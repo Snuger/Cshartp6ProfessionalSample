@@ -12,7 +12,7 @@ namespace Producer
             {
                 UserName = "guest",
                 Password = "guest",
-                HostName = "10.75.0.1"
+                HostName = "10.0.75.1"
             };
             var connect = factory.CreateConnection();
             var channel = connect.CreateModel();

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>cresult</Title>
+			<Shortcut>cresult</Shortcut>
+			<Description>自定义task result 的代码片段</Description>
+			<Author>Snuger</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>			   
+				<literal>
+					<ID>type</ID>
+					<ToolTip>请求方式</ToolTip>
+					<Default>Get</Default>
+				</literal>
+				<Literal>
+					<ID>expression</ID>
+					<ToolTip>异常类型</ToolTip>
+					<Function>SimpleTypeName(global::System.Exception)</Function>
+				</Literal>
+
+			</Declarations>
+			<Code Language="csharp"><![CDATA[			
+			[Http$type$]
+			public async Task<ActionResult>$type$()
+			{
+			Result result = new Result();			
+			try 
+	{	        
+		$selected$
+	}
+	catch ($expression$ ex)
+	{
+		$end$
+		 result.Code = "-1";
+         result.ExceptionDetails = ex.Message;     
+	}
+	 return new JsonResult(result);
+	 }
+	 ]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
