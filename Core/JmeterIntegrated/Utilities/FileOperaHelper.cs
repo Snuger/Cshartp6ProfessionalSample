@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace JmeterIntegrated.Utilities
 {
@@ -45,5 +46,21 @@ namespace JmeterIntegrated.Utilities
             });
         }
 
+
+        public static async Task<string> GetJmxFilePath(string directoryPath)
+        {
+            return await Task<string>.Run(() =>
+            {
+
+                if (!Directory.Exists(directoryPath))
+                    throw new DirectoryNotFoundException($"路径不存在{directoryPath}");
+                string[] files = Directory.GetFiles(directoryPath);
+                var jmxFiles = files.Where(c => c.EndsWith(".jmx"));
+                if (!jmxFiles.Any())
+                    throw new FileNotFoundException($"压缩包上上传的文件内没有找到可用的jmx文件");
+                return Path.Combine(directoryPath, jmxFiles.First());
+            });
+        }
     }
+
 }
