@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPageSample.Data;
 
-namespace RazorPageSample.Pages.Customers
+namespace RazorPageSample.Pages.Orders
 {
     public class IndexModel : PageModel
     {
@@ -18,11 +18,11 @@ namespace RazorPageSample.Pages.Customers
             _context = context;
         }
 
-        public IList<Customer> Customer { get;set; }
+        public IList<Order> Order { get;set; }
 
         public async Task OnGetAsync()
         {
-            Customer = await _context.Customers.ToListAsync();
+            Order = await _context.Orders.ToListAsync();
         }
     }
 }

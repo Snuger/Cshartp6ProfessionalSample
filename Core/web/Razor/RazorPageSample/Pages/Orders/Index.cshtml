@@ -1,5 +1,5 @@
 ﻿@page
-@model RazorPageSample.Pages.Customers.IndexModel
+@model RazorPageSample.Pages.Orders.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -15,28 +15,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Customer[0].Name)
+                @Html.DisplayNameFor(model => model.Order[0].ProductName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customer[0].Age)
+                @Html.DisplayNameFor(model => model.Order[0].Count)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customer[0].Address)
+                @Html.DisplayNameFor(model => model.Order[0].Cost)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Customer) {
+        @foreach (var item in Model.Order) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.ProductName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Age)
+                @Html.DisplayFor(modelItem => item.Count)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Address)
+                @Html.DisplayFor(modelItem => item.Cost)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

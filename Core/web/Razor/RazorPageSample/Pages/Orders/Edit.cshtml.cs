@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RazorPageSample.Data;
 
-namespace RazorPageSample.Pages.Customers
+namespace RazorPageSample.Pages.Orders
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace RazorPageSample.Pages.Customers
         }
 
         [BindProperty]
-        public Customer Customer { get; set; }
+        public Order Order { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace RazorPageSample.Pages.Customers
                 return NotFound();
             }
 
-            Customer = await _context.Customers.FirstOrDefaultAsync(m => m.Id == id);
+            Order = await _context.Orders.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Customer == null)
+            if (Order == null)
             {
                 return NotFound();
             }
@@ -47,7 +47,7 @@ namespace RazorPageSample.Pages.Customers
                 return Page();
             }
 
-            _context.Attach(Customer).State = EntityState.Modified;
+            _context.Attach(Order).State = EntityState.Modified;
 
             try
             {
@@ -55,7 +55,7 @@ namespace RazorPageSample.Pages.Customers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CustomerExists(Customer.Id))
+                if (!OrderExists(Order.Id))
                 {
                     return NotFound();
                 }
@@ -68,9 +68,9 @@ namespace RazorPageSample.Pages.Customers
             return RedirectToPage("./Index");
         }
 
-        private bool CustomerExists(int id)
+        private bool OrderExists(int id)
         {
-            return _context.Customers.Any(e => e.Id == id);
+            return _context.Orders.Any(e => e.Id == id);
         }
     }
 }
