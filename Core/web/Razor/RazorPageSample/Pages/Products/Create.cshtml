@@ -1,0 +1,27 @@
+﻿@page
+@model RazorPageSample.Pages.Products.CreateModel
+@{
+    ViewData["Title"] = "新增产品";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-sm-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Product.Name" class="control-label"></label>
+                <input type="text" asp-for="@Model.Product.Name" class="form-control" />
+                <span asp-validation-for="@Model.Product.Name" class="text-danger" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Product.Discretion" class="control-label"></label>
+                <input type="text" asp-for="@Model.Product.Discretion" class="form-control" />
+                <span asp-validation-for="@Model.Product.Discretion" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">确定</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts{ 
+ @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

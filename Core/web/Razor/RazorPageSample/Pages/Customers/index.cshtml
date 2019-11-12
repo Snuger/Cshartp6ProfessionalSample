@@ -2,14 +2,11 @@
 @model RazorPageSample.Pages.Customers.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "会员管理";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-
-<h1>Index</h1>
-
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">新增</a>
 </p>
 <table class="table">
     <thead>
@@ -38,7 +35,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
-            <td>
+            <td class="text-right">
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>

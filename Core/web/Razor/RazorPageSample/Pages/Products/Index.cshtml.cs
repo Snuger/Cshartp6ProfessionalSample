@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using RazorPageSample.Data;
 using Microsoft.EntityFrameworkCore;
+using RazorPageSample.Model;
 
 namespace RazorPageSample.Pages.Produces
 {
@@ -17,10 +18,9 @@ namespace RazorPageSample.Pages.Produces
 
         public IndexModel(RazorDbContext dbContext)
         {
-            _dbContext = dbContext;
-        }
+            _dbContext = dbContext;          
+        } 
 
-        [BindProperty]
         public List<Product> Product { get; set; }
 
         public async Task OnGetAsync()

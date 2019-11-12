@@ -4,52 +4,66 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RazorPageSample</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/dashboard.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">RazorPageSample</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">RazorPageSample</a>
+        @*<input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">*@
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block  bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">首页</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">
+                                <span data-feather="home"></span>
+                                首页<span class="sr-only">(current)</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">隐私</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">基本信息</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Index">客户</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Customers/Index">会员管理</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Orders/Index">订单</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Orders/Index">订单管理</a>
                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Products/Index">产品</a>
-                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Products/Index">产品管理</a>
+                        </li>                       
                     </ul>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - RazorPageSample - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">@ViewData["Title"]</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                            <span data-feather="calendar"></span>
+                            This week
+                        </button>
+                    </div>
+                </div>
+
+                @RenderBody()
+            </main>
         </div>
-    </footer>
-
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

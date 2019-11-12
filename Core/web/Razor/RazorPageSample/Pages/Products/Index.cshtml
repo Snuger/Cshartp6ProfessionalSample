@@ -4,7 +4,7 @@
 ViewData["Title"]="产品管理";
 Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-<h1>@ViewData["Title"]</h1>
+
 <p>
     <a asp-page="Create">增加新产品</a>
 </p>
@@ -20,6 +20,7 @@ Layout = "~/Pages/Shared/_Layout.cshtml";
            <th>
                @Html.DisplayNameFor(Model => Model.Product[0].Discretion);
            </th>
+           <th></th>
        </tr>
    </thead>
    <tbody>
@@ -29,6 +30,11 @@ Layout = "~/Pages/Shared/_Layout.cshtml";
                <td>@Html.DisplayFor(modelItem => item.Id)</td>
                <td>@Html.DisplayFor(modelItem => item.Name)</td>
                <td>@Html.DisplayFor(modelItem => item.Discretion)</td>
+               <td class="text-right">
+                   <a asp-page="./edit" asp-route-id="@item.Id">编辑</a>|
+                   <a asp-page="./details" asp-route-id="@item.Id">详情</a>|
+                   <a asp-page="./delete" asp-route-id="@item.Id">删除</a>
+               </td> 
            </tr>
        }
    </tbody>
