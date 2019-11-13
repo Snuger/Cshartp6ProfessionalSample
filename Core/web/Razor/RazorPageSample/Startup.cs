@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RazorPageSample.Data;
+using MySql.Data.EntityFrameworkCore;
 
 namespace RazorPageSample
 {
@@ -26,7 +27,10 @@ namespace RazorPageSample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            services.AddDbContext<RazorDbContext>(option => option.UseInMemoryDatabase("name"));
+            //services.AddDbContext<RazorDbContext>(option => option.UseInMemoryDatabase("name"));
+            services.AddDbContext<RazorDbContext>(option => {
+                option.UseMySQL(Configuration.GetConnectionString("SampkeDB"));              
+            } );
             services.AddRazorPages();
         }
 

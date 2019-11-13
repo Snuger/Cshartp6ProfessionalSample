@@ -15,5 +15,15 @@ namespace RazorPageSample.Data
 
         public DbSet<Product> Products { get; set; }
 
+        /// <summary>
+        /// ±Ê¼Ç±¾
+        /// </summary>
+        public DbSet<Laptop> Laptops { get; set; }
+
+        public DbSet<Category> Categoryes { get; set; }
+
+
+
+
     }
 }

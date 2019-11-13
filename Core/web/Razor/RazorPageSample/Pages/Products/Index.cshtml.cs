@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using RazorPageSample.Data;
 using Microsoft.EntityFrameworkCore;
 using RazorPageSample.Model;
+using System.Linq.Expressions;
 
 namespace RazorPageSample.Pages.Produces
 {
@@ -23,9 +24,15 @@ namespace RazorPageSample.Pages.Produces
 
         public List<Product> Product { get; set; }
 
+        [BindProperty(SupportsGet =true)]
+        public string SearchString { get; set; }
+
         public async Task OnGetAsync()
         {
-            Product = await _dbContext.Products.ToListAsync();
+            Expression<Func<Product, bool>> exp = cu => true;
+            if (!string.IsNullOrEmpty(SearchString))
+                exp = cu => cu.Name.Contains(SearchString);
+            Product = await _dbContext.Products.Where(exp).ToListAsync();
         }
 
 

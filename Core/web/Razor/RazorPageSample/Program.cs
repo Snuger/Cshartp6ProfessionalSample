@@ -18,6 +18,7 @@ namespace RazorPageSample
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+           .UseDefaultServiceProvider(option => option.ValidateScopes = false)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()

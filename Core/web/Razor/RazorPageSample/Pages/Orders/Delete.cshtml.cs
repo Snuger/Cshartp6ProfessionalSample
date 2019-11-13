@@ -18,7 +18,7 @@ namespace RazorPageSample.Pages.Orders
             _context = context;
         }
 
-        [BindProperty]
+       
         public Order Order { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
