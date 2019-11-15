@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RazorPageSample.Data;
 using MySql.Data.EntityFrameworkCore;
+using EasyCaching.Core;
 
 namespace RazorPageSample
 {
@@ -27,10 +28,17 @@ namespace RazorPageSample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            //services.AddDbContext<RazorDbContext>(option => option.UseInMemoryDatabase("name"));
-            services.AddDbContext<RazorDbContext>(option => {
-                option.UseMySQL(Configuration.GetConnectionString("SampkeDB"));              
-            } );
+            services.AddDbContext<RazorDbContext>(option => option.UseInMemoryDatabase("name"));
+            services.AddEasyCaching(option =>
+            {
+                option.UseRedis(config => {
+                    config.DBConfig.Endpoints.Add(new EasyCaching.Core.Configurations.ServerEndPoint("10.0.75.1",6379));
+                    config.DBConfig.AllowAdmin = true;
+                });
+            });
+            //services.AddDbContext<RazorDbContext>(option => {
+            //    option.UseMySQL(Configuration.GetConnectionString("SampkeDB"));              
+            //} );
             services.AddRazorPages();
         }
 
