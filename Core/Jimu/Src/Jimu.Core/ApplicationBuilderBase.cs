@@ -2,6 +2,7 @@ using System;
 using Autofac;
 using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
+using Jimu.Core.Common;
 
 namespace Jimu.Core
 {
@@ -22,43 +23,56 @@ namespace Jimu.Core
         protected IConfigurationRoot JimuAppSettings { get; }
 
 
-        public ApplicationBuilderBase(ContainerBuilder containerBuilder, string settingName)
+        protected ApplicationBuilderBase(ContainerBuilder containerBuilder, string settingName)
         {
             this.ContainerBuilder = containerBuilder;
-            // this.JimuAppSettings = jimuAppSettings;
+            this.JimuAppSettings = JimuHelper.ReadSettings(settingName);
             BeforeRunner = new List<Action<IContainer>>();
             Runners = new List<Action<IContainer>>();
             Initializer = new List<Action<IContainer>>();
             ModuleRegisters = new List<Action<ContainerBuilder>>();
         }
 
-        public T AddBeforeRunner(Action<IContainer> beforeRunner)
+        public virtual T AddBeforeRunner(Action<IContainer> beforeRunner)
         {
             BeforeRunner.Add(beforeRunner);
             return this as T;
         }
 
-        public T AddInitializer(Action<IContainer> initializer)
+        public virtual T AddInitializer(Action<IContainer> initializer)
         {
             Initializer.Add(initializer);
             return this as T;
         }
 
-        public T AddModel(Action<ContainerBuilder> modelBuilder)
+        public virtual T AddModel(Action<ContainerBuilder> modelBuilder)
         {
             ModuleRegisters.Add(modelBuilder);
             return this as T;
         }
 
-        public T AddRunner(Action<IContainer> runner)
+        public virtual T AddRunner(Action<IContainer> runner)
         {
             Runners.Add(runner);
             return this as T;
         }
 
-        public IApplication Builder()
+        public virtual IApplication Build()
         {
-            throw new NotImplementedException();
+            IContainer container = null;
+            var host = new Application(BeforeRunner, Runners, null);
+            ContainerBuilder.Register(x => host).As<IApplication>().SingleInstance();
+            ContainerBuilder.Register(x => container).As<IContainer>().SingleInstance();
+
+            ModuleRegisters.ForEach(x => { x(ContainerBuilder); });
+            container = ContainerBuilder.Build();
+
+            Initializer.ForEach(x => { x(container); });
+
+            host.Container = container;
+            host.JimuAppSettings = JimuAppSettings;
+
+            return host;
         }
     }
 }

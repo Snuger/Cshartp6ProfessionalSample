@@ -17,7 +17,7 @@ namespace Jimu.Core
         T AddRunner(Action<IContainer> runner);
 
 
-        IApplication Builder();
+        IApplication Build();
 
     }
 }
