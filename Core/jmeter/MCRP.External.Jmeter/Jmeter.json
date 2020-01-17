@@ -1,0 +1,9 @@
+{
+    "JmeterOptions": {
+        "FileName": "/usr/local/jmeter/bin/jmeter",
+        "JmxRootPath": "/usr/local/jmeterintegrated/jmx",
+        "ResultRootPath": "/usr/local/jmeterintegrated/result",
+        "ReportRootPath": "/usr/local/jmeterintegrated/report",
+        "ResultSuffix": ".csv"
+    }
+}
