@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace SerilogSamples
 {
@@ -18,9 +19,17 @@ namespace SerilogSamples
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+            .UseSerilog((context,configuration)=>{
+                 configuration
+                  .Enrich.WithProperty("ApplicationName", "mcrp-dev-gitlab")
+                  .Enrich.FromLogContext()
+                  .WriteTo.LogstashHttp("http://172.19.30.105:9011")
+                  .MinimumLevel.Information();
+
+            })
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
     }
 }

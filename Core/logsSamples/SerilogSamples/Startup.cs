@@ -20,13 +20,7 @@ namespace SerilogSamples
     {
         public Startup(IConfiguration configuration)
         {
-           Configuration = configuration;
-           Log.Logger = new LoggerConfiguration()
-          .Enrich.WithProperty("ApplicationName", "mcrp-dev-logsamples")
-          .Enrich.FromLogContext()
-          .WriteTo.LogstashHttp("http://172.19.30.105:9011")
-          .MinimumLevel.Information()
-          .CreateLogger();
+           Configuration = configuration;            
         }
 
         public IConfiguration Configuration { get; }

@@ -1,6 +1,5 @@
 using System;
-using System.Web;
-using Microsoft.AspNetCore.Http;
+using System.IO;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Serilog;
 
@@ -22,10 +21,16 @@ namespace SerilogSamples
             
         }
 
-        public void OnActionExecuting(ActionExecutingContext filterContext)
+        public void OnActionExecuting(ActionExecutingContext context)
         {
-            _diagnosticContext.Set("ActionName", filterContext.ActionDescriptor.DisplayName);
-            _diagnosticContext.Set("Content", filterContext.ActionDescriptor.RouteValues);
+              var reader=new StreamReader(context.HttpContext.Request.Body);
+              var readContent=reader.ReadToEndAsync();
+              _diagnosticContext.Set("Content",readContent.Result);
+              
+            _diagnosticContext.Set("RouteData",context.ActionDescriptor.RouteValues);
+            _diagnosticContext.Set("ActionName",context.ActionDescriptor.DisplayName);
+            _diagnosticContext.Set("ActionId",context.ActionDescriptor.Id);
+
 
         }
     }
