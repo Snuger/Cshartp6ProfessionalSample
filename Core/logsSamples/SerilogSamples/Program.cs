@@ -21,9 +21,10 @@ namespace SerilogSamples
             Host.CreateDefaultBuilder(args)
             .UseSerilog((context,configuration)=>{
                  configuration
-                  .Enrich.WithProperty("ApplicationName", "mcrp-dev-gitlab")
+                  .Enrich.WithProperty("ApplicationName", "mcrp-Identityserver")
                   .Enrich.FromLogContext()
                   .WriteTo.LogstashHttp("http://172.19.30.105:9011")
+                  .WriteTo.Console()
                   .MinimumLevel.Information();
 
             })
