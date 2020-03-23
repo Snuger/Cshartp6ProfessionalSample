@@ -32,9 +32,7 @@ namespace serilogSamples
                .WriteTo.Console()
                // 配置日志输出到文件，文件输出到当前项目的 logs 目录下
                // 日记的生成周期为每天
-               .WriteTo.LogstashHttp("http://172.19.30.105:9400");
-                // 创建 logger
-                //.CreateLogger();
+               .WriteTo.LogstashHttp("http://10.0.75.1:9600");          
             })
             .ConfigureWebHostDefaults(webBuilder =>
             {
