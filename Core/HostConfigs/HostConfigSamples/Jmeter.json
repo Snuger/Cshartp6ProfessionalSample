@@ -1,0 +1,6 @@
+{
+    "JmeterOptions": {
+        "FileName": "Jmeter.bat",
+        "JmxRootPath": "/usr/local/jmeter/jmx"
+    }
+}
