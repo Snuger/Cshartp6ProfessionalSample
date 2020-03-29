@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+  <block>
+    <date>2019-01-02</date>
+    <name>用户基本资料</name>
+    <total>4533</total>
+    <Uploaded>0</Uploaded>
+  </block>
+  <block>
+    <date>2019-01-03</date>
+    <name>用户基本资料</name>
+    <total>50000</total>
+    <Uploaded>34</Uploaded>
+  </block>
+  <block>
+    <date>2019-01-05</date>
+    <name>用户基本资料</name>
+    <total>3433</total>
+    <Uploaded>222</Uploaded>
+  </block>
+  <block>
+    <date>2019-01-04</date>
+    <name>用户基本资料</name>
+    <total>1000</total>
+    <Uploaded>323</Uploaded>
+  </block>
+  <block>
+    <date>2019-01-06</date>
+    <name>用户基本资料</name>
+    <total>221</total>
+    <Uploaded>23</Uploaded>
+  </block>
+  <block>
+    <date>2019-01-04</date>
+    <name>用户基本资料</name>
+    <total>4000</total>
+    <Uploaded>1999</Uploaded>
+  </block>
+</data>

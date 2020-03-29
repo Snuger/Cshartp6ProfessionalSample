@@ -1,0 +1,16 @@
+﻿<Application x:Class="Calculator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Calculator"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                  <ResourceDictionary Source="style\Them.xaml"/>
+                  <ResourceDictionary Source="style\Buttons.xaml"/>
+                <ResourceDictionary Source="style\TextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+     
+    </Application.Resources>
+</Application>

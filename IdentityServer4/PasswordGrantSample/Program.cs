@@ -12,7 +12,7 @@ namespace PasswordGrantSample
             //获取discover
             string token = string.Empty;
             var client = new HttpClient();
-            var discover = await client.GetDiscoveryDocumentAsync("http://localhost:5000/identity");
+            var discover = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
             if (discover.IsError)
             {
 

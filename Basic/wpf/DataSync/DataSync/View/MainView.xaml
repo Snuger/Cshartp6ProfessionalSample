@@ -1,0 +1,97 @@
+﻿<Controls:MetroWindow x:Class="DataSync.View.MainView"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:vmodel="clr-namespace:DataSync.ViewModel"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"      
+                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                      xmlns:s="https://github.com/canton7/Stylet"
+                       mc:Ignorable="d" 
+                      d:DataContext="{d:DesignInstance vmodel:MainViewModel}"                       
+                       Title="数据上传工具" Height="575" Width="935">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" Width="80"  Background="#FFEEEEEE">
+            <ToggleButton Width="55" Height="55" Margin="5" 
+              Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+              IsChecked="False">
+                <materialDesign:PackIcon
+                Kind="Update"
+                Height="35"
+                Width="35" Background="Transparent"/>
+            </ToggleButton>
+            <ToggleButton Width="55" Height="55" Margin="5" 
+              Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+              IsChecked="False">
+                <materialDesign:PackIcon
+                Kind="Upload"
+                Height="35"
+                Width="35" />
+            </ToggleButton>
+            <ToggleButton Width="55" Height="55" Margin="5"
+              Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+              IsChecked="False">
+                <materialDesign:PackIcon
+                Kind="SettingsOutline"
+                Height="35"
+                Width="35"/>
+            </ToggleButton>
+            <ToggleButton Width="55" Height="55" Margin="5" 
+              Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+              IsChecked="False">
+                <materialDesign:PackIcon
+                Kind="SettingsOutline"
+                Height="35"
+                Width="35"/>
+            </ToggleButton>
+            <ToggleButton Width="55" Height="55" Margin="5" 
+              Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+              ToolTip="MaterialDesignFlatPrimaryToggleButton"
+              IsChecked="False">
+                <materialDesign:PackIcon
+                Kind="SettingsOutline"
+                Height="35"
+                Width="35" />
+            </ToggleButton>
+        </StackPanel>
+        <Grid DockPanel.Dock="Right" Margin="8,8,8,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+            </Grid.RowDefinitions>
+            <WrapPanel Grid.Row="0" VerticalAlignment="Center">
+                <Button Content="添加任务" Name="btn_add_task" Command="{s:Action AddNewTaskComman}" Margin="4,0"/>
+                <Button Content="开始" Margin="4,0"/>
+                <Button Content="全部开始" Name="btn_start_all" Command="{s:Action AllTaskStartCommand}" Margin="4,0"/>
+                <Button Content="全自动" Name="btn_auto" Margin="4,0" Command="{s:Action FullyAutomaticCommand}"/>              
+            </WrapPanel>
+            <DataGrid  IsReadOnly="True" CanUserSortColumns="False" Grid.Row="1" ItemsSource="{Binding DataCells,UpdateSourceTrigger=PropertyChanged}"  AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn   Width="80" Header="编号" Binding="{Binding Id,Mode=OneWay}"></DataGridTextColumn>
+                    <DataGridTextColumn   Width="120" Header="交易名称" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn   Width="100" Header="日期" Binding="{Binding  BusinessDate}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="90" Header="记录数" Binding="{Binding Total}"></DataGridTextColumn>
+                    <DataGridTextColumn  Width="90" Header="已上传" Binding="{Binding UploadedTotal}"></DataGridTextColumn>
+                    <DataGridTemplateColumn  Width="220" Header="进度">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ProgressBar materialDesign:TransitionAssist.DisableTransitions="True"  Maximum="{Binding  Total}" Value="{Binding UploadedTotal}" Minimum="0" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <WrapPanel Grid.Row="2"  VerticalAlignment="Center">
+                <Label>状态-最大线程数：</Label>
+                <Label Content="{Binding MaxThreadNum}"></Label>
+                <Label Content="当前线程数:"/>
+                <Label Content="{Binding ActiveThreadNum}"></Label>
+            </WrapPanel>
+        </Grid>
+    </DockPanel>
+</Controls:MetroWindow>

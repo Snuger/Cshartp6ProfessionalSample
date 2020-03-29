@@ -35,10 +35,10 @@ namespace SampkeApi
             services.AddAuthentication("Bearer")
             .AddJwtBearer("Bearer", options =>
             {
-                options.Authority = "http://localhost:5000/Identity/";
+                options.Authority = "http://localhost:5000";
                 options.RequireHttpsMetadata = false;
 
-                //options.Audience = "api1";
+                options.Audience = "api_resource_1"; //必需要写，否则请求到token后会提示验证失败
             });
         }
 

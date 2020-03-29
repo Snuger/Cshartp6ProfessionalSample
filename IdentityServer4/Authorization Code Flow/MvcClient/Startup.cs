@@ -51,9 +51,10 @@ namespace MvcClient
                 options.ResponseType = "code";
 
                 options.Scope.Clear();
-                //options.Scope.Add("784419794395860992");
-                 options.Scope.Add(OidcConstants.StandardScopes.OpenId);
-                 options.Scope.Add(OidcConstants.StandardScopes.Profile);
+                options.Scope.Add(OidcConstants.StandardScopes.OpenId);
+                options.Scope.Add(OidcConstants.StandardScopes.Profile);
+                options.Scope.Add("api1");
+                 
                 //options.Scope.Add(OidcConstants.StandardScopes.Email);
                 //options.Scope.Add(OidcConstants.StandardScopes.Phone);
                 //options.Scope.Add(OidcConstants.StandardScopes.Address);

@@ -1,7 +1,0 @@
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\TaskSample\bin\Debug\TaskSample.exe.config
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\TaskSample\bin\Debug\TaskSample.exe
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\TaskSample\bin\Debug\TaskSample.pdb
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\TaskSample\obj\Debug\TaskSample.csprojAssemblyReference.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\TaskSample\obj\Debug\TaskSample.csproj.CoreCompileInputs.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\TaskSample\obj\Debug\TaskSample.exe
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Parallel\ParallelSample\TaskSample\obj\Debug\TaskSample.pdb

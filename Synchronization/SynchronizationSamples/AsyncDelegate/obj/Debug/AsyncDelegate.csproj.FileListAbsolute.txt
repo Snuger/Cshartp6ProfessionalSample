@@ -1,7 +1,0 @@
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\AsyncDelegate\bin\Debug\AsyncDelegate.exe.config
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\AsyncDelegate\bin\Debug\AsyncDelegate.exe
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\AsyncDelegate\bin\Debug\AsyncDelegate.pdb
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\AsyncDelegate\obj\Debug\AsyncDelegate.csprojAssemblyReference.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\AsyncDelegate\obj\Debug\AsyncDelegate.csproj.CoreCompileInputs.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\AsyncDelegate\obj\Debug\AsyncDelegate.exe
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\Synchronization\SynchronizationSamples\AsyncDelegate\obj\Debug\AsyncDelegate.pdb

@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityServer4;
 using IdentityServer4.Models;
 using System.Collections.Generic;
 
@@ -36,8 +37,9 @@ namespace IdentityServerSample
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = { new Secret("511536EF-F270-4058-80CA-1C89C192F69A".Sha256()) },
 
-                    AllowedScopes = { "api1" }
-                },
+                    AllowedScopes = { "api1",IdentityServerConstants.StandardScopes.OpenId }
+                }
+				/*,
 
                 // MVC client using code flow + pkce
                 new Client
@@ -56,10 +58,10 @@ namespace IdentityServerSample
                     AllowOfflineAccess = true,
                     AllowedScopes = { "openid", "profile", "api1" }
                 },
-
+				*/
                 // SPA client using code flow + pkce
-                new Client
-                {
+               //new Client
+                /* {
                     ClientId = "spa",
                     ClientName = "SPA Client",
                     ClientUri = "http://identityserver.io",
@@ -80,7 +82,7 @@ namespace IdentityServerSample
                     AllowedCorsOrigins = { "http://localhost:5002" },
 
                     AllowedScopes = { "openid", "profile", "api1" }
-                }
+                } */
             };
     }
 }

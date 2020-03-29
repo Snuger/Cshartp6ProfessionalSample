@@ -1,6 +1,0 @@
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\ListSample\bin\Debug\ListSample.exe.config
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\ListSample\bin\Debug\ListSample.exe
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\ListSample\bin\Debug\ListSample.pdb
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\ListSample\obj\Debug\ListSample.csproj.CoreCompileInputs.cache
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\ListSample\obj\Debug\ListSample.exe
-E:\Code Studio\C#-Project\Cshartp6ProfessionalSample\ListSample\obj\Debug\ListSample.pdb
