@@ -19,10 +19,11 @@ document.getElementById('logout').addEventListener('click', logout, false);
 
 var config = {
 	authority: 'http://localhost:5000/identity/',
-	client_id: 'ttow_implicit',
+	//client_id: 'ttow_implicit',
+	client_id: 'sampke',	
 	redirect_uri: 'http://localhost:5003/callback.html',
 	response_type: 'id_token token',
-	//scope: 'openid profile 784039679795138560',
+	scope: 'openid 784698765322752000',
 	post_logout_redirect_uri: 'http://localhost:5003/index.html'
 };
 var mgr = new Oidc.UserManager(config);
@@ -41,7 +42,7 @@ function login() {
 
 function api() {
 	mgr.getUser().then(function(user) {
-		var url = 'http://localhost:5000/identity';
+		var url = 'http://localhost:5088/WeatherForecast';
 
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url);

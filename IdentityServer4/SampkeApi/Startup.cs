@@ -26,6 +26,16 @@ namespace SampkeApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddMvc();        
+            services.AddCors(options =>
+            {
+                 options.AddPolicy("CorsPolicy",
+                builder => builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+            });
+
             services.AddMvcCore(opt=>{
                 opt.EnableEndpointRouting=false;
             })           
@@ -35,16 +45,21 @@ namespace SampkeApi
             services.AddAuthentication("Bearer")
             .AddJwtBearer("Bearer", options =>
             {
-                options.Authority = "http://localhost:5000";
+                options.Authority = "http://localhost:5000/identity";
                 options.RequireHttpsMetadata = false;
 
-                options.Audience = "api_resource_1"; //必需要写，否则请求到token后会提示验证失败
+                options.Audience = "784698765322752000"; //必需要写，否则请求到token后会提示验证失败
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {         
+        {       
+             if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }   
+           app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseMvc();          
         }
