@@ -42,13 +42,15 @@ function login() {
 
 function api() {
 	mgr.getUser().then(function(user) {
-		var url = 'http://localhost:5088/WeatherForecast';
+		var url = 'http://localhost:54100/WeatherForecast';
 
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url);
 		xhr.onload = function() {
 			log(xhr.status, JSON.parse(xhr.responseText));
 		};
+		console.log(user.access_token);
+		console.log(user.access_token.replace("\"",""));
 		xhr.setRequestHeader('Authorization', 'Bearer ' + user.access_token);
 		xhr.send();
 	});
