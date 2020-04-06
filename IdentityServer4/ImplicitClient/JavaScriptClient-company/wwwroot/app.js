@@ -18,9 +18,9 @@ document.getElementById('api').addEventListener('click', api, false);
 document.getElementById('logout').addEventListener('click', logout, false);
 
 var config = {
-	authority: 'http://localhost:5000/identity',
-	//client_id: 'ttow_implicit',
-	client_id: 'sampke',	
+	authority: 'http://localhost:5000',
+	//client_id: 'sampke',
+	client_id: 'angular-client',	
 	redirect_uri: 'http://localhost:5003/callback.html',
 	response_type: 'id_token token',
 	//scope: 'openid api1',
@@ -42,7 +42,7 @@ function login() {
 
 function api() {
 	mgr.getUser().then(function(user) {
-		var url = 'http://localhost:5088/WeatherForecast?access_token='+user.access_token;
+		var url = 'http://localhost:5088/WeatherForecast';
 
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url);

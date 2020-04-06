@@ -38,9 +38,7 @@ namespace IdentityServerSample
                     ClientSecrets = { new Secret("511536EF-F270-4058-80CA-1C89C192F69A".Sha256()) },
 
                     AllowedScopes = { "api1",IdentityServerConstants.StandardScopes.OpenId }
-                }
-				/*,
-
+                },	
                 // MVC client using code flow + pkce
                 new Client
                 {
@@ -58,10 +56,10 @@ namespace IdentityServerSample
                     AllowOfflineAccess = true,
                     AllowedScopes = { "openid", "profile", "api1" }
                 },
-				*/
+				
                 // SPA client using code flow + pkce
-               //new Client
-                /* {
+               new Client
+                {
                     ClientId = "spa",
                     ClientName = "SPA Client",
                     ClientUri = "http://identityserver.io",
@@ -82,7 +80,43 @@ namespace IdentityServerSample
                     AllowedCorsOrigins = { "http://localhost:5002" },
 
                     AllowedScopes = { "openid", "profile", "api1" }
-                } */
+                },
+                new Client
+                {
+                    ClientId = "angular-client",
+                    ClientName =  "Angular SPA 客户端",
+                    ClientUri = "http://localhost:5003/index.html",
+
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = true,
+                    AccessTokenLifetime = 60 * 5,
+
+                    RedirectUris =
+                    {
+                        "http://localhost:5003/callback.html",
+                        "http://localhost:5003/index.html"
+                    },
+
+                    PostLogoutRedirectUris =
+                    {
+                        "http://localhost:5003/index.html"
+                    },
+
+                    AllowedCorsOrigins =
+                    {
+                        "http://localhost:5003"
+                    },
+
+                    AllowedScopes = {
+                        "api1",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.StandardScopes.Address,
+                        IdentityServerConstants.StandardScopes.Phone,
+                        IdentityServerConstants.StandardScopes.Profile
+                    }
+                } 
             };
     }
 }

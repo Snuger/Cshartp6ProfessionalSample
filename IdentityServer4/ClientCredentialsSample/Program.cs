@@ -13,7 +13,7 @@ namespace ClientCredentialsSample
             //获取discover
             string token = string.Empty;
             var client = new HttpClient();
-            var discover = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
+            var discover = await client.GetDiscoveryDocumentAsync("http://localhost:5000/identity");
             if (discover.IsError)
             {
 
@@ -24,8 +24,8 @@ namespace ClientCredentialsSample
            var tokenResponse= await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest(){
                 Address=discover.TokenEndpoint,
                 ClientId = "client",
-                ClientSecret = "511536EF-F270-4058-80CA-1C89C192F69A",
-                Scope = "api3"   
+                ClientSecret = "secret",
+                //Scope = "784030086364925952"   
 
            });
         
@@ -53,8 +53,19 @@ namespace ClientCredentialsSample
                 var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(JArray.Parse(content));
             }
-
-
+			
+			Console.WriteLine("====================分隔线=========================");
+		    response = await apiClient.GetAsync("http://localhost:5088/Weather");
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine(response.StatusCode);
+            }
+            else
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(JArray.Parse(content));
+            }	
+	
             Console.ReadLine();
         }
     }

@@ -43,10 +43,10 @@ namespace MvcClient
             .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
             {
                 options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.Authority = "http://localhost:5000/";
+                options.Authority = "http://localhost:5000/identity";
                 options.RequireHttpsMetadata = false;                                        
-                options.ClientId = "mvc";
-                options.ClientSecret = "49C1A7E1-0C79-4A89-A3D6-A37998FB86B0";
+                options.ClientId = "roclient";
+                options.ClientSecret = "secret";
                 options.SaveTokens = true;
                 options.ResponseType = "code";
 

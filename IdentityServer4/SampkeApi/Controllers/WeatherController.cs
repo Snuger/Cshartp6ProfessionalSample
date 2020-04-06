@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace SampkeApi.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("[controller]")]
     public class WeatherController : ControllerBase
     {

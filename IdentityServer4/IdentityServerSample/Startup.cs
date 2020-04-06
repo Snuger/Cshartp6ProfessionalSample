@@ -89,7 +89,7 @@ namespace IdentityServerSample
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
-
+          
             app.UseStaticFiles();
 
             app.UseRouting();
