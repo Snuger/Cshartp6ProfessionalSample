@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
+
 
 namespace StringSample
 {
@@ -9,13 +11,13 @@ namespace StringSample
         static void Main(string[] args)
         {
             string atr = "helloword";
-            string att = "hello";           
+            string att = "hello";
 
             Console.WriteLine(atr[2]);
 
             Console.WriteLine(string.Compare(atr, att));
 
-            string[] arg = {"1223223","admin" };
+            string[] arg = { "1223223", "admin" };
 
             List<string> str = new List<string>();
             str.Add("a");
@@ -33,7 +35,7 @@ namespace StringSample
 
 
 
-          　Console.WriteLine(string.Concat(str as IEnumerable<string>));
+            Console.WriteLine(string.Concat(str as IEnumerable<string>));
 
             //Console.WriteLine("Hello World!");
             Console.ReadLine();
@@ -53,7 +55,7 @@ namespace StringSample
 
 
 
-            Persion persion = new Persion("张","三");
+            Persion persion = new Persion("张", "三");
             Console.WriteLine(persion.ToString("F"));
             Console.WriteLine($"{persion:L}");
             Console.ReadLine();
@@ -68,20 +70,30 @@ namespace StringSample
             "for download, so you can start writing Windows desktop, Windows Store apps, and " +
             "ASP.NET web applications immediately.";
 
+            Student student = new Student();
+            student.StuID = "11111";
+            student.Name = "张三";
+            var jsonstr = JsonConvert.SerializeObject(student);
 
-            FindIon(text);
 
-            Console.ReadLine();
+            System.Console.WriteLine(jsonstr);
 
-           // Regex.Match();
 
+            Student st = JsonConvert.DeserializeObject<Student>(jsonstr);
+
+            System.Console.WriteLine(st.Name);
+            System.Console.WriteLine(st.StuID);
+
+            Console.ReadKey(true);
 
         }
 
-        protected static void FindIon(string text) {
 
-             const string pattern = "ion";
-            MatchCollection matches=Regex.Matches(text, pattern, RegexOptions.IgnoreCase|RegexOptions.CultureInvariant);
+        protected static void FindIon(string text)
+        {
+
+            const string pattern = "ion";
+            MatchCollection matches = Regex.Matches(text, pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
             WriteMatches(text, matches);
 
         }
@@ -89,8 +101,8 @@ namespace StringSample
 
         public static void WriteMatches(string text, MatchCollection matches)
         {
-          Console.WriteLine($"Original text was: \n\n{text}\n");
-          Console.WriteLine($"No. of matches: {matches.Count}");
+            Console.WriteLine($"Original text was: \n\n{text}\n");
+            Console.WriteLine($"No. of matches: {matches.Count}");
 
             foreach (Match nextMatch in matches)
             {
@@ -105,20 +117,31 @@ namespace StringSample
                 $"{text.Substring(index - charsBefore, charsToDisplay)}");
             }
         }
-
-
-        public class sbody
-        {
-            public sbody(string id, string name)
-            {
-                Id = id;
-                Name = name;
-            }
-
-            public string Id { get; set; }
-
-            public string Name { get; set; }
-         
-        }
     }
+
+
+
+    public class sbody
+    {
+        public sbody(string id, string name)
+        {
+            Id = id;
+            Name = name;
+        }
+
+        public string Id { get; set; }
+
+        public string Name { get; set; }
+
+    }
+
+
+    public class Student
+    {
+        [JsonProperty("id")]
+        public string StuID { get; set; }
+        [JsonProperty("name")]
+        public string Name { get; set; }
+    }
+
 }
