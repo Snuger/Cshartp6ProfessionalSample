@@ -40,7 +40,6 @@ namespace ApiRequired.Controllers
         [HttpPost]
         public IActionResult AddStudent([FromBody] Students student)
         {
-            return BadRequest("你妹");
             return Ok(student);
         }
 

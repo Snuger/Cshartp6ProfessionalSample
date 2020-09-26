@@ -52,7 +52,7 @@ namespace MCRP.External.Jmeter.Utilities
                     _process.FileName = _jmeterOptions.FileName;
                 _process.Arguments = aguments;
                 _process.RedirectStandardOutput = false;
-                var proc = Process.Start(_process);
+                var proc = Process.Start(_process);            
                 proc.WaitForExit();
                 if (!proc.HasExited)
                 {
