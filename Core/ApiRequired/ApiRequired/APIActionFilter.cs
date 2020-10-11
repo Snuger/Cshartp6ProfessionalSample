@@ -22,9 +22,8 @@ namespace ApiRequired
                 {
                     var state = modelState[key];
                     if (state.Errors.Any())
-                    {
                         error.Append($"{key}:{state.Errors.First().ErrorMessage};");
-                    }
+
                 }
 
                 // PublicResponse result = new PublicResponse()
