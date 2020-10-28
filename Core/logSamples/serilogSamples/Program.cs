@@ -18,25 +18,10 @@ namespace serilogSamples
         {
             CreateHostBuilder(args).Build().Run();
         }
-
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-            .UseSerilog((context, configuration)=>{
-                configuration
-               .MinimumLevel.Information()
-               // 日志调用类命名空间如果以 Microsoft 开头，覆盖日志输出最小级别为 Information
-               .Enrich.WithProperty("ApplicationName", "Serilog.Sinks.LogstashHttp.ExampleApp")
-               .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-               .Enrich.FromLogContext()
-               // 配置日志输出到控制台
-               .WriteTo.Console()
-               // 配置日志输出到文件，文件输出到当前项目的 logs 目录下
-               // 日记的生成周期为每天
-               .WriteTo.LogstashHttp("http://10.0.75.1:9600");          
-            })
-            .ConfigureWebHostDefaults(webBuilder =>
-            {
-                webBuilder.UseStartup<Startup>();
-            });
+          Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
+          .UseSerilog((hostBuilderContext, configureLogger) => configureLogger.ReadFrom.Configuration(hostBuilderContext.Configuration).Enrich.FromLogContext()
+          .WriteTo.Debug()
+          .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}"));
     }
 }
