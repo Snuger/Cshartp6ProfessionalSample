@@ -49,6 +49,7 @@ under the License.
 		<scala.binary.version>2.11</scala.binary.version>
 		<scala.version>2.11.12</scala.version>
 		<log4j.version>2.12.1</log4j.version>
+		<kafka.version>2.12</kafka.version>
 	</properties>
 
 	<dependencies>
@@ -103,6 +104,18 @@ under the License.
 			<artifactId>log4j-core</artifactId>
 			<version>${log4j.version}</version>
 			<scope>runtime</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-connector-kafka -->
+		<dependency>
+			<groupId>org.apache.flink</groupId>
+			<artifactId>flink-connector-kafka_${kafka.version}</artifactId>
+			<version>${flink.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-shade-plugin</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 
