@@ -7,7 +7,6 @@ import java.util.Properties
 
 
 
-
 object YongHuXXCustomer {
   def main(args: Array[String]): Unit = {
     val env=StreamExecutionEnvironment.getExecutionEnvironment
