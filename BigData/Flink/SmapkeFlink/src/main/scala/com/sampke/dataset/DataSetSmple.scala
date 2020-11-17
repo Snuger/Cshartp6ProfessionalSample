@@ -1,11 +1,12 @@
 package com.sampke.dataset
 import org.apache.flink.streaming.api.scala._
-import org.apache.flink.table.api._
 import com.sampke.dataset.model._
-import org.apache.flink.api.scala.{DataSet}
 
+
+import org.apache.flink.api.common.functions.MapFunction
 
 object DataSetSmple {
+
   def main(args: Array[String]): Unit = {
     val env = StreamExecutionEnvironment.getExecutionEnvironment
 
