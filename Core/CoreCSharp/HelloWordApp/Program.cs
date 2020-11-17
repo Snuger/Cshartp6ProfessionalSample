@@ -26,7 +26,7 @@ namespace HelloWordApp
 
 
             Car car = new Car("法拉利");
-           
+
             Console.WriteLine(car.ToString());
 
             car = new Car(2, "1.0");
@@ -39,34 +39,42 @@ namespace HelloWordApp
             sheep sheep1 = new sheep("456");
 
 
-
-
             WorkDay day = new WorkDay();
 
 
-            Console.ReadLine();
+            UserType userType = (UserType)3;
+            Console.WriteLine($"{userType.ToString()}");
+
+            UserType types = UserType.HIS | UserType.HIS;
+
+            Console.WriteLine($"{types.ToString()}");
         }
 
     }
 
-    public class myNumber {
+    public class myNumber
+    {
 
         private static int _num;
-        private myNumber(int number) {
+        private myNumber(int number)
+        {
             _num = number;
-        }       
+        }
     }
 
 
-    public class SingLetn {
+    public class SingLetn
+    {
 
         private static SingLetn _intance;
 
         private int _state;
-        private SingLetn(int state) {
+        private SingLetn(int state)
+        {
             _state = state;
         }
-        public static SingLetn Intance{
+        public static SingLetn Intance
+        {
 
             get { return _intance ?? (_intance = new SingLetn(999)); }
         }
@@ -81,7 +89,8 @@ namespace HelloWordApp
     }
 
 
-    public class Car {
+    public class Car
+    {
         private string _description;
         private uint _nWheels;
         private string _displacement;
@@ -89,7 +98,8 @@ namespace HelloWordApp
 
 
 
-        public Car(string description, uint wheels,string displacement="1.5T") {
+        public Car(string description, uint wheels, string displacement = "1.5T")
+        {
 
             _description = description;
             _nWheels = wheels;
@@ -106,17 +116,18 @@ namespace HelloWordApp
             _nWheels = 4;
         }*/
         #endregion
-        public Car(string description) : this(description, 4) {
+        public Car(string description) : this(description, 4)
+        {
 
         }
 
-        public Car(uint wheels, string displacement) : this("摩托车",wheels, displacement) { }
+        public Car(uint wheels, string displacement) : this("摩托车", wheels, displacement) { }
 
 
         public override string ToString()
         {
             return $"{System.DateTime.Now.ToString()},工厂造出一辆{_nWheels}轮子的{_description};";
-        }        
+        }
 
     }
 
@@ -127,20 +138,22 @@ namespace HelloWordApp
         private string _name;
 
 
-        public sheep() {
-           //
+        public sheep()
+        {
+            //
         }
-      
+
         /// <summary>
         /// 些方法只执行一次
         /// </summary>
         static sheep()
         {
-            num += 1;           
+            num += 1;
             Console.WriteLine($"第{num}次初始化");
         }
 
-        public sheep(string name) {
+        public sheep(string name)
+        {
             _name = name;
             Console.WriteLine($"啦啦啦....{_name}");
         }
@@ -189,7 +202,6 @@ namespace HelloWordApp
             Console.WriteLine($"当前时间是{timeNow.ToString("yyyy-MM-DD hh:ssmm")},今天是{timeNow.DayOfWeek}");
 
         }
-
 
     }
 }

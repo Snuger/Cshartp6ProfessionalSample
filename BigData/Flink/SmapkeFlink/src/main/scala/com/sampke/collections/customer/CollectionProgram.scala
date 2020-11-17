@@ -1,17 +1,14 @@
 package com.sampke.collections.customer
-import java.lang
 
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 import org.apache.flink.api.scala.{createTypeInformation, _}
 import org.apache.flink.api.common.functions.{FlatMapFunction, MapFunction, MapPartitionFunction}
 import org.apache.flink.util.Collector
 
-
-
 object CollectionProgram {
   def main(args: Array[String]): Unit = {
     val env=StreamExecutionEnvironment.getExecutionEnvironment
-    val words= env.fromElements(new WC("LISI", 600), new WC("LISI", 400), new WC("WANGWU", 300), new WC("ZHAOLIU", 700))
+    val words= env.fromElements(WC("LISI", 600),  WC("LISI", 400),  WC("WANGWU", 300),  WC("ZHAOLIU", 700))
 
 //    val wordCounts1 = words.groupBy("word").reduce {
 //      (w1, w2) => new WC(w1.word, w1.salary + w2.salary)
@@ -23,6 +20,7 @@ object CollectionProgram {
 
     val groups1=words.filter(item=>item.word=="WANGWU")
     groups1.print()
+
 
     var keyWords=env.fromElements("hell,word","hello lilei")
 
@@ -48,12 +46,6 @@ object CollectionProgram {
       override def map(t: Student): Student = Student(t.name.toUpperCase(),t.age)
     })
     students.print()
-
-
-
-
-
-
 
 
 

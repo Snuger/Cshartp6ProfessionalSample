@@ -50,6 +50,7 @@ under the License.
 		<scala.version>2.11.12</scala.version>
 		<log4j.version>2.12.1</log4j.version>
 		<kafka.version>2.12</kafka.version>
+		<postgresql.version>42.2.5</postgresql.version>
 	</properties>
 
 	<dependencies>
@@ -126,12 +127,33 @@ under the License.
 			<artifactId>flink-connector-kafka_${kafka.version}</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
+		<!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
 		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-shade-plugin</artifactId>
-			<version>3.0.0</version>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${scala.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.scala-lang/scala-reflect -->
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-reflect</artifactId>
+			<version>${scala.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.core -->
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>4.3.1</version>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
