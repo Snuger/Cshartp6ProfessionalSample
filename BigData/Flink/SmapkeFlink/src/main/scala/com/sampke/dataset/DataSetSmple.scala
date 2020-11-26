@@ -17,7 +17,7 @@ object DataSetSmple {
         Student("赵六",33,132.3)
      )
 
-
+    streamInput.print()
 
    //val streamOutPut=env.fromDataStream(streamInput)
 

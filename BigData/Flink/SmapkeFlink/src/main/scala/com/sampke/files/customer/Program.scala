@@ -1,5 +1,5 @@
 package com.sampke.files.customer
-import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, _}
+import org.apache.flink.streaming.api.scala._
 
 object Program {
   def main(args: Array[String]): Unit = {

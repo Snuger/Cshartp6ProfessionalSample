@@ -1,0 +1,56 @@
+using System;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Confluent.Kafka;
+using KafkaSmapke.Models;
+using KafkaSmapke.utils;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+
+
+
+namespace KafkaSmapke.Service
+{
+    public class KafkaDataInitService : BackgroundService
+    {
+        private readonly ILogger _logger;
+        private readonly IProducer<long, string> _producer;
+
+
+        public KafkaDataInitService(ILogger<KafkaDataInitService> logger, IProducer<long, string> producer)
+        {
+            _logger = logger;
+            _producer = producer;
+        }
+
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            _logger.LogInformation("Data init Start ....");
+            long num = 0;
+            while (!stoppingToken.IsCancellationRequested)
+            {
+                num += 1;
+                Person person = new Person() { Name = ChineseNameGenerater.GetChineseName(), Age = Convert.ToInt32(num), Address = "浙江省" };
+                _logger.LogInformation($"初始化第{num}条数据->{JsonConvert.SerializeObject(person)}->{DateTime.Now.ToLongTimeString()}");
+                try
+                {
+                    await _producer.ProduceAsync(nameof(Person), new Message<long, string>()
+                    {
+                        Key = num,
+                        Value = JsonConvert.SerializeObject(person)
+                    });
+                }
+                catch (System.Exception ex)
+                {
+                    _logger.LogError(null, ex);
+                }
+                await Task.Delay(1000, stoppingToken);
+            }
+
+            _logger.LogInformation("Service stopping");
+        }
+    }
+
+}

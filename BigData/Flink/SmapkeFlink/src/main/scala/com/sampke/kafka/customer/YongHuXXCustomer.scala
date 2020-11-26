@@ -3,7 +3,8 @@ package com.msb.stream.source
 import java.sql.{Connection, DriverManager, Statement}
 import java.text.SimpleDateFormat
 import java.util.{Date, Properties, UUID}
-
+import org.apache.flink.api.scala._
+import org.apache.flink.streaming.api.scala._
 import com.sampke.kafka.customer.{TestKafka, TestSinkToPostgreSqL}
 import org.apache.flink.api.common.functions.MapFunction
 import org.apache.flink.api.common.typeinfo.TypeInformation
@@ -11,7 +12,8 @@ import org.apache.flink.streaming.api.scala.{StreamExecutionEnvironment, createT
 import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer, KafkaDeserializationSchema}
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.common.serialization.StringSerializer
-import org.apache.flink.streaming.api.scala._
+
+
 
 
 

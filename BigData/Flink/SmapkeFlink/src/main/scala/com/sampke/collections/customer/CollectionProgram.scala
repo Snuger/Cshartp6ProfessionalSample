@@ -1,9 +1,9 @@
 package com.sampke.collections.customer
-
-import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
+import org.apache.flink.streaming.api.scala._
 import org.apache.flink.api.scala.{createTypeInformation, _}
-import org.apache.flink.api.common.functions.{FlatMapFunction, MapFunction, MapPartitionFunction}
+import org.apache.flink.api.common.functions.{FlatMapFunction, MapFunction}
 import org.apache.flink.util.Collector
+
 
 object CollectionProgram {
   def main(args: Array[String]): Unit = {
