@@ -1,13 +1,13 @@
 ﻿using System;
 using Confluent.Kafka;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using KafkaConsumer.Models;
+using Microsoft.Extensions.DependencyInjection; 
 using Confluent.SchemaRegistry.Serdes;
-using Confluent.Kafka.SyncOverAsync;
-using KafkaConsumer.Services;
+using Confluent.Kafka.SyncOverAsync;  
+using Confluent.SchemaRegistry;
+using Sampke.Kafka.Model;
 
-namespace KafkaConsumer
+namespace Sampke.Serialization.Consumer
 {
     class Program
     {
@@ -16,13 +16,14 @@ namespace KafkaConsumer
             CreateHostBuilder(args).Build().Run();
         }
 
-        static IHostBuilder CreateHostBuilder(string [] arg) {
+        static IHostBuilder CreateHostBuilder(string [] args) {
            return Host.CreateDefaultBuilder()
-                .ConfigureServices((context,service)=> {
-                    service.AddScoped<IConsumer<string, string>>(sep => new ConsumerBuilder<string, string>(
+                .ConfigureServices((context,service)=> {                  
+
+                    service.AddScoped<IConsumer<string, Student>>(sep => new ConsumerBuilder<string, Student>(
                         new ConsumerConfig() {
-                            BootstrapServers = "172.25.223.200:32769",                       
-                            GroupId = "csharp-consumer-01",
+                            BootstrapServers = "172.25.223.200:32770",                       
+                            GroupId = $"{nameof(Student).ToLower()}-consumer-clinet",
                             EnableAutoCommit = false,
                             StatisticsIntervalMs = 5000,
                             SessionTimeoutMs = 6000,
@@ -31,7 +32,7 @@ namespace KafkaConsumer
                         })
                        .SetErrorHandler((_,e)=>Console.WriteLine(e.Reason))
                        .SetStatisticsHandler((_,json)=>Console.WriteLine($">{json}"))
-                      // .SetValueDeserializer(new JsonDeserializer<Person>().AsSyncOverAsync())
+                       .SetValueDeserializer(new JsonDeserializer<Student>().AsSyncOverAsync())
                     .Build());
 
                     service.AddHostedService<ConsumerService>();

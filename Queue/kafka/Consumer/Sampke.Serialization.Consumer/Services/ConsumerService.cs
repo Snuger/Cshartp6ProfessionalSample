@@ -4,16 +4,17 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Confluent.Kafka;
-using KafkaConsumer.Models;
+using Sampke.Kafka.Model;
+
 using Microsoft.Extensions.Hosting;
 
-namespace KafkaConsumer.Services
+namespace Sampke.Serialization.Consumer
 {
     class ConsumerService : BackgroundService
     {
-        private readonly IConsumer<string, string> _consumer;
+        private readonly IConsumer<string,Student> _consumer;
 
-        public ConsumerService(IConsumer<string, string> consumer)
+        public ConsumerService(IConsumer<string, Student> consumer)
         {
             _consumer = consumer;
         }
@@ -21,7 +22,7 @@ namespace KafkaConsumer.Services
         const int commitPeriod = 5;
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _consumer.Subscribe(nameof(Person));
+            _consumer.Subscribe(nameof(Student));
 
              return  Task.Run(()=> {
                 try
