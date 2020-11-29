@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaSmapke", "KafkaSmapke\KafkaSmapke.csproj", "{1A46916C-13CA-42DA-8678-4471C4D07803}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KafkaSmapke", "KafkaSmapke\KafkaSmapke.csproj", "{1A46916C-13CA-42DA-8678-4471C4D07803}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Produtor", "Produtor", "{11002AB8-B581-465C-9266-DFE05ADE8391}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaSampkeConsole", "KafkaSampkeConsole\KafkaSampkeConsole.csproj", "{13E76D7E-EA45-46F4-A8E8-6827D313920F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{02F4B2E7-65B2-4D9B-926D-9B15796F59E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaConsumer", "KafkaConsumer\KafkaConsumer.csproj", "{E930A488-3AD4-4E18-ADFD-C036CD3251BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1A46916C-13CA-42DA-8678-4471C4D07803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +35,40 @@ Global
 		{1A46916C-13CA-42DA-8678-4471C4D07803}.Release|x64.Build.0 = Release|Any CPU
 		{1A46916C-13CA-42DA-8678-4471C4D07803}.Release|x86.ActiveCfg = Release|Any CPU
 		{1A46916C-13CA-42DA-8678-4471C4D07803}.Release|x86.Build.0 = Release|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Debug|x64.Build.0 = Debug|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Debug|x86.Build.0 = Debug|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Release|x64.ActiveCfg = Release|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Release|x64.Build.0 = Release|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Release|x86.ActiveCfg = Release|Any CPU
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F}.Release|x86.Build.0 = Release|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Debug|x64.Build.0 = Debug|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Release|x64.ActiveCfg = Release|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Release|x64.Build.0 = Release|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A46916C-13CA-42DA-8678-4471C4D07803} = {11002AB8-B581-465C-9266-DFE05ADE8391}
+		{13E76D7E-EA45-46F4-A8E8-6827D313920F} = {11002AB8-B581-465C-9266-DFE05ADE8391}
+		{E930A488-3AD4-4E18-ADFD-C036CD3251BB} = {02F4B2E7-65B2-4D9B-926D-9B15796F59E7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2F5EABE-4548-46EB-BAEC-F073E93312BA}
 	EndGlobalSection
 EndGlobal

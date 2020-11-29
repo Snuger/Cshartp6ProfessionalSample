@@ -16,7 +16,7 @@ namespace KafkaSmapke.Service
     public class KafkaDataInitService : BackgroundService
     {
         private readonly ILogger _logger;
-        private readonly IProducer<long, string> _producer;
+        private readonly IProducer<long,string> _producer;
 
 
         public KafkaDataInitService(ILogger<KafkaDataInitService> logger, IProducer<long, string> producer)
@@ -32,13 +32,13 @@ namespace KafkaSmapke.Service
             while (!stoppingToken.IsCancellationRequested)
             {
                 num += 1;
-                Person person = new Person() { Name = ChineseNameGenerater.GetChineseName(), Age = Convert.ToInt32(num), Address = "浙江省" };
+                Person person = new Person() { Name = ChineseNameGenerater.GetChineseName(), Age = new Random().Next(1,100), Address = "浙江省" };
                 _logger.LogInformation($"初始化第{num}条数据->{JsonConvert.SerializeObject(person)}->{DateTime.Now.ToLongTimeString()}");
                 try
                 {
                     await _producer.ProduceAsync(nameof(Person), new Message<long, string>()
                     {
-                        Key = num,
+                        Key = num,                       
                         Value = JsonConvert.SerializeObject(person)
                     });
                 }
@@ -46,7 +46,7 @@ namespace KafkaSmapke.Service
                 {
                     _logger.LogError(null, ex);
                 }
-                await Task.Delay(1000, stoppingToken);
+                await Task.Delay(100, stoppingToken);
             }
 
             _logger.LogInformation("Service stopping");
