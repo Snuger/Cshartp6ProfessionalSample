@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace KafkaSampkeConsole.Models
+namespace Sampke.Default.Productor.Models
 {
-    public class People
+    public class Person
     {
         public string Name { get; set; }
 

@@ -22,14 +22,12 @@ namespace Sampke.Serialization.Productor
         Host.CreateDefaultBuilder()
         .ConfigureServices((context, service) =>
         { 
-
             service.AddScoped<IProducer<long, Student>>(x => {
-            return new ProducerBuilder<long, Student>(new ProducerConfig { BootstrapServers = "172.25.223.200:32770" })
+            return new ProducerBuilder<long, Student>(new ProducerConfig { BootstrapServers = "172.25.211.161:32768" })
             .SetValueSerializer(new JsonSerializer<Student>(
                  new CachedSchemaRegistryClient(new SchemaRegistryConfig() { Url = "http://172.25.223.200/student" }),
                  new JsonSerializerConfig() { BufferBytes = 100 }
-                ))
-             //.SetStatisticsHandler((_, student) => { Console.WriteLine($"{student}"); })
+                ))           
              .Build(); });
             service.AddHostedService<ProductorInitService>();
         });

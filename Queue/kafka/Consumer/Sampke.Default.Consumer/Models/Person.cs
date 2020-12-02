@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace KafkaConsumer.Models
+namespace Sampke.Default.Consumer.Models
 {
-    public class People
+    public class Person
     {
         public string Name { get; set; }
 

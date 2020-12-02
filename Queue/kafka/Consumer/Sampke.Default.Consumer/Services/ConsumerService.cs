@@ -4,10 +4,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Confluent.Kafka;
-using KafkaConsumer.Models;
+using Sampke.Default.Consumer.Models;
 using Microsoft.Extensions.Hosting;
 
-namespace KafkaConsumer.Services
+namespace Sampke.Default.Consumer.Services
 {
     class ConsumerService : BackgroundService
     {
@@ -29,7 +29,7 @@ namespace KafkaConsumer.Services
                     while (!stoppingToken.IsCancellationRequested)
                     {
                         try
-                        {
+                        {                          
                             var cr = _consumer.Consume(stoppingToken);
                              if (cr.IsPartitionEOF)
                              {

@@ -3,15 +3,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Confluent.Kafka;
-using KafkaSmapke.Models;
-using KafkaSmapke.utils;
+using Sampke.Default.Productor.Models;
+using Sampke.Default.Productor.utils;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 
 
-namespace KafkaSmapke.Service
+namespace Sampke.Default.Productor.Service
 {
     public class KafkaDataInitService : BackgroundService
     {

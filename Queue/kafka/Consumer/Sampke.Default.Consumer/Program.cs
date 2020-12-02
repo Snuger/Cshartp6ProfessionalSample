@@ -2,12 +2,12 @@
 using Confluent.Kafka;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using KafkaConsumer.Models;
+using Sampke.Default.Consumer.Models;
 using Confluent.SchemaRegistry.Serdes;
 using Confluent.Kafka.SyncOverAsync;
-using KafkaConsumer.Services;
+using Sampke.Default.Consumer.Services;
 
-namespace KafkaConsumer
+namespace Sampke.Default.Consumer
 {
     class Program
     {
@@ -21,7 +21,7 @@ namespace KafkaConsumer
                 .ConfigureServices((context,service)=> {
                     service.AddScoped<IConsumer<string, string>>(sep => new ConsumerBuilder<string, string>(
                         new ConsumerConfig() {
-                            BootstrapServers = "172.25.223.200:32769",                       
+                            BootstrapServers = "172.25.219.207:9092",                       
                             GroupId = "csharp-consumer",
                             EnableAutoCommit = false,
                             StatisticsIntervalMs = 5000,

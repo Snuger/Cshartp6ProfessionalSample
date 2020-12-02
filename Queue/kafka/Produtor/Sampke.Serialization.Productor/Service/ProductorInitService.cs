@@ -31,14 +31,13 @@ namespace Sampke.Serialization.Productor.Service
             {
                 num += 1;
                 Student student = new Student() { Name = ChineseNameGenerater.GetChineseName(), Age = new Random().Next(1,100), Address = "浙江省" };
-               // _logger.LogInformation($"初始化第{num}条数据->{JsonConvert.SerializeObject(student)}->{DateTime.Now.ToLongTimeString()}");
                 try
-                {
+                {           
                     await _producer.ProduceAsync(nameof(Student), new Message<long, Student>()
                     {
                         Key = num,                       
                         Value = student
-                    });
+                    });                  
                 }
                 catch (System.Exception ex)
                 {

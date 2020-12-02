@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KafkaSampkeConsole.utils
+namespace Sampke.Console.Productor.utils
 {
     public class ChineseNameGenerater
     {
