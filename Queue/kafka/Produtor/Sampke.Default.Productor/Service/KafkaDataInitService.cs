@@ -32,7 +32,7 @@ namespace Sampke.Default.Productor.Service
             while (!stoppingToken.IsCancellationRequested)
             {
                 num += 1;
-                Person person = new Person() { Name = ChineseNameGenerater.GetChineseName(), Age = new Random().Next(1,100), Address = "浙江省" };
+                Person person = new Person() { ID=num,Name = ChineseNameGenerater.GetChineseName(), Age = new Random().Next(1,100), Address = "浙江省" };
                 _logger.LogInformation($"初始化第{num}条数据->{JsonConvert.SerializeObject(person)}->{DateTime.Now.ToLongTimeString()}");
                 try
                 {
@@ -46,7 +46,7 @@ namespace Sampke.Default.Productor.Service
                 {
                     _logger.LogError(null, ex);
                 }
-                await Task.Delay(100, stoppingToken);
+                //await Task.Delay(10, stoppingToken);
             }
 
             _logger.LogInformation("Service stopping");

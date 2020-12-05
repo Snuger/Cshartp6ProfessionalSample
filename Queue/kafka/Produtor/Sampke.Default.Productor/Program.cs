@@ -20,7 +20,7 @@ namespace Sampke.Default.Productor
         Host.CreateDefaultBuilder()
         .ConfigureServices((context, service) =>
         {
-            service.AddScoped<IProducer<long, string>>(x => { return new ProducerBuilder<long, string>(new ProducerConfig { BootstrapServers = "172.25.219.207:9092" }).Build(); });
+            service.AddScoped<IProducer<long, string>>(x => { return new ProducerBuilder<long, string>(new ProducerConfig { BootstrapServers = "172.25.211.90:9092" }).Build(); });
             //service.AddScoped<IProducer<long,Person>>(x => (new ProducerBuilder<long, Person>(new ProducerConfig() { BootstrapServers = "localhost:9092" }).Build()));
             service.AddHostedService<KafkaDataInitService>();
         });

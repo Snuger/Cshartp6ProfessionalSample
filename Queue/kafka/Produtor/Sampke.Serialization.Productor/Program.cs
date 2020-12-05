@@ -23,9 +23,9 @@ namespace Sampke.Serialization.Productor
         .ConfigureServices((context, service) =>
         { 
             service.AddScoped<IProducer<long, Student>>(x => {
-            return new ProducerBuilder<long, Student>(new ProducerConfig { BootstrapServers = "172.25.211.161:32768" })
+            return new ProducerBuilder<long, Student>(new ProducerConfig { BootstrapServers = "172.25.211.90:9092" })
             .SetValueSerializer(new JsonSerializer<Student>(
-                 new CachedSchemaRegistryClient(new SchemaRegistryConfig() { Url = "http://172.25.223.200/student" }),
+                 new CachedSchemaRegistryClient(new SchemaRegistryConfig() { Url = "http://json-schema.org/draft-07/schema#" }),
                  new JsonSerializerConfig() { BufferBytes = 100 }
                 ))           
              .Build(); });

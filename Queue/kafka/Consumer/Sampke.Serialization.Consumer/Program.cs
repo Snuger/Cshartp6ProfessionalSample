@@ -22,7 +22,7 @@ namespace Sampke.Serialization.Consumer
 
                     service.AddScoped<IConsumer<string, Student>>(sep => new ConsumerBuilder<string, Student>(
                         new ConsumerConfig() {
-                            BootstrapServers = "172.25.223.200:32770",                       
+                            BootstrapServers = "172.25.211.90:9092",                       
                             GroupId = $"{nameof(Student).ToLower()}-consumer-clinet",
                             EnableAutoCommit = false,
                             StatisticsIntervalMs = 5000,
