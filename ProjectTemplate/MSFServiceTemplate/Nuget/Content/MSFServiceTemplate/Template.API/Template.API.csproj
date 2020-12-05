@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FastReport.OpenSource.Web" Version="2020.4.11" />
+    <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
+    <PackageReference Include="MCRP.MSF.CRUD.API" Version="3.1.9" />
+    <PackageReference Include="Starter.EntityFramework.Postgresql" Version="3.1.2.1" />
+    <PackageReference Include="Starter.Refit" Version="1.0.3" />
+    <PackageReference Include="Starter.Sequence" Version="1.0.1" />
+    <PackageReference Include="Starter.Sequence.Postgresql" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Template.Service\Template.Service.csproj" />
+  </ItemGroup> 
+</Project>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" TextQuality="Regular" ReportInfo.Description="This example demonstrates how to print a datasource using the TableObject. To do this:&#13;&#10;- select the Table object;&#13;&#10;- go to the &quot;Properties&quot; window and click the &quot;Events&quot; button to view a list of available events;&#13;&#10;- doubleclick the &quot;ManualBuild&quot; event;&#13;&#10;- you will see an empty event handler. You need to print rows using TableObject.PrintRow method; in each row, you must also print all columns (using PrintColumn method). See the script's code for more details." ReportInfo.Created="08/01/2008 14:01:38" ReportInfo.Modified="12/04/2020 22:33:56" ReportInfo.CreatorVersion="2019.4.4.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;  
+
+namespace FastReport
+{
+  public class ReportScript
+  {     
+    
+  }
+}
+</ScriptText>
+  <Styles>
+    <Style Name="表头" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" />
+    <Style Name="表格内容" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Font="宋体, 9pt" />
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="gongzuol_details" ReferenceName="Reports.gongzuol_details" DataType="System.String" Enabled="true">
+      <Column Name="xuqiuid" DataType="System.String" />
+      <Column Name="xuqiuhao" DataType="System.String" />
+      <Column Name="xuqiubt" DataType="System.String" />
+      <Column Name="xuqiulx" DataType="System.String" />
+      <Column Name="xuqiu_chuangjiansj" DataType="System.DateTime" />
+      <Column Name="xuqiu_qiwangwcsj" DataType="System.DateTime" />
+      <Column Name="renwu_fuzerid" DataType="System.String" />
+      <Column Name="renwu_fuzerxm" DataType="System.String" />
+      <Column Name="renwumc" DataType="System.String" />
+      <Column Name="biaozhungs" DataType="System.Decimal" />
+      <Column Name="shijigs" DataType="System.Decimal" />
+      <Column Name="zhuangtai" DataType="System.String" />
+      <Column Name="renwu_chuangjiansj" DataType="System.DateTime" />
+      <Column Name="renwu_qiwangwcsj" DataType="System.DateTime" />
+      <Column Name="renwu_wanchengsj" DataType="System.DateTime" />
+    </TableDataSource>
+    <TableDataSource Name="renYuanXX" ReferenceName="Reports.renYuanXX" DataType="System.String" Enabled="true">
+      <Column Name="id" DataType="System.String" />
+      <Column Name="姓名" DataType="System.String" />
+      <Column Name="部门名称" DataType="System.String" />
+      <Column Name="项目组" DataType="System.String" />
+    </TableDataSource>
+    <Relation Name="renYuanXX_gongzuol_details" ParentDataSource="renYuanXX" ChildDataSource="gongzuol_details" ParentColumns="id" ChildColumns="renwu_fuzerid" Enabled="true" />
+    <Total Name="biaoZhungsTotal" Expression="[gongzuol_details.biaozhungs]" Evaluator="Data1" />
+    <Total Name="shiJigsTotal" Expression="[gongzuol_details.shijigs]" Evaluator="Data1" />
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="297" PaperHeight="420" RawPaperSize="8" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" Guides="699.3" Watermark.Font="宋体, 60pt" ExtraDesignWidth="true">
+    <ReportTitleBand Name="ReportTitle1" Width="1122.66" Height="28.35" CanGrow="true" CanShrink="true" FirstRowStartsNewPage="true">
+      <TextObject Name="Text4" Left="-9450" Top="-9450" Width="66.15" Height="18.9" Text="姓名" Font="宋体, 9pt, style=Bold" />
+      <TextObject Name="Text1" Left="395.49" Top="-1.18" Width="256.09" Height="28.35" Text="工作量详细信息" HorzAlign="Center" VertAlign="Center" Font="微软雅黑, 16pt" />
+      <TextObject Name="Text2" Left="831.6" Top="7.45" Width="179.55" Height="18.9" Font="宋体, 9pt" />
+    </ReportTitleBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="31.68" Width="1122.66" Height="57">
+      <TableObject Name="Table2" Width="1114.54" Height="56.46" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Style="表头">
+        <TableColumn Name="Column14" Width="80" />
+        <TableColumn Name="Column15" Width="51" />
+        <TableColumn Name="Column16" Width="165" />
+        <TableColumn Name="Column17" Width="80" />
+        <TableColumn Name="Column18" Width="127.21" />
+        <TableColumn Name="Column21" Width="61.06" />
+        <TableColumn Name="Column22" Width="70.51" />
+        <TableColumn Name="Column23" Width="89.41" />
+        <TableColumn Name="Column24" Width="70.51" />
+        <TableColumn Name="Column25" Width="89.41" />
+        <TableColumn Name="Column26" Width="79.96" />
+        <TableColumn Name="Column27" Width="89.41" />
+        <TableColumn Name="Column28" Width="61.06" />
+        <TableRow Name="Row2" Height="28.23">
+          <TableCell Name="Cell62" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="部门" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" RowSpan="2" />
+          <TableCell Name="Cell63" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="姓名" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" RowSpan="2" />
+          <TableCell Name="Cell64" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="需求名称" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" RowSpan="2" />
+          <TableCell Name="Cell65" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="需求类型" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" RowSpan="2" />
+          <TableCell Name="Cell66" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="任务名称" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" RowSpan="2" />
+          <TableCell Name="Cell69" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="状态" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" RowSpan="2" />
+          <TableCell Name="Cell70" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="需求" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" ColSpan="2" />
+          <TableCell Name="Cell71" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell72" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="任务" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" ColSpan="3" />
+          <TableCell Name="Cell73" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell74" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell88" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="工时" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" ColSpan="2" />
+          <TableCell Name="Cell90" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+        </TableRow>
+        <TableRow Name="Row3" Height="28.23">
+          <TableCell Name="Cell75" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell76" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell77" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell78" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell79" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell82" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell83" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="创建时间" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell84" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="期望完成时间" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell85" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="创建时间" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell86" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="期望完成时间" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell87" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="完成时间" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell89" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="标志" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" />
+          <TableCell Name="Cell91" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Fill.Color="238, 245, 251" Text="实际" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt" Style="表头" />
+        </TableRow>
+      </TableObject>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="92.02" Width="1122.66" Height="28.23" DataSource="gongzuol_details">
+      <TableObject Name="Table1" Width="1114.54" Height="28.23" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Style="表格内容">
+        <TableColumn Name="Column1" Width="80" />
+        <TableColumn Name="Column2" Width="51" />
+        <TableColumn Name="Column3" Width="165" />
+        <TableColumn Name="Column4" Width="80" />
+        <TableColumn Name="Column5" Width="127.21" />
+        <TableColumn Name="Column8" Width="61.06" />
+        <TableColumn Name="Column9" Width="70.51" />
+        <TableColumn Name="Column10" Width="89.41" />
+        <TableColumn Name="Column11" Width="70.51" />
+        <TableColumn Name="Column12" Width="89.41" />
+        <TableColumn Name="Column13" Width="79.96" />
+        <TableColumn Name="Column30" Width="89.41" />
+        <TableColumn Name="Column31" Width="61.06" />
+        <TableRow Name="Row1" Height="28.23">
+          <TableCell Name="Cell1" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[Substring(PadRight([gongzuol_details.renYuanXX.部门名称],5,' '),0,5)]" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell2" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.renYuanXX.姓名]" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell3" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[Substring(PadRight([gongzuol_details.renwumc],12,' '),0,12)]&#13;&#10;" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell4" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.xuqiulx]" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell5" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[Substring(PadRight([gongzuol_details.renwumc],12,' '),0,9)]" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell36" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.zhuangtai]" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell41" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.xuqiu_chuangjiansj]" Format="Date" Format.Format="d" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell46" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.xuqiu_qiwangwcsj]" Format="Date" Format.Format="d" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell51" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.renwu_chuangjiansj]" Format="Date" Format.Format="d" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell56" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.renwu_qiwangwcsj]" Format="Date" Format.Format="d" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell61" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.renwu_wanchengsj]" Format="Date" Format.Format="d" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell94" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.biaozhungs]" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+          <TableCell Name="Cell95" Border.Lines="All" Border.Color="229, 229, 229" Border.Width="0.25" Text="[gongzuol_details.shijigs]" VertAlign="Bottom" Font="宋体, 9pt" Style="表格内容" />
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="123.58" Width="1122.66" Height="28.35">
+      <TextObject Name="Text3" Left="1021.9" Top="6.45" Width="37.8" Height="18.9" Text="[biaoZhungsTotal]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt, style=Bold" />
+      <TextObject Name="Text5" Left="1058.7" Top="5.45" Width="47.25" Height="18.9" Text="[shiJigsTotal]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt, style=Bold" />
+      <TextObject Name="Text6" Left="935.85" Top="6.45" Width="75.6" Height="18.9" Text="合计" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt, style=Bold" />
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>
