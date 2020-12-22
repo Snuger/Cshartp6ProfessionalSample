@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MCRP.MultiTenancy.API" Version="1.0.0" />
+    <PackageReference Include="Starter.EntityFramework.Postgresql" Version="3.1.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MCRP.KaoQin.TongJi.ORM\MCRP.KaoQin.TongJi.ORM.csproj" />
+  </ItemGroup>
+
+</Project>

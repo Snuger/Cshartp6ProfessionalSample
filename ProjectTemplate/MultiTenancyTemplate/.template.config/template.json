@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Snguer",
+  "classifications": [ "Mediinfo/MMSService" ],
+  "name": "Mediinfo MultiTenancy Service",
+  "identity": "Mediinfo MultiTenancy Service", //模板唯一标识
+  "groupIdentity": "Mediinfo MultiTenancy Service",
+  "shortName": "mms", //【修改】短名称，使用 dotnet new <shortName> 安装模板时的名称
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "Template", //【修改】在使用 -n 选项时，会替换模板中项目的名字
+  "preferNameDirectory": true,
+  "symbols":{
+    "dbType": {
+	  "type":"parameter",
+      "datatype": "choice",
+	  "defaultValue":"postgresql",
+       "choices": [
+        {
+          "choice": "postgresql",
+          "description": "postgresql"
+        },
+        {
+          "choice": "oracle",
+          "description":"oracle"
+        } 		
+      ]     
+    },
+	"postgresql":{
+	  "type":"computed",
+	  "value": "(dbType == \"postgresql\")"
+	},
+	"oracle":{
+	  "type":"computed",
+	  "value": "(dbType == \"oracle\")"
+	}	
+  }
+}

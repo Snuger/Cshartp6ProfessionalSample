@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MCRP.MultiTenancy.API" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(postgresql)' == 'True' ">
+    <PackageReference Include="Starter.EntityFramework.Postgresql" Version="3.1.2.2" />
+  </ItemGroup>
+    <ItemGroup Condition="'$(oracle)' == 'True' ">
+    <PackageReference Include="Starter.EntityFramework.Oracle" Version="3.19.80.1" />
+  </ItemGroup>    
+  <ItemGroup>
+    <ProjectReference Include="..\Template.ORM\Template.ORM.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MCRP.MultiTenancy.API" Version="1.0.0" />
+  </ItemGroup>
+    <ItemGroup>
+    <PackageReference Include="Starter.EntityFramework.Oracle" Version="3.19.80.1" />
+  </ItemGroup>    
+  <ItemGroup>
+    <ProjectReference Include="..\MCRP.KaoQin.WeiHu.ORM\MCRP.KaoQin.WeiHu.ORM.csproj" />
+  </ItemGroup>
+
+</Project>
