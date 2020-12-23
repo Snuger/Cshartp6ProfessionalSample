@@ -6,8 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CData.Greenplum" Version="20.0.7587" />
     <PackageReference Include="Dapper" Version="2.0.35" />
-    <PackageReference Include="Npgsql" Version="4.1.5" />
+    <PackageReference Include="Npgsql" Version="5.0.1.1" />
   </ItemGroup>
 
 </Project>
