@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Elasticsearch.Net;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +33,7 @@ namespace ElasticSearch.Sample
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ElasticSearch.Sample", Version = "v1" });
             });
+            services.AddScoped(typeof(ElasticLowLevelClient), ac => new ElasticLowLevelClient(new ConnectionConfiguration(new Uri("http://172.19.30.190:9400"))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
