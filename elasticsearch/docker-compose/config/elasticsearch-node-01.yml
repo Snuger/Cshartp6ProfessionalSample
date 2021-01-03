@@ -1,0 +1,12 @@
+node.name: elasticsearch-node-01
+network.host: "0.0.0.0"
+xpack:
+  ml.enabled: false
+  monitoring.enabled: false
+  security.enabled: false
+  watcher.enabled: false
+  monitoring.collection.enabled: true
+cluster.initial_master_nodes: ["elasticsearch-node-01"]
+discovery.seed_hosts: ["elasticsearch-node-01:9300"]
+http.cors.enabled: true
+http.cors.allow-origin: "*"

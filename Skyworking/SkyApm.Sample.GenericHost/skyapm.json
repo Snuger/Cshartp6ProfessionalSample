@@ -1,28 +1,22 @@
 {
   "SkyWalking": {
-    "ServiceName": "general-host-sample",
-    "Namespace": "",
-    "HeaderVersions": [
-      "sw6"
-    ],
+     "ServiceName": "general-host-sample",
+    "SpanLimitPerSegment": 300,
     "Sampling": {
-      "SamplePer3Secs": -1,
-      "Percentage": -1.0
+      "SamplePer3Secs": -1
     },
     "Logging": {
       "Level": "Information",
-      "FilePath": "logs/skyapm-{Date}.log"
+      "FilePath": "logs\\SkyWalking-{Date}.log"
     },
     "Transport": {
       "Interval": 3000,
-      "ProtocolVersion": "v6",
-      "QueueSize": 30000,
-      "BatchSize": 3000,
+      "PendingSegmentLimit": 30000,
+      "PendingSegmentTimeout": 1000,
       "gRPC": {
         "Servers": "localhost:11800",
-        "Timeout": 100000,
-        "ConnectTimeout": 100000,
-        "ReportTimeout": 600000
+        "Timeout": 2000,
+        "ConnectTimeout": 10000
       }
     }
   }

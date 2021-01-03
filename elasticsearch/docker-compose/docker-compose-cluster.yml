@@ -1,0 +1,58 @@
+version: "2"
+services:
+  elasticsearch-node-01: #服务名称（不是容器名,名称最好不要含有特殊字符，碰到过用下划线时运行出错）
+    image: elasticsearch:7.9.1
+    container_name: elasticsearch-node-01 #容器名称 
+    volumes: #挂载文件
+      - ./logs/elasticsearch/logs/:/usr/share/elasticsearch/logs/
+      - ./config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - ./data/elasticsearch/data:/usr/share/elasticsearch/data
+      - ./data/elasticsearch/plugins:/usr/share/elasticsearch/plugins
+    ports:
+      - "9200:9200" #暴露的端口信息和docker run -d -p 80:80一样
+      - "9300:9300"
+    environment: #设置镜像变量，它可以保存变量到镜像里面
+      cluster.name: sampke
+      ES_JAVA_OPTS: "-Xmx512m -Xms512m"
+      http.cors.enabled: "true"
+      http.cors.allow-origin: "http://localhost:1358,http://127.0.0.1:1358"
+      http.cors.allow-headers: "X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization"
+      http.cors.allow-credentials: "true"
+      bootstrap.memory_lock: "true"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    networks: #加入指定网络
+      - elk
+  logstash-node-01:
+    image: logstash:7.9.1
+    container_name: logstash-node-01
+    volumes:
+      - ./config/logstash/config/:/usr/share/logstash/config/:ro
+      - ./config/logstash/pipeline/:/usr/share/logstash/pipeline/
+      - ./logs/logstash/logs/:/var/log/logstash/
+      - ./data/logstash/data:/usr/share/logstash/data
+    ports:
+      - "5000:5000"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx512m -Xms512m"
+    networks:
+      - elk
+    depends_on: #标签解决了容器的依赖、启动先后的问题
+      - elasticsearch-node-01
+  kibana-node-01:
+    image: kibana:7.9.1
+    container_name: kibana-node-01
+    volumes:
+      - ./config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - "5601:5601"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch-node-01
+networks:
+  elk:
+    driver: bridge
