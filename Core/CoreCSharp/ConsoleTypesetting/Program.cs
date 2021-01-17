@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Threading.Tasks;
 
 namespace ConsoleTypesetting
 {
@@ -53,8 +54,8 @@ namespace ConsoleTypesetting
             var xs = new int[] { 1, 2, 7, 9 };
             var ys = new int[] { 7, 9, 12 };
 
-           // Console.WriteLine($"Find the intersection of the {{{string.Join(", ", xs)}}} and {{{string.Join(", ", ys)}}} sets.");
-            Console.WriteLine($"find the intersectin of the {{{string.Join(", ",xs)}}} and {{{string.Join(", ",ys)}}} sets");
+            // Console.WriteLine($"Find the intersection of the {{{string.Join(", ", xs)}}} and {{{string.Join(", ", ys)}}} sets.");
+            Console.WriteLine($"find the intersectin of the {{{string.Join(", ", xs)}}} and {{{string.Join(", ", ys)}}} sets");
 
             var userName = "Jane";
             var stringWithEscapes = $"C:\\Users\\{userName}\\Documents";
@@ -76,7 +77,7 @@ namespace ConsoleTypesetting
 
 
             var rand = new Random();
-            for (int t = 0; t < 7; t++)
+            for (int tt = 0; tt < 7; tt++)
                 Console.WriteLine($"Coin flip: {(rand.NextDouble() < 0.5 ? "heads" : "tails")}");
 
 
@@ -111,10 +112,107 @@ namespace ConsoleTypesetting
                 "dog"       // 8                   ^1
             };
 
-           // Console.WriteLine($"The last word is {words[^1]}");
+            // Console.WriteLine($"The last word is {words[^1]}");
+
+
+            (string Alpha, string Beta) sunal = ("a", "b");
+
+            System.Console.WriteLine($"{sunal.Alpha,-10} {sunal.Beta,10}");
+
+
+            var aplpha = (x: 12, y: 10);
+            System.Console.WriteLine($"{aplpha.x,-10}  {aplpha.y,20}");
+
+
+            (double, int) tt1 = (4.51, 90);
+
+            var t = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+            Console.WriteLine(t.Item6);
+
+            (int a, int b) lt = (5, 10);
+            (long a, int b) rt = (5, 10);
+            Console.WriteLine(lt == rt);
+
+
+            var dt = new Dictionary<int, (int x, int y, int z)>()
+            {
+                [1] = (1, 1, 1),
+                [2] = (1, 3, 4),
+                [3] = (4, 5, 3)
+            };
+
+            if (dt.TryGetValue(2, out (int x, int y, int z) outItme))
+            {
+                Console.WriteLine($"{outItme.x},{outItme.y},{outItme.z}");
+            };
+
+
+            IEnumerable<object> Iab = new List<Object> { 1, 3m, new List<int> { 1, 2, 3, 4, 5, 6 }, new MyClass() { Name = "张三" }, new { x = 10, ys = 12, z = 12 }, 3, "admin" };
+            int sum = 0;
+            foreach (var item in Iab)
+            {
+                switch (item)
+                {
+                    case 0:
+                        break;
+                    case IEnumerable<int> child:
+                        {
+                            foreach (var item1 in child)
+                                sum += item1 > 0 ? item1 : 0;
+                            break;
+                        }
+                    case int n when n > 0:
+                        sum += n;
+                        break;
+                    case MyClass mys:
+                        {
+                            Console.WriteLine($"取出object类型------>{mys.Name}");
+                            break;
+                        }
+                }
+            }
+            Console.WriteLine($"{sum}");
+
+
+            //调用异步方法
+            int result = Program.DoWorkAsync().GetAwaiter().GetResult();
+            System.Console.WriteLine($"普通的main方法调用异步方法{result}");
 
             Console.ReadLine();
+
+
+            B clab = new B(12);
+            Console.WriteLine($"{clab}");
+
+            logger.WriteMessage += LoggingMethods.LogToConsole;
+            logger.LogMessage("hello word");
+
+
+            string extensionTest = "Hello Extension Methods";
+            int i = extensionTest.WordCount();
+
+
+
         }
+
+
+        protected static Task<int> DoWorkAsync()
+        {
+            return Task.Run(() =>
+            {
+                return 10;
+            });
+
+        }
+
+
+    }
+
+
+    public class MyClass
+    {
+        public string Name { get; set; }
 
     }
 }

@@ -12,10 +12,10 @@ namespace serilogSamples.Extensions
         {
             if (app == null) throw new ArgumentNullException(nameof(app));
             var opts = app.ApplicationServices.GetService<IOptions<RequestLoggingOptions>>()?.Value ?? new RequestLoggingOptions();
-            options.Invoke(opts);
+            options?.Invoke(opts);
             if (opts.MessageTemplate == null) throw new ArgumentException($"{nameof(opts.MessageTemplate)} cannot be null.");
             if (opts.GetLevel == null) throw new ArgumentException($"{nameof(opts.GetLevel)} cannot be null.");
-
+           
             return app.UseMiddleware<RequestLoggingMiddleware>(opts);
 
         }

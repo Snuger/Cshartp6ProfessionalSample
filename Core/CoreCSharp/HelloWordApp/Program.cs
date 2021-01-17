@@ -10,7 +10,7 @@ namespace HelloWordApp
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             //Console.WriteLine(Encoding.GetEncoding("GB2312"));
             /*
-            var name = "杨靖";           
+            var name = "ujjjj";           
             Console.WriteLine($"姓名{name}");
             Console.WriteLine($"name的类型{name.GetType()}");
             //return t;

@@ -17,7 +17,7 @@ namespace serilogSamples.Extensions
 
         readonly DiagnosticContext _diagnosticContext;
 
-        readonly Action<IDiagnosticContext, HttpContext> _enrichDiagnosticContext;
+        readonly Action<DiagnosticContext, HttpContext> _enrichDiagnosticContext;
 
         readonly MessageTemplate _messageTemplate;
 

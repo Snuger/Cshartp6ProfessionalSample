@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using serilogSamples.Model;
 
 namespace serilogSamples.Controllers
 {
@@ -30,7 +31,7 @@ namespace serilogSamples.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post() {
+        public IActionResult Post([FromBody] SampleData data) {
             return Ok(Summaries[1]);
         }
     }

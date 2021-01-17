@@ -16,12 +16,25 @@ namespace serilogSamples
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+          .MinimumLevel.Debug()
+          .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+          .Enrich.FromLogContext()
+          .WriteTo.Console()         
+          .CreateLogger();
+
+
             CreateHostBuilder(args).Build().Run();
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-          Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
-          .UseSerilog((hostBuilderContext, configureLogger) => configureLogger.ReadFrom.Configuration(hostBuilderContext.Configuration).Enrich.FromLogContext()
-          .WriteTo.Debug()
-          .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}"));
+          Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
+            .UseSerilog();
+        
+          // .UseSerilog((hostBuilderContext, configureLogger) => configureLogger.ReadFrom.Configuration(hostBuilderContext.Configuration).Enrich.FromLogContext()
+          //.WriteTo.Debug()
+          //.WriteTo.Console());
+        
+        // .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}"));
     }
 }
