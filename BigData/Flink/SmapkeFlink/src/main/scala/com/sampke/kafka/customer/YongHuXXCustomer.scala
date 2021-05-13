@@ -14,10 +14,6 @@ import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.common.serialization.StringSerializer
 
 
-
-
-
-
 //读取kafka中数据  key value全部读出来
 object YongHuXXCustomer {
   def main(args: Array[String]): Unit = {
@@ -33,7 +29,7 @@ object YongHuXXCustomer {
     val props = new Properties()
     props.setProperty("bootstrap.servers", KAFKA_BROKERS)
     props.setProperty("group.id",TOPIC_NAME)
-      props.setProperty("key.deserializer",classOf[StringSerializer].getName)
+    props.setProperty("key.deserializer",classOf[StringSerializer].getName)
     props.setProperty("value.deserializer",classOf[StringSerializer].getName)
 
     //第一个参数 ： 消费的topic名
