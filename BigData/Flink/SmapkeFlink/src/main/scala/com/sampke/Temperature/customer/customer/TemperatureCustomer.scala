@@ -17,7 +17,7 @@ object TemperatureCustomer {
   def main(args: Array[String]): Unit = {
     val env = StreamExecutionEnvironment.getExecutionEnvironment
     // kafka 配置
-    val KAFKA_BROKERS = "172.19.32.51:9092"
+    val KAFKA_BROKERS = "172.26.57.95:9092"
     val TOPIC_NAME = "iot_platform_tiwentie"
     //时间格式化
     val PRINT_DATEFORMAT: SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
@@ -54,10 +54,10 @@ object TemperatureCustomer {
     }))
     dataTransOUt.addSink(new TemperatureToPostgreSqL).name("体温消费")
 
-    var dataTransOut1=stream.map(new MapFunction[(String,String),TemperatureStorage] {
-      override def map(t: (String, String)): TemperatureStorage = messageAnalyse(t._2)
-    }).filter(item=>item.tiWen>38)
-    dataTransOut1.print()
+//    var dataTransOut1=stream.map(new MapFunction[(String,String),TemperatureStorage] {
+//      override def map(t: (String, String)): TemperatureStorage = messageAnalyse(t._2)
+//    }).filter(item=>item.tiWen>38)
+//    dataTransOut1.print()
 
     env.execute("体温监测")
   }

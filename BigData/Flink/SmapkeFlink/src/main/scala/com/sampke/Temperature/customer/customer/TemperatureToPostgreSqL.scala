@@ -30,7 +30,7 @@ class TemperatureToPostgreSqL extends RichSinkFunction[TemperatureMessage] {
   }
 
   //给参数赋值
-  override def invoke(data: TemperatureMessage, context: SinkFunction.Context[_]): Unit = {
+   override def invoke(data: TemperatureMessage, context: SinkFunction.Context): Unit = {
     try
       {
         val json=data.txt;

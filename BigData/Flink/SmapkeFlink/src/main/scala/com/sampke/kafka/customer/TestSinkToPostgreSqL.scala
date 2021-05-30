@@ -28,7 +28,7 @@ class TestSinkToPostgreSqL extends RichSinkFunction[TestKafka] {
   }
 
   //给参数赋值
-  override def invoke(data: TestKafka, context: SinkFunction.Context[_]): Unit = {
+  override def invoke(data: TestKafka, context: SinkFunction.Context): Unit = {
     try
       {
         ps.setString(1,data.id.toString())

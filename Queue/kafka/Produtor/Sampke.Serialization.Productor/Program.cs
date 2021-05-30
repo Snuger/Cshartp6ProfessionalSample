@@ -6,6 +6,7 @@ using Confluent.SchemaRegistry.Serdes;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sampke.Kafka.Model;
+using Sampke.Serialization.Productor.Buillder;
 using Sampke.Serialization.Productor.Service;
 
 namespace Sampke.Serialization.Productor
@@ -21,14 +22,11 @@ namespace Sampke.Serialization.Productor
         public static IHostBuilder CreateHostBuilder(string[] arg) =>
         Host.CreateDefaultBuilder()
         .ConfigureServices((context, service) =>
-        { 
-            service.AddScoped<IProducer<long, Student>>(x => {
-            return new ProducerBuilder<long, Student>(new ProducerConfig { BootstrapServers = "172.25.211.90:9092" })
-            .SetValueSerializer(new JsonSerializer<Student>(
-                 new CachedSchemaRegistryClient(new SchemaRegistryConfig() { Url = "http://json-schema.org/draft-07/schema#" }),
-                 new JsonSerializerConfig() { BufferBytes = 100 }
-                ))           
-             .Build(); });
+        {
+            service.AddScoped<ISchemaRegistryClient>(x => new CachedSchemaRegistryClient(new SchemaRegistryConfig() { Url = "http://192.168.164.224:8081" }));
+            service.AddScoped(x => new ProducerConfig() { BootstrapServers = "192.168.164.224:9092" });
+            service.AddScoped<SampkeProducterBuilder<Student>>();
+            service.AddScoped<SampkeProducterBuilder<CollegeStudents>>();
             service.AddHostedService<ProductorInitService>();
         });
 

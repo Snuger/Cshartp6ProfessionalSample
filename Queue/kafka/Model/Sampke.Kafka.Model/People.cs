@@ -2,16 +2,19 @@
 using System;
 
 namespace Sampke.Kafka.Model
-{
+{ 
      public class People
-    {
-        [JsonRequired]
+    {      
+        [JsonRequired]  
+        [JsonProperty("name")]
         public string Name { get; set; }
-
-        [JsonRequired]
+    
+        [JsonRequired]  
+        [JsonProperty("age")]
         public int Age { get; set; }
 
-        [JsonRequired]
+        [JsonRequired]  
+        [JsonProperty("address")]
         public string Address { get; set; }
     }
 }
