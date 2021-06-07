@@ -1,0 +1,11 @@
+---
+- hosts: sample
+  remote_user: root
+  vars: 
+   source_dir: k8s
+   step: release
+  roles: 
+    - k8s-canary-release
+  
+  
+  

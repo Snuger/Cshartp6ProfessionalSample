@@ -1,0 +1,6 @@
+---
+hosts: 'master'
+remote_user: 'root'
+app_name: "nginx"
+image: "nginx"
+version: "1.11"
