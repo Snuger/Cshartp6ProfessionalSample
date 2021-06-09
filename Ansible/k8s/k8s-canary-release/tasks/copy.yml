@@ -1,7 +1,0 @@
----
-- name: "准备yml存储目录"
-  shell: 'mkdir -p /tmp/{{source_dir}}'
-- name: "拷贝文件"
-  copy: "src={{ item }} dest=/tmp/{{ source_dir }}"
-  with_fileglob:
-    - files/*
