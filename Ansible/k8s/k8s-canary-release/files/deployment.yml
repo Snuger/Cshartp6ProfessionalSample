@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{aplication_name}}
+spec:
+  selector:
+    matchLabels:
+      app: {{aplication_name}}
+  replicas: 5
+  revisionHistoryLimit: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 3
+  template:
+    metadata:
+      labels:
+        app: {{aplication_name}}
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: {{aplication_name}}
+          image: '{{app_image}}:{{app_image_version}}'
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            initialDelaySeconds: 15
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 3
+          ports:
+          - containerPort: 80
+            name: {{aplication_name}}

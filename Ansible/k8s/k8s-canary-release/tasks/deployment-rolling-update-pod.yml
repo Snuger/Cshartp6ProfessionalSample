@@ -1,0 +1,3 @@
+--- 
+- name: "滚动更新"
+  shell: 'kubectl apply -f deployment.yml'

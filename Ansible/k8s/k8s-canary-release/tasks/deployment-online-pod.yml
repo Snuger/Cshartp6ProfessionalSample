@@ -1,0 +1,3 @@
+--- 
+- name: "执行应用上线"
+  shell: 'kubectl rollout resume deployment/aplication_name'

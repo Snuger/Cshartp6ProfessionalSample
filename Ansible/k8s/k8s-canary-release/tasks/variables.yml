@@ -1,0 +1,19 @@
+---
+# Variable configuration.
+- name: Include default variables.
+  include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        - "vars/variables.yml"
+      skip: true
+
+- name: default workSpace.
+  set_fact:
+    source_directory: "{{ __source_directory }}"
+  when: source_directory is not defined
+
+- name: defined aplication  deployment step.
+  set_fact:
+    deployment_step: "{{ __deployment_step }}"
+  when: deployment_step is not defined
+

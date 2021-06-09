@@ -1,0 +1,21 @@
+---
+# Variable configuration.
+- include_tasks: variables.yml
+
+#拷贝文件
+- include_tasks: ./copy.yml
+
+#滚动更新
+- include_tasks: ./deployment-rolling-update-pod.yml
+  when: deployment_step == 'rolling'
+
+#执行灰度发布
+- include_tasks: ./deployment-canary-pod.yml
+  when: deployment_step == 'canary'
+
+#执行应用上线
+- include_tasks: ./deployment-online-pod.yml
+  when: deployment_step == 'online'
+
+#执行Svc更新
+- include_tasks: ./deployment-svc.yml

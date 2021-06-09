@@ -1,0 +1,3 @@
+--- 
+- name: "更新SVC"
+  shell: 'kubectl apply -f svc.yml'

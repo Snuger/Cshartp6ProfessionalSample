@@ -1,0 +1,14 @@
+--- 
+- name: "切换工作目录"
+  command: "chdir={{source_directory}} ls"
+- name: "准备文件"
+  file: "path={{source_directory}}/test.txt state=touch"
+- name: '正常部署' 
+  shell: 'echo "release --> {{aplication_name}} {{app_image}}:{{app_image_version}}" >> {{source_directory}}/test.txt'
+  when: deployment_step == 'release'
+- name: '灰度发布' 
+  shell: 'echo "update -->  {{aplication_name}} {{app_image}}:{{app_image_version}}" >> {{source_directory}}/test.txt'
+  when: deployment_step == 'update'
+- name: '上线应用' 
+  shell: 'echo "online -->  {{aplication_name}} {{app_image}} {{app_image_version}}" >> {{source_directory}}/test.txt'
+  when: deployment_step == 'online'

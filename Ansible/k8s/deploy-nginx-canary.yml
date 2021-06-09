@@ -1,0 +1,8 @@
+---
+- hosts: sample
+  remote_user: root 
+  roles: 
+    - k8s-canary-release
+  
+  
+  

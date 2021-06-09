@@ -1,0 +1,12 @@
+---
+- name: "检查工作目录是否存在"
+  shell: ls {{source_directory}}
+  ignore_errors: true
+  register: source_directory_exists
+- name: "初始化源文件目录"
+  shell: 'mkdir -p {{source_directory}}'
+  when: source_directory_exists is failure
+- name: "拷贝文件"
+  copy: "src={{ item }} dest={{ source_directory }}"
+  with_fileglob:
+    - files/*

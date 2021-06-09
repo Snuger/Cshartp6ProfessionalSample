@@ -1,0 +1,3 @@
+---
+__source_directory: /tmp/k8s-canary-release
+__deployment_step: 'rolling'
