@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Sampke.Generator": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
