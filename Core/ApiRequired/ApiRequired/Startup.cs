@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+
 
 namespace ApiRequired
 {
@@ -25,22 +28,40 @@ namespace ApiRequired
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+
+            services.AddControllers().AddJsonOptions(opt =>
+            {
+                opt.JsonSerializerOptions.Converters.Add(new JsonConverterFormatDatetime()
+                {
+                    DateTimeFormat = "yyyy-MM-dd HH:mm:ss",
+                    Culture = CultureInfo.GetCultureInfo("zh-cn"),
+                });
+            });
             // services.AddMvc(opt =>
             // {
             //     opt.Filters.Add<APIActionFilter>();
             // });
             // services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
+
+            services.AddMvc();
+            services.AddSwaggerGen();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
 
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseHttpsRedirection();
 

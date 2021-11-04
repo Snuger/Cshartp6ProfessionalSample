@@ -38,7 +38,7 @@ namespace ApiRequired.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddStudent([FromBody] Students student)
+        public IActionResult AddStudent([FromForm] Students student)
         {
             return Ok(student);
         }
@@ -52,11 +52,11 @@ namespace ApiRequired.Controllers
                 Address = "浙江省杭州市西湖区",
                 Age = 18,
                 Email = "explemsnii@outlook.com",
-                Friend = new Friend()
-                {
-                    Name = "李四",
-                    Age = 199
-                }
+                // Friend = new Friend()
+                // {
+                //     Name = "李四",
+                //     Age = 199
+                // }
             });
         }
     }

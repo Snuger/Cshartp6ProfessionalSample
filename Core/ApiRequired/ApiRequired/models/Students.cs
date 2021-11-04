@@ -1,4 +1,7 @@
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
+
 
 namespace ApiRequired.models
 {
@@ -17,8 +20,8 @@ namespace ApiRequired.models
         [EmailAddress(ErrorMessage = "邮箱格式错误")]
         public string Email { get; set; }
 
-
-        public Friend Friend { get; set; }
+        [JsonPropertyName("time_begin")]
+        public DateTime TimeBigin { get; set; }
 
     }
 

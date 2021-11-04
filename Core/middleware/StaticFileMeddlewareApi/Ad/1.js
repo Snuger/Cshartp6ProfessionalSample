@@ -1,0 +1,3 @@
+﻿function ad {
+    console.log();
+}
