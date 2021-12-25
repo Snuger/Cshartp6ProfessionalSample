@@ -20,24 +20,21 @@ using IWebHostEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 namespace Swashbuckle.AspNetCore.Swagger.ExportExtension.Middleware
 {
     public class ApiDocmentExportMiddleware
-    {
-        private readonly RequestDelegate _next;
+    { 
+        private readonly StaticFileMiddleware _staticFileMiddleware;
 
-        private readonly StaticFileMiddleware _staticFileMiddleware; 
-        
-        private readonly IWebHostEnvironment _webHostEnvironment;
-  
+        private readonly ISwaggerDocGenerator _swaggerDocGenerator;   
 
-        public ApiDocmentExportMiddleware(RequestDelegate next, IWebHostEnvironment environment, ILoggerFactory loggerFactory)
-        {
-            _next = next;
-            _webHostEnvironment = environment;
+
+        public ApiDocmentExportMiddleware(RequestDelegate next, IWebHostEnvironment environment, ILoggerFactory loggerFactory, ISwaggerDocGenerator swaggerDocGenerator)
+        {                 
             StaticFileOptions options = new StaticFileOptions()
             {
                 RequestPath = "/doc",
                 FileProvider = new EmbeddedFileProvider(typeof(ApiDocmentExportMiddleware).Assembly, $"{typeof(ApiDocmentExportMiddleware).Assembly.ManifestModule.Name.Replace(".dll", ".node_modules")}")
             };
-            _staticFileMiddleware = new StaticFileMiddleware(next, environment, Options.Create(options), loggerFactory);          
+            _staticFileMiddleware = new StaticFileMiddleware(next, environment, Options.Create(options), loggerFactory);
+            _swaggerDocGenerator = swaggerDocGenerator;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -61,22 +58,22 @@ namespace Swashbuckle.AspNetCore.Swagger.ExportExtension.Middleware
         }
 
         private async Task ExportApiDocument(HttpContext context)
-        {         
-            var version =context.Request.Query["version"];
-            var html= await new SwaggerHtmlDocGenProvider().SwaggerToHtml(context,version);
-            byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(html);           
-            var tmpPath=Path.Combine(AppContext.BaseDirectory, "tmp");
-            if(!Directory.Exists(tmpPath))
+        {
+            var version =context.Request.Query["version"];     
+            var stream = await _swaggerDocGenerator.GetSwaggerDocStreamAsync(version);    
+            var tmpPath = Path.Combine(AppContext.BaseDirectory, "tmp");
+            if (!Directory.Exists(tmpPath))
                 Directory.CreateDirectory(tmpPath);
-            var htmlPath = Path.Combine(tmpPath, $"{System.Guid.NewGuid().ToString()}.html");
-            using (FileStream fs = File.Create(htmlPath))        
+            var makeDownFilePath = Path.Combine(tmpPath, $"{Guid.NewGuid().ToString()}.md");
+            byte[] byteArray = stream.ToArray();
+            using (FileStream fs = File.Create(makeDownFilePath))
                 await fs.WriteAsync(byteArray, 0, byteArray.Length);
-            var downloadFile = new FileInfo(htmlPath);
+            var downloadFile = new FileInfo(makeDownFilePath);
             context.Response.ContentType = "application/octet-stream";
             context.Response.Headers.Add("Content-Length", downloadFile.Length.ToString());
-            context.Response.Headers.Add("Content-Disposition", "attachment; filename=test.html");
+            context.Response.Headers.Add("Content-Disposition", "attachment; filename=*.md");
             context.Response.Headers.Add("Content-Transfer-Encoding", "binary");
-            await context.Response.SendFileAsync(new PhysicalFileInfo(new FileInfo(htmlPath)),0,downloadFile.Length);          
+            await context.Response.SendFileAsync(new PhysicalFileInfo(new FileInfo(makeDownFilePath)), 0, downloadFile.Length);
         }
 
     }

@@ -15,6 +15,8 @@ namespace StaticFileMeddlewareApi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).UseDefaultServiceProvider(options => { 
+                    options.ValidateScopes = false;
                 });
     }
 }

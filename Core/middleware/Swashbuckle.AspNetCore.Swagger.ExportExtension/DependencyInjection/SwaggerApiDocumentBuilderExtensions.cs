@@ -6,15 +6,16 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class SwaggerApiDocumentBuilderExtensions
-    {
+    {     
         /// <summary>
-        /// 
+        /// 注册<see cref="ISwaggerDocGenerator"/>服务
         /// </summary>
+        /// <param name="services"></param>
         /// <returns></returns>
         public static IServiceCollection AddSwaggerApiDocumentExportSupport(this IServiceCollection services)
         {
             services.AddScoped<SwaggerGenerator>();
-            services.AddScoped<SwaggerHtmlDocGenProvider>();               
+             services.AddScoped<ISwaggerDocGenerator, SwaggerMakeDownDocGenerator>();
             services.Configure<SwaggerUIOptions>(opt => {
                 //css注入
                 opt.InjectStylesheet("/doc/swagger_ui_extension/swagger-common.css");//自定义样式
@@ -24,7 +25,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 opt.InjectJavascript("/doc/buzyload/app.min.js");//loading 遮罩层js
                 opt.InjectJavascript("/doc/swagger_ui_extension/swagger-lang.js");//我们自定义的js
             });
-            return services; 
+            return services;        
         }
     }
 }

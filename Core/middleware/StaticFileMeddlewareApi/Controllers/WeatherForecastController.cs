@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mime;
+using System.Threading.Tasks;
 
 namespace StaticFileMeddlewareApi.Controllers
 {
@@ -50,6 +51,47 @@ namespace StaticFileMeddlewareApi.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        /// <summary>
+        /// 提交
+        /// </summary>
+        /// <param name="weather">气温对象</param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<IActionResult> Add([FromBody] WeatherForecast weather) {
+            return Ok();
+        }
+
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="weather">气温对象</param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] WeatherForecast weather) {
+            return Ok();
+        }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id">主键ID</param>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> Delete(string id) {
+            return Ok();
+        }
+
+        /// <summary>
+        /// 替换
+        /// </summary>
+        /// <param name="weather">气温对象</param>
+        /// <returns></returns>
+        [HttpPatch]
+        public async Task<IActionResult> Patch([FromBody] WeatherForecast weather) {
+            return Ok();
         }
     }
 }

@@ -1,0 +1,41 @@
+﻿<Window x:Class="UartSamples.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UartSamples"
+        mc:Ignorable="d"
+        Title="我们都是好孩子" Height="256" Width="530" WindowStyle="None" BorderThickness="1" BorderBrush="#FF545454">
+    <DockPanel LastChildFill="True">
+        <StackPanel Height="20" DockPanel.Dock="Top" SnapsToDevicePixels="True" Background="#FF545454">
+            <Grid Height="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                    <ColumnDefinition Width="20"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="2" Width="18" Height="18" Content="-" BorderBrush="#FFF1F1F1" Background="#FF969595" Foreground="#FFECECEC"/>
+                <Button Grid.Row="0" Grid.Column="3" Width="18" Height="18" Content="+" BorderBrush="#FFF1F1F1" Background="#FF969595" Foreground="#FFECECEC"/>
+                <Button Grid.Row="0" Grid.Column="4" Width="18" Height="18" Content="X" BorderBrush="#FFF1F1F1" Background="#FF969595" Foreground="#FFECECEC"/>
+            </Grid>   
+        </StackPanel>
+        <Grid DockPanel.Dock="Bottom" Background="#FFABABAB" > 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="#FF545454" Margin="0,0,1,0" Grid.Row="0" Grid.Column="0"></StackPanel>
+            <TabPanel Background="#FF545454" Grid.Row="0" Grid.Column="1">
+                
+            </TabPanel>                    
+        </Grid>
+    </DockPanel>
+</Window>

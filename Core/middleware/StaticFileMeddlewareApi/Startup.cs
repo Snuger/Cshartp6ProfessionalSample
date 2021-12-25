@@ -15,14 +15,15 @@ namespace StaticFileMeddlewareApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-             services.AddSwaggerGen(c =>
+            services.AddSwaggerApiDocumentExportSupport();
+            services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SwaggerMediwareSample", Version = "v1" });
                 var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);//获取应用程序所在目录（绝对，不受工作目录影响，建议采用此方法获取路径）
                 var xmlPath = Path.Combine(basePath, $"{nameof(StaticFileMeddlewareApi)}.xml");
                 c.IncludeXmlComments(xmlPath);
             });          
-            services.AddSwaggerApiDocumentExportSupport();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
