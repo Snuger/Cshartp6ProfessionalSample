@@ -19,26 +19,23 @@ using IWebHostEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace Swashbuckle.AspNetCore.Swagger.ExportExtension.Middleware
 {
-    public class ApiDocmentExportMiddleware
+    public class SwaggerApiDocmentExportMiddleware
     { 
-        private readonly StaticFileMiddleware _staticFileMiddleware;
+        private readonly StaticFileMiddleware _staticFileMiddleware; 
 
-        private readonly ISwaggerDocGenerator _swaggerDocGenerator;   
-
-
-        public ApiDocmentExportMiddleware(RequestDelegate next, IWebHostEnvironment environment, ILoggerFactory loggerFactory, ISwaggerDocGenerator swaggerDocGenerator)
+        public SwaggerApiDocmentExportMiddleware(RequestDelegate next, IWebHostEnvironment environment, ILoggerFactory loggerFactory)
         {                 
             StaticFileOptions options = new StaticFileOptions()
             {
                 RequestPath = "/doc",
-                FileProvider = new EmbeddedFileProvider(typeof(ApiDocmentExportMiddleware).Assembly, $"{typeof(ApiDocmentExportMiddleware).Assembly.ManifestModule.Name.Replace(".dll", ".node_modules")}")
+                FileProvider = new EmbeddedFileProvider(typeof(SwaggerApiDocmentExportMiddleware).Assembly, $"{typeof(SwaggerApiDocmentExportMiddleware).Assembly.ManifestModule.Name.Replace(".dll", ".node_modules")}")
             };
             _staticFileMiddleware = new StaticFileMiddleware(next, environment, Options.Create(options), loggerFactory);
-            _swaggerDocGenerator = swaggerDocGenerator;
+       
         }
 
         public async Task InvokeAsync(HttpContext context)
-        {
+        {          
             if (RequestingSwaggerExport(context.Request))
                 await ExportApiDocument(context);
             await _staticFileMiddleware.Invoke(context);
@@ -59,8 +56,9 @@ namespace Swashbuckle.AspNetCore.Swagger.ExportExtension.Middleware
 
         private async Task ExportApiDocument(HttpContext context)
         {
-            var version =context.Request.Query["version"];     
-            var stream = await _swaggerDocGenerator.GetSwaggerDocStreamAsync(version);    
+            var version =context.Request.Query["version"];
+            var service = (ISwaggerDocGenerator) context.RequestServices.GetService(typeof(ISwaggerDocGenerator));
+            var stream = await service.GetSwaggerDocStreamAsync(version);    
             var tmpPath = Path.Combine(AppContext.BaseDirectory, "tmp");
             if (!Directory.Exists(tmpPath))
                 Directory.CreateDirectory(tmpPath);

@@ -20,9 +20,6 @@
     <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.11" />
     <PackageReference Include="System.Text.Json" Version="5.0.2" />
     <PackageReference Include="RazorEngine.NetCore" Version="2.2.6" />
-  </ItemGroup> 
-  <ItemGroup>
-    <None Remove="node_modules\swagger_ui_extension\SwaggerDoc.cshtml" />
   </ItemGroup>  
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.3" />

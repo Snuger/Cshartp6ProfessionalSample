@@ -34,7 +34,7 @@ namespace StaticFileMeddlewareApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(opt => opt.SwaggerEndpoint("/swagger/v1/swagger.json", "SwaggerMediwareSample v1"));
-                app.UseMiddleware<ApiDocmentExportMiddleware>();
+                app.UseMiddleware<SwaggerApiDocmentExportMiddleware>();
             }
 
             app.UseRouting();      
