@@ -50,7 +50,7 @@ under the License.
 		<scala.version>2.11.12</scala.version>
 		<log4j.version>2.13.2</log4j.version>
 		<kafka.version>2.12</kafka.version>
-		<postgresql.version>42.2.5</postgresql.version>
+		<postgresql.version>42.2.25</postgresql.version>
 	</properties>
 
 	<dependencies>
